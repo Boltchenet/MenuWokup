@@ -1,0 +1,103 @@
+/* Variables CSS */
+:root {
+    --red-primary: #b71c1c;
+    --blue-primary: #0d47a1;
+    --gold-accent: #d4af37;
+    --light-bg: #f9f9f9;
+    --dark-text: #333;
+}
+
+/* Reset et styles de base */
+body {
+    font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--dark-text);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+}
+
+.main-header {
+    background: linear-gradient(135deg, var(--red-primary), var(--blue-primary));
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 4px solid var(--gold-accent);
+    position: relative;
+}
+
+.logo-container h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.qr-notice {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr-code {
+    width: 80px;
+    height: 80px;
+    margin-top: 0.5rem;
+}
+
+.category-nav {
+    background-color: var(--blue-primary);
+    padding: 1rem;
+}
+
+.category-iframe {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+}
+
+.menu-content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-footer {
+    background-color: var(--blue-primary);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo-container h1 {
+        font-size: 1.8rem;
+    }
+    
+    .qr-notice {
+        position: static;
+        margin-top: 1rem;
+    }
+    
+    .category-iframe {
+        height: 100px;
+    }
+}
+
+/* Styles pour l'impression */
+@media print {
+    .main-header, .category-nav, .main-footer {
+        display: none;
+    }
+    
+    .menu-content {
+        padding: 0;
+    }
+}

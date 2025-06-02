@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Restaurant Chinois | La Saveur de l'Orient</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/plats.css">
+    <link rel="stylesheet" href="css/boissons.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <h1>La Saveur de l'Orient</h1>
+            <p>Menu Traditionnel Chinois</p>
+        </div>
+        <div class="qr-notice">
+            <p>Scannez ce QR code pour retrouver notre menu</p>
+            <img src="qr-code/qr-menu.png" alt="QR Code du menu" class="qr-code">
+        </div>
+    </header>
+
+    <nav class="category-nav">
+        <!-- Contenu chargé dynamiquement depuis categories.html -->
+        <iframe src="html/categories.html" frameborder="0" class="category-iframe"></iframe>
+    </nav>
+
+    <main class="menu-content">
+        <!-- Contenu chargé dynamiquement selon la sélection -->
+        <section id="content-placeholder">
+            <h2>Bienvenue à notre restaurant</h2>
+            <p>Sélectionnez une catégorie pour voir notre menu</p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>Restaurant La Saveur de l'Orient &copy; 2025</p>
+        <p>Ouvert du mardi au dimanche, 11h30-14h30 et 18h30-22h30</p>
+    </footer>
+
+    <script>
+        // Script pour charger les contenus dynamiquement
+        function loadContent(contentUrl) {
+            fetch(contentUrl)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('content-placeholder').innerHTML = html;
+                });
+        }
+    </script>
+</body>
+</html>
