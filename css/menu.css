@@ -1,0 +1,109 @@
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Catégories */
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    color: #e63946;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #a8dadc;
+}
+
+/* Grille des plats */
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Carte plat */
+.menu-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.item-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: #eee;
+}
+
+.item-info {
+    padding: 15px;
+}
+
+.item-name {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #1d3557;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #e63946;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-title {
+        font-size: 1.5rem;
+    }
+    
+    .item-image {
+        height: 160px;
+    }
+    
+    .menu-container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-image {
+        height: 140px;
+    }
+    
+    .item-name {
+        font-size: 1rem;
+    }
+    
+    .item-price {
+        font-size: 1rem;
+    }
+}

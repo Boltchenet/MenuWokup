@@ -1,103 +1,84 @@
-/* Variables CSS */
+/* Variables */
 :root {
-    --red-primary: #b71c1c;
-    --blue-primary: #0d47a1;
-    --gold-accent: #d4af37;
-    --light-bg: #f9f9f9;
-    --dark-text: #333;
+    --primary: #e63946;
+    --secondary: #f1faee;
+    --accent: #a8dadc;
+    --dark: #1d3557;
+    --light: #f8f9fa;
+    --text: #333;
 }
 
-/* Reset et styles de base */
-body {
-    font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
-    color: var(--dark-text);
-    background-color: var(--light-bg);
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('../images/imagesite/fond_rouge_bleu_asiat.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text);
     line-height: 1.6;
-}
-
-.main-header {
-    background: linear-gradient(135deg, var(--red-primary), var(--blue-primary));
-    color: white;
-    padding: 1.5rem;
-    text-align: center;
-    border-bottom: 4px solid var(--gold-accent);
     position: relative;
+    min-height: 100vh;
 }
 
-.logo-container h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.qr-notice {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: white;
-    padding: 0.5rem;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.qr-code {
-    width: 80px;
-    height: 80px;
-    margin-top: 0.5rem;
-}
-
-.category-nav {
-    background-color: var(--blue-primary);
-    padding: 1rem;
-}
-
-.category-iframe {
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 60px;
-    overflow: hidden;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.88);
+    z-index: -1;
 }
 
-.menu-content {
-    padding: 2rem;
+/* Layout */
+.menu-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.main-footer {
-    background-color: var(--blue-primary);
-    color: white;
+/* Header */
+.menu-header {
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--primary);
 }
 
-/* Responsive Design */
+.restaurant-name {
+    font-size: 2.8rem;
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.menu-title {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-style: italic;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .logo-container h1 {
-        font-size: 1.8rem;
+    .restaurant-name {
+        font-size: 2.2rem;
     }
     
-    .qr-notice {
-        position: static;
-        margin-top: 1rem;
+    .menu-title {
+        font-size: 1.5rem;
     }
     
-    .category-iframe {
-        height: 100px;
-    }
-}
-
-/* Styles pour l'impression */
-@media print {
-    .main-header, .category-nav, .main-footer {
-        display: none;
-    }
-    
-    .menu-content {
-        padding: 0;
+    .menu-container {
+        padding: 15px;
     }
 }

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Restaurant WOKUP</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: url('images/imagesite/fond_rouge_bleu_asiat.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.88);
+            z-index: -1;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Menu Header */
+        .menu-header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e63946;
+        }
+
+        .restaurant-name {
+            font-size: 2.8rem;
+            color: #1d3557;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .menu-title {
+            font-size: 1.8rem;
+            color: #e63946;
+            font-style: italic;
+        }
+
+        /* Menu Categories */
+        .menu-category {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: #e63946;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px dashed #a8dadc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Menu Items Grid */
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Individual Menu Item */
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .item-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .item-info {
+            padding: 18px;
+        }
+
+        .item-name {
+            font-size: 1.2rem;
+            color: #1d3557;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .item-price {
+            font-size: 1.1rem;
+            color: #e63946;
+            font-weight: 700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .restaurant-name {
+                font-size: 2.2rem;
+            }
+            
+            .menu-title {
+                font-size: 1.5rem;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+            }
+            
+            .item-image {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-container {
+                padding: 15px;
+            }
+            
+            .item-image {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <header class="menu-header">
+            <h1 class="restaurant-name">WOKUP</h1>
+            <h2 class="menu-title">Menu du Midi</h2>
+        </header>
+
+        <!-- Entrées -->
+        <section class="menu-category">
+            <h2 class="category-title">🥗 Entrées</h2>
+            <div class="menu-items">
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/saladelegume.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Salade aux légumes</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/nemspoulet3pcs.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">3 nems au poulet</h3>
+                        <p class="item-price">3,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/ravliolisfrits4pcs.jpeg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">4 raviolis frits</h3>
+                        <p class="item-price">3,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/potagepekinois.jpeg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Potage chinois</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Plats Principaux -->
+        <section class="menu-category">
+            <h2 class="category-title">🍛 Plats Principaux</h2>
+            <div class="menu-items">
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizporcaigredouce.jpeg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz au travers de porc, sauce aigre-douce</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rziboeufoignon.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz au bœuf sauté aux oignons</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizescalopepouletfrit.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz à l'escalope de poulet frit</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rzipouletaigredouce.jpeg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz au poulet, sauce aigre-douce</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizcrevetteaigredouce.avif')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz aux crevettes, sauce aigre-douce</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/nouillesautépoulet.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Nouilles sautées au poulet</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizsautépoulet.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz sauté au poulet</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/soupewonton.webp')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Soupe "roue" (thon, porc, crevettes)</h3>
+                        <p class="item-price">12,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/raviolisporcchou.jpeg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Raviolis au porc et chou</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Desserts -->
+        <section class="menu-category">
+            <h2 class="category-title">🍍 Desserts</h2>
+            <div class="menu-items">
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/bouletterizsesame.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">4 boulettes de riz au sésame</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/lichisirop.png')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Litchis au sirop</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/perlecoco2pcs.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">2 perles de coco</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/ananassirop.avif')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Ananas au sirop</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

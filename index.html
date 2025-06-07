@@ -3,50 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Restaurant Chinois | La Saveur de l'Orient</title>
+    <title>Menu du Midi - WOKUP Paris</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/plats.css">
-    <link rel="stylesheet" href="css/boissons.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="logo-container">
-            <h1>La Saveur de l'Orient</h1>
-            <p>Menu Traditionnel Chinois</p>
-        </div>
-        <div class="qr-notice">
-            <p>Scannez ce QR code pour retrouver notre menu</p>
-            <img src="qr-code/qr-menu.png" alt="QR Code du menu" class="qr-code">
-        </div>
-    </header>
+    <div class="menu-container">
+        <header class="menu-header">
+            <h1 class="restaurant-name">WOKUP</h1>
+            <h2 class="menu-title">Menu du Midi</h2>
+        </header>
 
-    <nav class="category-nav">
-        <!-- Contenu chargé dynamiquement depuis categories.html -->
-        <iframe src="html/categories.html" frameborder="0" class="category-iframe"></iframe>
-    </nav>
-
-    <main class="menu-content">
-        <!-- Contenu chargé dynamiquement selon la sélection -->
-        <section id="content-placeholder">
-            <h2>Bienvenue à notre restaurant</h2>
-            <p>Sélectionnez une catégorie pour voir notre menu</p>
+        <!-- Entrées -->
+        <section class="menu-category">
+            <h2 class="category-title">🥗 Entrées</h2>
+            <div class="menu-items">
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/saladelegume.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Salade aux légumes</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/nemspoulet3pcs.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">3 nems au poulet</h3>
+                        <p class="item-price">3,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/ravliolisfrits4pcs.jpeg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">4 raviolis frits</h3>
+                        <p class="item-price">3,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/potagepekinois.jpeg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Potage chinois</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+            </div>
         </section>
-    </main>
 
-    <footer class="main-footer">
-        <p>Restaurant La Saveur de l'Orient &copy; 2025</p>
-        <p>Ouvert du mardi au dimanche, 11h30-14h30 et 18h30-22h30</p>
-    </footer>
+        <!-- Plats Principaux -->
+        <section class="menu-category">
+            <h2 class="category-title">🍛 Plats Principaux</h2>
+            <div class="menu-items">
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizporcaigredouce.jpeg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz au travers de porc, sauce aigre-douce</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rziboeufoignon.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz au bœuf sauté aux oignons</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizescalopepouletfrit.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz à l'escalope de poulet frit</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rzipouletaigredouce.jpeg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz au poulet, sauce aigre-douce</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizcrevetteaigredouce.avif')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz aux crevettes, sauce aigre-douce</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/nouillesautépoulet.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Nouilles sautées au poulet</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizsautépoulet.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Riz sauté au poulet</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/soupewonton.webp')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Soupe "roue" (thon, porc, crevettes)</h3>
+                        <p class="item-price">12,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/raviolisporcchou.jpeg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Raviolis au porc et chou</h3>
+                        <p class="item-price">10,08 €</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <script>
-        // Script pour charger les contenus dynamiquement
-        function loadContent(contentUrl) {
-            fetch(contentUrl)
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('content-placeholder').innerHTML = html;
-                });
-        }
-    </script>
+        <!-- Desserts -->
+        <section class="menu-category">
+            <h2 class="category-title">🍍 Desserts</h2>
+            <div class="menu-items">
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/bouletterizsesame.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">4 boulettes de riz au sésame</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/lichisirop.png')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Litchis au sirop</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/perlecoco2pcs.jpg')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">2 perles de coco</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image" style="background-image: url('images/plat/menumidi/ananassirop.avif')"></div>
+                    <div class="item-info">
+                        <h3 class="item-name">Ananas au sirop</h3>
+                        <p class="item-price">4,08 €</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
