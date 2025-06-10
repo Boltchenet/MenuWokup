@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WOKUP Paris - Menu Asiatique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+JP:wght@400;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d32f2f;
+            --secondary: #f5f5f5;
+            --accent: #ff9800;
+            --dark: #212121;
+            --light: #ffffff;
+            --text: #fff;
+            --gold: #d4af37;
+            --red: #b22222;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text);
+            height: 100vh;
+            overflow-x: hidden;
+            background: url('https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=1000') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        .menu-container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: transparent;
+            backdrop-filter: blur(2px);
+        }
+
+        .menu-header {
+            text-align: center;
+            padding: 15px 0;
+            background: linear-gradient(to right, rgba(180, 34, 34, 0.8), rgba(0, 0, 0, 0.8));
+            color: var(--light);
+            position: relative;
+            border-bottom: 3px solid var(--gold);
+            box-shadow: var(--shadow);
+        }
+
+        .restaurant-name {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .menu-title {
+            font-size: 1.3rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .decorative-border {
+            height: 10px;
+            background: repeating-linear-gradient(45deg, var(--gold), var(--gold) 10px, var(--red) 10px, var(--red) 20px);
+            margin: 10px 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 0 15px;
+            margin-top: 10px;
+        }
+
+        .category-card {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .category-image {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .category-card h3 {
+            padding: 15px;
+            font-size: 1.5rem;
+            color: var(--light);
+            text-align: center;
+            font-family: 'ZCOOL XiaoWei', serif;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .category-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/rice-paper-3.png');
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .menu-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            margin: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--gold);
+            padding: 15px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 0 0 15px 0;
+            padding: 8px 15px;
+            background: var(--primary);
+            color: var(--light);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: 1px solid var(--gold);
+            font-family: 'ZCOOL XiaoWei', serif;
+        }
+
+        .back-button:hover {
+            background: var(--dark);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .menu-category {
+            margin-bottom: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/paper-3.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            text-align: center;
+            position: relative;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .menu-item {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .item-image {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .item-info {
+            padding: 12px;
+        }
+
+        .item-name {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--light);
+            font-weight: 600;
+            font-family: 'ZCOOL XiaoWei', serif;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 1.2rem;
+            display: block;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        .menu-footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--light);
+            text-align: center;
+            padding: 12px;
+            font-size: 0.9rem;
+            border-top: 2px solid var(--gold);
+            font-family: 'ZCOOL XiaoWei', serif;
+        }
+
+        .chinese-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/chinese-style.png');
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .lantern {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background: var(--red);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.7);
+            z-index: 5;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .lantern::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .lantern::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 18px;
+            width: 4px;
+            height: 15px;
+            background: var(--gold);
+        }
+
+        .lantern.top-left {
+            top: 10%;
+            left: 5%;
+        }
+
+        .lantern.top-right {
+            top: 8%;
+            right: 5%;
+            animation-delay: 1s;
+        }
+
+        .lantern.bottom-left {
+            bottom: 10%;
+            left: 7%;
+            animation-delay: 0.5s;
+        }
+
+        .lantern.bottom-right {
+            bottom: 12%;
+            right: 6%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @media (max-width: 768px) {
+            .restaurant-name {
+                font-size: 2.3rem;
+            }
+            
+            .menu-title {
+                font-size: 1.1rem;
+            }
+            
+            .category-grid {
+                gap: 15px;
+            }
+            
+            .item-image {
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chinese-pattern"></div>
+    <div class="lantern top-left"></div>
+    <div class="lantern top-right"></div>
+    <div class="lantern bottom-left"></div>
+    <div class="lantern bottom-right"></div>
+
+    <div class="menu-container">
+        <header class="menu-header">
+            <h1 class="restaurant-name">WOKUP</h1>
+            <div class="decorative-border"></div>
+            <div class="menu-categories" id="mainCategories">
+                <h2 class="menu-title">Notre Menu Authentique</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-category="midi">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000')"></div>
+                        <h3>Menu du Midi</h3>
+                    </div>
+                    <div class="category-card" data-category="fondues">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1000')"></div>
+                        <h3>Fondues Chinoises</h3>
+                    </div>
+                    <div class="category-card" data-category="plats">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1000')"></div>
+                        <h3>Plats Individuels</h3>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="menu-content" id="menuContent">
+            <!-- Le contenu des menus sera chargé dynamiquement ici -->
+        </div>
+
+        <footer class="menu-footer">
+            <p>Ouvert du lundi au samedi de 11h30 à 15h et de 18h30 à 23h</p>
+            <p>12 Rue des Bambous, 75015 Paris - 01 45 78 90 12</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Données des menus
+            const menuData = {
+                midi: {
+                    categories: [
+                        {
+                            title: '🥢 Entrées',
+                            items: [
+                                {
+                                    name: 'Salade aux légumes',
+                                    price: '4,08 €',
+                                    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1000'
+                                },
+                                {
+                                    name: '3 nems au poulet',
+                                    price: '3,08 €',
+                                    image: 'https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=1000'
+                                },
+                                {
+                                    name: '4 raviolis frits',
+                                    price: '3,08 €',
+                                    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1000'
+                                },
+                                {
+                                    name: 'Potage chinois',
+                                    price: '4,08 €',
+                                    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1000'
+                                }
+                            ]
+                        },
+                        {
+                            title: '🍚 Plats Principaux',
+                            items: [
+                                {
+                                    name: 'Riz au travers de porc, sauce aigre-douce',
+                                    price: '10,08 €',
+                                    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1000'
+                                },
+                                {
+                                    name: 'Riz au bœuf sauté aux oignons',
+                                    price: '10,08 €',
+                                    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1000'
+                                },
+                                {
+                                    name: 'Riz à l\'escalope de poulet frit',
+                                    price: '10,08 €',
+                                    image: 'https://images.unsplash.com/photo-1562967916-eb82221dfb92?q=80&w=1000'
+                                },
+                                {
+                                    name: 'Riz au poulet, sauce aigre-douce',
+                                    price: '10,08 €',
+                                    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000'
+                                }
+                            ]
+                        },
+                        {
+                            title: '🍡 Desserts',
+                            items: [
+                                {
+                                    name: '4 boulettes de riz au sésame',
+                                    price: '4,08 €',
+                                    image: 'https://images.unsplash.com/photo-1603532648955-a039f8e5c3a7?q=80&w=1000'
+                                },
+                                {
+                                    name: 'Litchis au sirop',
+                                    price: '4,08 €',
+                                    image: 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=1000'
+                                },
+                                {
+                                    name: '2 perles de coco',
+                                    price: '4,08 €',
+                                    image: 'https://images.unsplash.com/photo-1603532648955-a039f8e5c3a7?q=80&w=1000'
+                                },
+                                {
+                                    name: 'Ananas au sirop',
+                                    price: '4,08 €',
+                                    image: 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=1000'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                fondues: {
+                    categories: [
+                        {
+                            title: '🥘 Fondues Traditionnelles',
+                            items: [
+                                {
+                                    name: 'Fondue Sichuan épicée',
+                                    price: '18,50 €',
+                                    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000'
+                                },
+                                {
+                                    name: 'Fondue au bouillon de champignons',
+                                    price: '17,90 €',
+                                    image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=1000'
+                                },
+                                {
+                                    name: 'Fondue mixte (bouillon et épicée)',
+                                    price: '19,90 €',
+                                    image: 'https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=1000'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                plats: {
+                    categories: [
+                        {
+                            title: '🍛 Plats Individuels',
+                            items: [
+                                {
+                                    name: 'Poulet Kung Pao',
+                                    price: '14,90 €',
+                                    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1000'
+                                },
+                                {
+                                    name: 'Boeuf à l\'ail',
+                                    price: '15,50 €',
+                                    image: 'https://images.unsplash.com/photo-1603360946369-dc9bbd814103?q=80&w=1000'
+                                },
+                                {
+                                    name: 'Porc aigre-doux',
+                                    price: '13,90 €',
+                                    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1000'
+                                }
+                            ]
+                        }
+                    ]
+                }
+            };
+
+            // Gestion des catégories principales
+            const categoryCards = document.querySelectorAll('.category-card');
+            const mainCategories = document.getElementById('mainCategories');
+            const menuContent = document.getElementById('menuContent');
+            
+            // Charger la catégorie sélectionnée
+            categoryCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    loadCategory(category);
+                });
+            });
+            
+            // Fonction pour charger une catégorie
+            function loadCategory(category) {
+                // Masquer les catégories principales
+                mainCategories.style.display = 'none';
+                
+                // Créer le bouton de retour
+                const backButton = document.createElement('a');
+                backButton.className = 'back-button';
+                backButton.textContent = '← Retour au menu principal';
+                backButton.href = '#';
+                backButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mainCategories.style.display = 'block';
+                    menuContent.innerHTML = '';
+                });
+                
+                // Créer le contenu du menu
+                const menuGrid = document.createElement('div');
+                menuGrid.className = 'menu-grid';
+                
+                // Ajouter les plats de la catégorie sélectionnée
+                const categoryData = menuData[category];
+                
+                if (categoryData) {
+                    categoryData.categories.forEach(cat => {
+                        const categorySection = document.createElement('section');
+                        categorySection.className = 'menu-category';
+                        
+                        const categoryTitle = document.createElement('h2');
+                        categoryTitle.className = 'category-title';
+                        categoryTitle.textContent = cat.title;
+                        
+                        const menuItems = document.createElement('div');
+                        menuItems.className = 'menu-items';
+                        
+                        cat.items.forEach(item => {
+                            const menuItem = document.createElement('article');
+                            menuItem.className = 'menu-item';
+                            
+                            const itemImage = document.createElement('div');
+                            itemImage.className = 'item-image';
+                            itemImage.style.backgroundImage = `url('${item.image}')`;
+                            
+                            const itemInfo = document.createElement('div');
+                            itemInfo.className = 'item-info';
+                            
+                            const itemName = document.createElement('h3');
+                            itemName.className = 'item-name';
+                            itemName.textContent = item.name;
+                            
+                            const itemPrice = document.createElement('span');
+                            itemPrice.className = 'item-price';
+                            itemPrice.textContent = item.price;
+                            
+                            itemInfo.appendChild(itemName);
+                            itemInfo.appendChild(itemPrice);
+                            
+                            menuItem.appendChild(itemImage);
+                            menuItem.appendChild(itemInfo);
+                            
+                            menuItems.appendChild(menuItem);
+                        });
+                        
+                        categorySection.appendChild(categoryTitle);
+                        categorySection.appendChild(menuItems);
+                        menuGrid.appendChild(categorySection);
+                    });
+                }
+                
+                // Vider et remplir le contenu
+                menuContent.innerHTML = '';
+                menuContent.appendChild(backButton);
+                menuContent.appendChild(menuGrid);
+            }
+        });
+    </script>
+</body>
+</html>
