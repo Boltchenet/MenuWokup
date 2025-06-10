@@ -3,168 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu du Midi - WOKUP Paris</title>
+    <title>Restaurant WOKUP | Expérience Culinaire Asiatique</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/midicss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="js/app.js" defer></script>
 </head>
 <body>
-    <div class="menu-container">
-        <header class="menu-header">
-            <h1 class="restaurant-name">WOKUP</h1>
-            <h2 class="menu-title">Menu du Midi</h2>
+    <div class="smooth-scroll">
+        <!-- Navigation fixe -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#midi" class="nav-link" data-scroll>Menu Midi</a></li>
+                <li><a href="#fondue" class="nav-link" data-scroll>Fondue</a></li>
+                <li><a href="#individuels" class="nav-link" data-scroll>Plats Individuels</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="hero" id="home">
+            <div class="hero-content">
+                <h1 class="title-anim">WOKUP</h1>
+                <p class="subtitle-anim">Restaurant Asiatique - Paris 75009</p>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+            </div>
         </header>
 
-        <!-- Entrées -->
-        <section class="menu-category">
-            <h2 class="category-title">🥗 Entrées</h2>
-            <div class="menu-items">
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/saladelegume.jpg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Salade aux légumes</h3>
-                        <p class="item-price">4,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/nemspoulet3pcs.jpg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">3 nems au poulet</h3>
-                        <p class="item-price">3,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/ravliolisfrits4pcs.jpeg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">4 raviolis frits</h3>
-                        <p class="item-price">3,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/potagepekinois.jpeg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Potage chinois</h3>
-                        <p class="item-price">4,08 €</p>
-                    </div>
-                </article>
+        <!-- Sections Menu -->
+        <section class="menu-section" id="midi" style="background-image: url('images/imagesite/fond-menu-midi.jpg')">
+            <div class="section-overlay"></div>
+            <div class="menu-content" style="background: transparent; backdrop-filter: none; padding: 2rem; max-width: none;">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Menu Midi</h2>
+                <iframe src="menu-midi.html" style="width:100%; height:100%; border:none; background: transparent;"></iframe>
             </div>
         </section>
 
-        <!-- Plats Principaux -->
-        <section class="menu-category">
-            <h2 class="category-title">🍛 Plats Principaux</h2>
-            <div class="menu-items">
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizporcaigredouce.jpeg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Riz au travers de porc, sauce aigre-douce</h3>
-                        <p class="item-price">10,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/rziboeufoignon.jpg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Riz au bœuf sauté aux oignons</h3>
-                        <p class="item-price">10,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizescalopepouletfrit.jpg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Riz à l'escalope de poulet frit</h3>
-                        <p class="item-price">10,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/rzipouletaigredouce.jpeg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Riz au poulet, sauce aigre-douce</h3>
-                        <p class="item-price">10,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizcrevetteaigredouce.avif')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Riz aux crevettes, sauce aigre-douce</h3>
-                        <p class="item-price">10,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/nouillesautépoulet.jpg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Nouilles sautées au poulet</h3>
-                        <p class="item-price">10,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/rizsautépoulet.jpg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Riz sauté au poulet</h3>
-                        <p class="item-price">10,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/soupewonton.webp')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Soupe "roue" (thon, porc, crevettes)</h3>
-                        <p class="item-price">12,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/raviolisporcchou.jpeg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Raviolis au porc et chou</h3>
-                        <p class="item-price">10,08 €</p>
-                    </div>
-                </article>
+        <section class="menu-section" id="fondue" style="background-image: url('images/imagesite/fond-fondues.png')">
+            <div class="section-overlay"></div>
+            <div class="menu-content">
+                <h2>Fondue</h2>
+                <!-- Contenu à ajouter -->
             </div>
         </section>
 
-        <!-- Desserts -->
-        <section class="menu-category">
-            <h2 class="category-title">🍍 Desserts</h2>
-            <div class="menu-items">
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/bouletterizsesame.jpg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">4 boulettes de riz au sésame</h3>
-                        <p class="item-price">4,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/lichisirop.png')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Litchis au sirop</h3>
-                        <p class="item-price">4,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/perlecoco2pcs.jpg')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">2 perles de coco</h3>
-                        <p class="item-price">4,08 €</p>
-                    </div>
-                </article>
-                
-                <article class="menu-item">
-                    <div class="item-image" style="background-image: url('images/plat/menumidi/ananassirop.avif')"></div>
-                    <div class="item-info">
-                        <h3 class="item-name">Ananas au sirop</h3>
-                        <p class="item-price">4,08 €</p>
-                    </div>
-                </article>
+        <section class="menu-section last-section" id="individuels" style="background-image: url('images/imagesite/fond-plats-individuels.jpg')">
+            <div class="section-overlay"></div>
+            <div class="menu-content">
+                <h2>Plats Individuels</h2>
+                <!-- Contenu à ajouter -->
             </div>
         </section>
     </div>

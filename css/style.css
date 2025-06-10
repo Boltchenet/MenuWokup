@@ -1,84 +1,257 @@
-/* Variables */
+/* css/style.css */
 :root {
-    --primary: #e63946;
-    --secondary: #f1faee;
-    --accent: #a8dadc;
-    --dark: #1d3557;
-    --light: #f8f9fa;
-    --text: #333;
+    --red: #c12a32;
+    --gold: #d4af37;
+    --blue: #1a3a6a;
+    --dark: #1a1a1a;
+    --light: #f8f8f8;
+    --transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Base Styles */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('../images/imagesite/fond_rouge_bleu_asiat.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: var(--text);
-    line-height: 1.6;
-    position: relative;
-    min-height: 100vh;
+html {
+    scroll-behavior: smooth;
 }
 
-body::before {
-    content: '';
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--light);
+    background-color: var(--dark);
+    overflow-x: hidden;
+}
+
+.smooth-scroll {
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* Navigation */
+.main-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.88);
-    z-index: -1;
+    z-index: 1000;
+    padding: 1.5rem;
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
 }
 
-/* Layout */
-.menu-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.92);
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+.main-nav ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
 }
 
-/* Header */
-.menu-header {
+.nav-link {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--gold);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 20px 0;
-    margin-bottom: 30px;
-    border-bottom: 2px solid var(--primary);
+    position: relative;
+    scroll-snap-align: start;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
-.restaurant-name {
-    font-size: 2.8rem;
-    color: var(--dark);
-    margin-bottom: 5px;
-    font-weight: 700;
+.hero-content {
+    z-index: 2;
 }
 
-.menu-title {
-    font-size: 1.8rem;
-    color: var(--primary);
-    font-style: italic;
+.title-anim {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s 0.3s forwards;
+}
+
+.subtitle-anim {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s 0.6s forwards;
+}
+
+/* Menu Sections */
+.menu-section {
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(193, 42, 50, 0.8) 0%, rgba(26, 58, 106, 0.8) 100%);
+}
+
+.menu-content {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    max-width: 1200px;
+    padding: 3rem;
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.menu-section.active .menu-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.menu-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.menu-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: var(--gold);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mouse {
+    width: 25px;
+    height: 40px;
+    border: 2px solid var(--gold);
+    border-radius: 15px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 2px;
+    animation: scrollAnimation 2s infinite;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollAnimation {
+    0% {
+        opacity: 1;
+        top: 5px;
+    }
+    100% {
+        opacity: 0;
+        top: 20px;
+    }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .restaurant-name {
-        font-size: 2.2rem;
+    .main-nav ul {
+        gap: 1.5rem;
     }
     
-    .menu-title {
-        font-size: 1.5rem;
+    .title-anim {
+        font-size: 4rem;
     }
     
-    .menu-container {
-        padding: 15px;
+    .menu-content {
+        width: 90%;
+        padding: 2rem;
     }
+}
+/* Ajoutez ceci à la fin de votre style.css */
+.menu-section iframe {
+    background: transparent;
+    min-height: 70vh;
+    height: auto;
+}
+
+.menu-content[style*="background: transparent"] {
+    box-shadow: none;
+    width: 90%;
+}
+
+.menu-content h2 {
+    text-align: center;
+    margin-bottom: 2rem;
 }
