@@ -110,11 +110,27 @@
 }
 
 /* Menu Categories */
+.menu-category {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.menu-category:not(:last-child)::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: rgba(255, 190, 11, 0.3);
+    margin: 2rem 0;
+    width: 100%;
+}
+
 .category-title {
     font-family: 'Noto Serif SC', serif;
     font-weight: 700;
     color: var(--gold);
     font-size: 2.2rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
 }
 
 /* Dishes Grid */
@@ -182,7 +198,12 @@
     }
     
     .dishes-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .dish-card {
+        margin-bottom: 1rem;
     }
     
     .dish-image {
