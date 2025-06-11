@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fondue | WOKUP</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/midicss.css">
+    <link rel="stylesheet" href="css/fondue.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+SC:wght@400;700&family=ZCOOL+QingKe+HuangYou&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="js/fondue.js" defer></script>
 </head>
 <body style="background: url('images/imagesite/fond-fondues.png') no-repeat center center fixed; background-size: cover;">
     <!-- Navigation fixe -->
@@ -18,8 +19,35 @@
         </ul>
     </nav>
 
+    <!-- Hero Section -->
+    <div class="fondue-hero">
+        <div class="hero-overlay"></div>
+        <h1>Fondue Chinoise</h1>
+    </div>
+
     <div class="menu-container">
-        <h1 style="color: var(--gold); text-align: center; margin-top: 2rem; font-family: 'ZCOOL QingKe HuangYou', serif;">Fondues</h1>
+        <!-- Section Formules -->
+        <section class="formule-section">
+            <h2>Formules</h2>
+        </section>
+
+        <!-- Section Viandes -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <span class="emoji">🍖</span>
+                <span class="text">Viandes & Fruits de mer</span>
+            </h2>
+            <div id="viandes-grid"></div>
+        </section>
+
+        <!-- Section Légumes -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <span class="emoji">🥬</span>
+                <span class="text">Légumes & Féculents</span>
+            </h2>
+            <div id="legumes-grid"></div>
+        </section>
     </div>
 </body>
 </html>
