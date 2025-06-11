@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Données des plats (peuvent être remplacées par une API)
     const menuData = {
         entrees: [
             { name: "Salade aux légumes", price: "4,08 €", image: "images/plat/menumidi/saladelegume.jpg" },
@@ -23,9 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
-    // Générer les plats
-    function generateDishes(category, dishes) {
-        const grid = document.querySelector(`.menu-category:nth-child(${category}) .dishes-grid`);
+    function generateDishes(categoryId, dishes) {
+        const grid = document.getElementById(categoryId);
         
         dishes.forEach(dish => {
             const dishCard = document.createElement('div');
@@ -43,10 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Appeler la fonction pour chaque catégorie
-    generateDishes(1, menuData.entrees);
-    generateDishes(2, menuData.plats);
-    generateDishes(3, menuData.desserts);
+    generateDishes('entrees-grid', menuData.entrees);
+    generateDishes('plats-grid', menuData.plats);
+    generateDishes('desserts-grid', menuData.desserts);
 
     // Animation des cartes
     const dishCards = document.querySelectorAll('.dish-card');
