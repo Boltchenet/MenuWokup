@@ -181,8 +181,31 @@
         align-items: center;
     }
     
+    /* Modification principale pour 2 cartes par ligne */
     .dishes-grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    /* Ajustements pour les cartes */
+    .dish-card {
+        min-width: 0;
+    }
+    
+    .dish-image {
+        height: 150px;
+    }
+    
+    .dish-info {
+        padding: 1rem;
+    }
+    
+    .dish-name {
+        font-size: 1rem;
+    }
+    
+    .dish-price {
+        font-size: 1.1rem;
     }
 }
 
@@ -192,10 +215,20 @@
     }
     
     .menu-container {
-        padding: 1.5rem;
+        padding: 1rem;
     }
     
     .category-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Ajustements supplémentaires pour petits écrans */
+    .dishes-grid {
+        gap: 0.8rem;
+    }
+    
+    .dish-image {
+        height: 120px;
     }
 }
