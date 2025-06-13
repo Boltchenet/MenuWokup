@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plats Individuels | WOKUP</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/midicss.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+SC:wght@400;700&family=ZCOOL+QingKe+HuangYou&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/individuels.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+SC:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <script src="js/individuels.js" defer></script>
 </head>
-<body style="background: url('images/imagesite/fond-plats-individuels.jpg') no-repeat center center fixed; background-size: cover;">
+<body>
     <!-- Navigation fixe -->
     <nav class="main-nav">
         <ul>
@@ -18,8 +19,67 @@
         </ul>
     </nav>
 
+    <!-- Hero Section avec image de fond -->
+    <div class="individuels-hero">
+        <div class="hero-overlay"></div>
+        <h1>Plats Individuels</h1>
+    </div>
+
+    <!-- Contenu principal du menu -->
     <div class="menu-container">
-        <h1 style="color: var(--gold); text-align: center; margin-top: 2rem; font-family: 'ZCOOL QingKe HuangYou', serif;">Plats Individuels</h1>
+        <!-- Section Poissons -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <span class="emoji">🐟</span>
+                <span class="text">Poissons & Fruits de Mer</span>
+            </h2>
+            <div class="dishes-grid" id="poissons-grid"></div>
+        </section>
+
+        <!-- Section Viandes -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <span class="emoji">🍖</span>
+                <span class="text">Viandes</span>
+            </h2>
+            <div class="dishes-grid" id="viandes-grid"></div>
+        </section>
+
+        <!-- Section Volaille -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <span class="emoji">🍗</span>
+                <span class="text">Volaille</span>
+            </h2>
+            <div class="dishes-grid" id="volaille-grid"></div>
+        </section>
+
+        <!-- Section Légumes -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <span class="emoji">🥬</span>
+                <span class="text">Légumes & Tofu</span>
+            </h2>
+            <div class="dishes-grid" id="legumes-grid"></div>
+        </section>
+
+        <!-- Section Soupes -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <span class="emoji">🍜</span>
+                <span class="text">Soupes & Nouilles</span>
+            </h2>
+            <div class="dishes-grid" id="soupes-grid"></div>
+        </section>
+
+        <!-- Section Riz & Raviolis -->
+        <section class="menu-category">
+            <h2 class="category-title">
+                <span class="emoji">🍚</span>
+                <span class="text">Riz & Raviolis</span>
+            </h2>
+            <div class="dishes-grid" id="riz-grid"></div>
+        </section>
     </div>
 </body>
 </html>
