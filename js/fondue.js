@@ -4,39 +4,37 @@ document.addEventListener('DOMContentLoaded', () => {
             { 
                 name: "Formule Bouillon 'Tub Bone Casserole'", 
                 description: "", 
-                price: "25,80 €",
-                image: "images/imagesite/fondue-formule1.jpg" 
+                price: "25,80 €"
             },
             { 
                 name: "Formule Bouillon 'Choucroute de Poisson'", 
                 description: "Bouillon au choix: os, carottes, tomates, feuilles de tofu au porc", 
-                price: "34,80 €",
-                image: "images/imagesite/fondue-formule2.jpg"
+                price: "34,80 €"
             }
         ],
         viandes: [
-            { name: "Os", price: "6,90 €", image: "images/imagesite/fondue-viande1.jpg" },
-            { name: "Tranches de bœuf", price: "5,90 €", image: "images/imagesite/fondue-viande2.jpg" },
-            { name: "Tranches d'agneau", price: "5,90 €", image: "images/imagesite/fondue-viande3.jpg" },
-            { name: "Bœuf mariné épicé", price: "9,90 €", image: "images/imagesite/fondue-viande4.jpg" },
-            { name: "Calamar", price: "9,90 €", image: "images/imagesite/fondue-viande5.jpg" },
-            { name: "Champignons tranchés", price: "6,90 €", image: "images/imagesite/fondue-viande6.jpg" },
-            { name: "Tripes", price: "6,90 €", image: "images/imagesite/fondue-viande7.jpg" },
-            { name: "Sangue en gelée de porc", price: "6,90 €", image: "images/imagesite/fondue-viande8.jpg" },
-            { name: "Intestin de sèche", price: "8,90 €", image: "images/imagesite/fondue-viande9.jpg" },
-            { name: "Boules de sèche", price: "9,90 €", image: "images/imagesite/fondue-viande10.jpg" }
+            { name: "Os", price: "6,90 €" },
+            { name: "Tranches de bœuf", price: "5,90 €" },
+            { name: "Tranches d'agneau", price: "5,90 €" },
+            { name: "Bœuf mariné épicé", price: "9,90 €" },
+            { name: "Calamar", price: "9,90 €" },
+            { name: "Champignons tranchés", price: "6,90 €" },
+            { name: "Tripes", price: "6,90 €" },
+            { name: "Sangue en gelée de porc", price: "6,90 €" },
+            { name: "Intestin de sèche", price: "8,90 €" },
+            { name: "Boules de sèche", price: "9,90 €" }
         ],
         legumes: [
-            { name: "Assortiment de champignons", price: "12,90 €", image: "images/imagesite/fondue-legume1.jpg" },
-            { name: "Assortiment de légumes", price: "7,90 €", image: "images/imagesite/fondue-legume2.jpg" },
-            { name: "Assortiment de produits à base de soja", price: "12,90 €", image: "images/imagesite/fondue-legume3.jpg" },
-            { name: "Algues", price: "4,90 €", image: "images/imagesite/fondue-legume4.jpg" },
-            { name: "Colibier à pied velouté", price: "5,90 €", image: "images/imagesite/fondue-legume5.jpg" },
-            { name: "Champignons shiitake", price: "4,90 €", image: "images/imagesite/fondue-legume6.jpg" },
-            { name: "Tranches de pomme de terre", price: "4,90 €", image: "images/imagesite/fondue-legume7.jpg" },
-            { name: "Concombres", price: "4,90 €", image: "images/imagesite/fondue-legume8.jpg" },
-            { name: "Tofu", price: "4,90 €", image: "images/imagesite/fondue-legume9.jpg" },
-            { name: "Rouleau de tofu séché", price: "4,90 €", image: "images/imagesite/fondue-legume10.jpg" }
+            { name: "Assortiment de champignons", price: "12,90 €" },
+            { name: "Assortiment de légumes", price: "7,90 €" },
+            { name: "Assortiment de produits à base de soja", price: "12,90 €" },
+            { name: "Algues", price: "4,90 €" },
+            { name: "Colibier à pied velouté", price: "5,90 €" },
+            { name: "Champignons shiitake", price: "4,90 €" },
+            { name: "Tranches de pomme de terre", price: "4,90 €" },
+            { name: "Concombres", price: "4,90 €" },
+            { name: "Tofu", price: "4,90 €" },
+            { name: "Rouleau de tofu séché", price: "4,90 €" }
         ]
     };
 
@@ -48,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
             dishCard.className = 'dish-card';
             
             dishCard.innerHTML = `
-                <img src="${dish.image}" alt="${dish.name}" class="dish-image">
                 <div class="dish-info">
                     <h4 class="dish-name">${dish.name}</h4>
+                    ${dish.description ? `<p class="dish-description">${dish.description}</p>` : ''}
                     <p class="dish-price">${dish.price}</p>
                 </div>
             `;
