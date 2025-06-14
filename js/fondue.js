@@ -1,123 +1,79 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuData = {
         formules: [
-            { name: "Formule Bouillon 'Tub Bone Casserole'", description: "", price: "25,80 €" },
+            { 
+                name: "Formule Bouillon 'Tub Bone Casserole'", 
+                description: "", 
+                price: "25,80 €",
+                image: "images/imagesite/fondue-formule1.jpg" 
+            },
             { 
                 name: "Formule Bouillon 'Choucroute de Poisson'", 
                 description: "Bouillon au choix: os, carottes, tomates, feuilles de tofu au porc", 
-                price: "34,80 €" 
+                price: "34,80 €",
+                image: "images/imagesite/fondue-formule2.jpg"
             }
         ],
         viandes: [
-            { name: "Os", price: "6,90 €" },
-            { name: "Tranches de bœuf", price: "5,90 €" },
-            { name: "Tranches d'agneau", price: "5,90 €" },
-            { name: "Bœuf mariné épicé", price: "9,90 €" },
-            { name: "Calamar", price: "9,90 €" },
-            { name: "Champignons tranchés", price: "6,90 €" },
-            { name: "Tripes", price: "6,90 €" },
-            { name: "Sangue en gelée de porc", price: "6,90 €" },
-            { name: "Intestin de sèche", price: "8,90 €" },
-            { name: "Boules de sèche", price: "9,90 €" },
-            { name: "Boules de porc", price: "9,90 €" },
-            { name: "Boulettes de bœuf", price: "9,90 €" },
-            { name: "Assortiment de boules", price: "9,90 €" },
-            { name: "Raviolis feuilles de tofu au porc", price: "9,90 €" },
-            { name: "Filet de morue épicé", price: "9,90 €" },
-            { name: "Crevettes entières", price: "14,90 €" },
-            { name: "Tranches de bar", price: "16,90 €" },
-            { name: "Chair de crevette", price: "9,90 €" },
-            { name: "Raviolis œuf au porc", price: "9,90 €" }
+            { name: "Os", price: "6,90 €", image: "images/imagesite/fondue-viande1.jpg" },
+            { name: "Tranches de bœuf", price: "5,90 €", image: "images/imagesite/fondue-viande2.jpg" },
+            { name: "Tranches d'agneau", price: "5,90 €", image: "images/imagesite/fondue-viande3.jpg" },
+            { name: "Bœuf mariné épicé", price: "9,90 €", image: "images/imagesite/fondue-viande4.jpg" },
+            { name: "Calamar", price: "9,90 €", image: "images/imagesite/fondue-viande5.jpg" },
+            { name: "Champignons tranchés", price: "6,90 €", image: "images/imagesite/fondue-viande6.jpg" },
+            { name: "Tripes", price: "6,90 €", image: "images/imagesite/fondue-viande7.jpg" },
+            { name: "Sangue en gelée de porc", price: "6,90 €", image: "images/imagesite/fondue-viande8.jpg" },
+            { name: "Intestin de sèche", price: "8,90 €", image: "images/imagesite/fondue-viande9.jpg" },
+            { name: "Boules de sèche", price: "9,90 €", image: "images/imagesite/fondue-viande10.jpg" }
         ],
         legumes: [
-            { name: "Assortiment de champignons", price: "12,90 €" },
-            { name: "Assortiment de légumes", price: "7,90 €" },
-            { name: "Assortiment de produits à base de soja", price: "12,90 €" },
-            { name: "Algues", price: "4,90 €" },
-            { name: "Colibier à pied velouté", price: "5,90 €" },
-            { name: "Champignons shiitake", price: "4,90 €" },
-            { name: "Tranches de pomme de terre", price: "4,90 €" },
-            { name: "Concombres", price: "4,90 €" },
-            { name: "Tofu", price: "4,90 €" },
-            { name: "Rouleau de tofu séché", price: "4,90 €" },
-            { name: "Feuilles de tofu", price: "4,90 €" },
-            { name: "Vermicelles", price: "4,90 €" },
-            { name: "Chou chinois", price: "4,90 €" },
-            { name: "Pousses de soja", price: "4,90 €" },
-            { name: "Salade", price: "4,90 €" },
-            { name: "Coriandre", price: "4,90 €" },
-            { name: "Tranches de racine de lotus", price: "4,90 €" },
-            { name: "Champignons noirs", price: "4,90 €" },
-            { name: "Nouilles ou nouilles de riz", price: "5,90 €" },
-            { name: "Wontons", price: "5,90 €" }
+            { name: "Assortiment de champignons", price: "12,90 €", image: "images/imagesite/fondue-legume1.jpg" },
+            { name: "Assortiment de légumes", price: "7,90 €", image: "images/imagesite/fondue-legume2.jpg" },
+            { name: "Assortiment de produits à base de soja", price: "12,90 €", image: "images/imagesite/fondue-legume3.jpg" },
+            { name: "Algues", price: "4,90 €", image: "images/imagesite/fondue-legume4.jpg" },
+            { name: "Colibier à pied velouté", price: "5,90 €", image: "images/imagesite/fondue-legume5.jpg" },
+            { name: "Champignons shiitake", price: "4,90 €", image: "images/imagesite/fondue-legume6.jpg" },
+            { name: "Tranches de pomme de terre", price: "4,90 €", image: "images/imagesite/fondue-legume7.jpg" },
+            { name: "Concombres", price: "4,90 €", image: "images/imagesite/fondue-legume8.jpg" },
+            { name: "Tofu", price: "4,90 €", image: "images/imagesite/fondue-legume9.jpg" },
+            { name: "Rouleau de tofu séché", price: "4,90 €", image: "images/imagesite/fondue-legume10.jpg" }
         ]
     };
 
-    // Generate formules
-    const formuleSection = document.querySelector('.formule-section');
-    if (formuleSection) {
-        const formuleStacked = document.createElement('div');
-        formuleStacked.className = 'formule-stacked';
+    function generateDishes(categoryId, dishes) {
+        const grid = document.getElementById(categoryId);
         
-        menuData.formules.forEach((formule, index) => {
-            const formuleLine = document.createElement('div');
-            formuleLine.className = `formule-line ${index === 1 ? 'highlight' : ''}`;
+        dishes.forEach(dish => {
+            const dishCard = document.createElement('div');
+            dishCard.className = 'dish-card';
             
-            formuleLine.innerHTML = `
-                <span class="formule-combo">${formule.name} ${formule.description ? `<br><small>${formule.description}</small>` : ''}</span>
-                <span class="formule-price">${formule.price}</span>
+            dishCard.innerHTML = `
+                <img src="${dish.image}" alt="${dish.name}" class="dish-image">
+                <div class="dish-info">
+                    <h4 class="dish-name">${dish.name}</h4>
+                    <p class="dish-price">${dish.price}</p>
+                </div>
             `;
             
-            formuleStacked.appendChild(formuleLine);
+            grid.appendChild(dishCard);
         });
-        
-        formuleSection.appendChild(formuleStacked);
     }
 
-    // Generate tables
-    function generateTable(categoryId, items) {
-        const section = document.getElementById(categoryId);
-        if (!section) return;
-        
-        const table = document.createElement('table');
-        table.className = 'fondue-table';
-        
-        const thead = document.createElement('thead');
-        thead.innerHTML = `
-            <tr>
-                <th>Produit</th>
-                <th>Prix</th>
-            </tr>
-        `;
-        
-        const tbody = document.createElement('tbody');
-        items.forEach(item => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${item.name}</td>
-                <td>${item.price}</td>
-            `;
-            tbody.appendChild(row);
-        });
-        
-        table.appendChild(thead);
-        table.appendChild(tbody);
-        section.appendChild(table);
-    }
+    // Générer les formules comme des cartes aussi
+    generateDishes('formules-grid', menuData.formules);
+    generateDishes('viandes-grid', menuData.viandes);
+    generateDishes('legumes-grid', menuData.legumes);
 
-    generateTable('viandes-grid', menuData.viandes);
-    generateTable('legumes-grid', menuData.legumes);
-
-    // Animation des éléments
-    const animateElements = document.querySelectorAll('.formule-line, .fondue-table tr');
-    animateElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.5s ease';
+    // Animation des cartes
+    const dishCards = document.querySelectorAll('.dish-card');
+    dishCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease';
         
         setTimeout(() => {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-        }, 100 + (index * 50));
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 100 + (index * 100));
     });
 });
