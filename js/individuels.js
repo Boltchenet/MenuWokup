@@ -103,6 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setupFilterNavigation() {
         const filterBtns = document.querySelectorAll('.filter-btn');
+        const filtersContainer = document.querySelector('.filters-container');
+        const filtersScroll = document.querySelector('.filters-scroll');
         
         filterBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -116,16 +118,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (category === 'all') {
                     window.scrollTo({
-                        top: document.querySelector('.menu-container').offsetTop - 60,
+                        top: document.querySelector('.menu-container').offsetTop - filtersContainer.offsetHeight,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Faire défiler les filtres vers le début
+                    filtersScroll.scrollTo({
+                        left: 0,
                         behavior: 'smooth'
                     });
                 } else {
                     const section = document.getElementById(`${category}-grid`).parentElement;
-                    const scrollPosition = section.offsetTop - document.querySelector('.filters-container').offsetHeight - 20;
+                    const scrollPosition = section.offsetTop - filtersContainer.offsetHeight - 20;
                     
                     window.scrollTo({
                         top: scrollPosition,
                         behavior: 'smooth'
+                    });
+                    
+                    // Centrer le bouton actif dans la vue
+                    btn.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest',
+                        inline: 'center'
                     });
                 }
             });
