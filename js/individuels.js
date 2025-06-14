@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         dishes.forEach(dish => {
             const dishCard = document.createElement('div');
-            dishCard.className = 'dish-card visible';
+            dishCard.className = 'dish-card';
             dishCard.dataset.category = categoryId.replace('-grid', '');
             
             let descriptionHTML = '';
@@ -101,62 +101,32 @@ document.addEventListener('DOMContentLoaded', () => {
     generateDishes('soupes-grid', menuData.soupes);
     generateDishes('riz-grid', menuData.riz);
 
-    function setupFilters() {
+    function setupFilterNavigation() {
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const dishCards = document.querySelectorAll('.dish-card');
-        
-        // Définir quels plats sont végétariens
-        const vegetarianCategories = ['legumes', 'soupes', 'riz'];
-        const vegetarianDishes = ['Mapo Tofu', 'Aubergine à l\'ail', 'Feuilles de tofu au poivre', 
-                                'Luffa avec edamames', 'Chou blanc sauté', 'Haricots verts sautés',
-                                'Chou-fleur sauté', 'Pommes de terre aigres-piquantes', 'Chou de Shanghai sauté',
-                                'Légumes sautés', 'Riz nature', 'Soupe pékinoise', 'Soupe aux tomates et aux œufs',
-                                'Nouilles pékinoises'];
         
         filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
                 // Mettre à jour les boutons actifs
-                filterBtns.forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 
                 const category = btn.dataset.category;
                 
-                // Filtrer les cartes
-                dishCards.forEach(card => {
-                    const cardCategory = card.dataset.category;
-                    const dishName = card.querySelector('.dish-name').textContent;
-                    
-                    if (category === 'all') {
-                        card.classList.remove('hidden');
-                        card.classList.add('visible');
-                    } 
-                    else if (category === 'vegetarien') {
-                        if (vegetarianCategories.includes(cardCategory) || 
-                            vegetarianDishes.some(name => dishName.includes(name))) {
-                            card.classList.remove('hidden');
-                            card.classList.add('visible');
-                        } else {
-                            card.classList.add('hidden');
-                            card.classList.remove('visible');
-                        }
-                    }
-                    else {
-                        if (cardCategory === category) {
-                            card.classList.remove('hidden');
-                            card.classList.add('visible');
-                        } else {
-                            card.classList.add('hidden');
-                            card.classList.remove('visible');
-                        }
-                    }
-                });
-                
-                // Scroll doux vers la section correspondante (sauf pour "Tous")
-                if (category !== 'all' && category !== 'vegetarien') {
+                if (category === 'all') {
+                    window.scrollTo({
+                        top: document.querySelector('.menu-container').offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                } else {
                     const section = document.getElementById(`${category}-grid`).parentElement;
-                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                } else if (category === 'all') {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    const scrollPosition = section.offsetTop - document.querySelector('.filters-container').offsetHeight - 20;
+                    
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
@@ -175,6 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100 + (index * 100));
     });
 
-    // Configurer les filtres
-    setupFilters();
+    // Configurer la navigation par filtres
+    setupFilterNavigation();
 });
