@@ -2,6 +2,7 @@
     --red: #e63946;
     --gold: #ffbe0b;
     --blue: #3a86ff;
+    --purple: #8338ec;
     --dark: #1a1a2e;
     --light: #f8f9fa;
     --transition: all 0.3s ease;
@@ -81,7 +82,7 @@
     padding-top: 2rem;
 }
 
-/* Dishes Grid */
+/* Dishes Grid - Même style que menu midi */
 .dishes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -93,22 +94,29 @@
     border-radius: 8px;
     overflow: hidden;
     transition: var(--transition);
+    height: 100%; /* Ajout pour uniformiser la hauteur */
+    display: flex;
+    flex-direction: column;
 }
 
 .dish-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .dish-image {
     width: 100%;
-    height: 200px;
+    height: 180px; /* Hauteur identique à midicss.css */
     object-fit: cover;
     display: block;
 }
 
 .dish-info {
     padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .dish-name {
@@ -116,7 +124,18 @@
     color: var(--light);
     margin-bottom: 0.5rem;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 400;
+    font-weight: 500; /* Plus gras pour mieux lire */
+    line-height: 1.4;
+}
+
+.dish-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.8rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    flex-grow: 1;
 }
 
 .dish-price {
@@ -124,9 +143,10 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 1.2rem;
+    margin-top: auto; /* Aligne le prix en bas */
 }
 
-/* Responsive Design */
+/* Responsive Design - Identique à midicss.css */
 @media (max-width: 768px) {
     .individuels-hero h1 {
         font-size: 3rem;
@@ -137,7 +157,7 @@
     }
     
     .dish-image {
-        height: 180px;
+        height: 160px;
     }
     
     .category-title {
@@ -152,6 +172,7 @@
     
     .dishes-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .dish-card {
@@ -159,6 +180,14 @@
     }
     
     .dish-image {
-        height: 160px;
+        height: 150px;
+    }
+    
+    .dish-name {
+        font-size: 1rem;
+    }
+    
+    .dish-price {
+        font-size: 1.1rem;
     }
 }
