@@ -13,7 +13,7 @@
     position: relative;
     height: 40vh;
     min-height: 300px;
-    background: url('../images/imagesite/fond-fondues.png') no-repeat center center;
+    background: url('images/imagesite/fond-fondues.png') no-repeat center center;
     background-size: cover;
     background-attachment: local;
     display: flex;
@@ -145,17 +145,16 @@
     border-radius: 8px;
     overflow: hidden;
     transition: var(--transition);
+    padding: 1.2rem;
 }
 
-.dish-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
+.dish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .dish-info {
-    padding: 1.2rem;
+    padding: 0;
 }
 
 .dish-name {
@@ -164,6 +163,13 @@
     margin-bottom: 0.5rem;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 400;
+}
+
+.dish-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .dish-price {
@@ -206,10 +212,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .dish-image {
-        height: 180px;
-    }
-    
     .category-title {
         font-size: 1.8rem;
     }
@@ -231,10 +233,6 @@
     
     .dish-card {
         margin-bottom: 1rem;
-    }
-    
-    .dish-image {
-        height: 160px;
     }
     
     .formule-combo {
