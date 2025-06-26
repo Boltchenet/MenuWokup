@@ -1,12 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation links behavior
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Animation du titre et sous-titre
+    const title = document.querySelector('.title-anim');
+    const subtitle = document.querySelector('.subtitle-anim');
+    const navButtons = document.querySelectorAll('.simple-nav-btn');
     
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Update active link
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-        });
+    // Animation des boutons de navigation
+    navButtons.forEach((btn, index) => {
+        btn.style.opacity = '0';
+        btn.style.transform = 'translateY(20px)';
+        btn.style.transition = 'all 0.5s ease';
+        
+        setTimeout(() => {
+            btn.style.opacity = '1';
+            btn.style.transform = 'translateY(0)';
+        }, 900 + (index * 100));
     });
 });

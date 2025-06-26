@@ -137,29 +137,48 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     
                     // Centrer le bouton actif dans la vue
-                    btn.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'nearest',
-                        inline: 'center'
+                    const btnPosition = btn.offsetLeft - (window.innerWidth / 2) + (btn.offsetWidth / 2);
+                    filtersScroll.scrollTo({
+                        left: btnPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
+
+        // Ajouter le shadow scroll
+        filtersScroll.addEventListener('scroll', () => {
+            const scrollLeft = filtersScroll.scrollLeft;
+            const maxScroll = filtersScroll.scrollWidth - filtersScroll.clientWidth;
+            
+            filtersScroll.style.boxShadow = 
+                scrollLeft > 0 ? 
+                'inset 10px 0 8px -8px rgba(255, 190, 11, 0.3)' : 
+                'none';
+                
+            filtersScroll.style.boxShadow = 
+                scrollLeft < maxScroll ? 
+                `${filtersScroll.style.boxShadow}, inset -10px 0 8px -8px rgba(255, 190, 11, 0.3)` : 
+                filtersScroll.style.boxShadow;
+        });
     }
 
     // Animation des cartes
-    const dishCards = document.querySelectorAll('.dish-card');
-    dishCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease';
-        
-        setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 100 + (index * 100));
-    });
+    const animateCards = () => {
+        const dishCards = document.querySelectorAll('.dish-card');
+        dishCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.5s ease';
+            
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100 + (index * 100));
+        });
+    };
 
     // Configurer la navigation par filtres
     setupFilterNavigation();
+    animateCards();
 });

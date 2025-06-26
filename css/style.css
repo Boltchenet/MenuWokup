@@ -22,6 +22,10 @@ body {
     color: var(--light);
     background-color: var(--dark);
     overflow-x: hidden;
+    background-image: url('../images/imagesite/wokup-bg-pattern.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 /* Navigation */
@@ -36,6 +40,7 @@ body {
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid rgba(255, 190, 11, 0.2);
 }
 
 .main-nav ul {
@@ -68,59 +73,10 @@ body {
     justify-content: center;
     text-align: center;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.9));
+    overflow: hidden;
 }
 
-.title-anim {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 4.5rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-}
-
-.subtitle-anim {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 3px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .main-nav ul {
-        gap: 1.5rem;
-    }
-    
-    .title-anim {
-        font-size: 3.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-nav ul {
-        gap: 1rem;
-    }
-    
-    .title-anim {
-        font-size: 2.5rem;
-    }
-    
-    .subtitle-anim {
-        font-size: 1rem;
-    }
-}
-/* ... (conservez les autres styles) ... */
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    overflow: hidden; /* Ajouté pour éviter les débordements pendant l'animation */
-}
 
 .title-anim {
     font-family: 'Noto Serif SC', serif;
@@ -130,6 +86,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s 0.3s forwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle-anim {
@@ -139,6 +96,38 @@ body {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s 0.6s forwards;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Simple Navigation */
+.simple-nav {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.simple-nav-btn {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 190, 11, 0.3);
+    min-width: 150px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.simple-nav-btn:hover {
+    background: var(--gold);
+    color: var(--dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 190, 11, 0.3);
 }
 
 /* Animations */
@@ -153,4 +142,42 @@ body {
     }
 }
 
-/* ... (conservez le reste du CSS) ... */
+/* Responsive */
+@media (max-width: 768px) {
+    .main-nav ul {
+        gap: 1.5rem;
+    }
+    
+    .title-anim {
+        font-size: 3.5rem;
+    }
+    
+    .simple-nav {
+        flex-direction: column;
+        gap: 1rem;
+        width: 80%;
+        margin: 2rem auto 0;
+    }
+    
+    .simple-nav-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-anim {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle-anim {
+        font-size: 1rem;
+    }
+    
+    .main-nav ul {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
