@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuData = {
         formules: [
-            { name: "Formule Bouillon 'Tub Bone Casserole'", description: "", price: "25,80 €" },
+            { 
+                name: "Formule Bouillon 'Tub Bone Casserole'", 
+                description: "Bouillon maison composé de : os, carottes, tomates, feuilles de tofu au porc", 
+                price: "25,80 €" 
+            },
             { 
                 name: "Formule Bouillon 'Choucroute de Poisson'", 
-                description: "Bouillon maison composé de : os, carottes, tomates, feuilles de tofu au porc", 
+                description: "", 
                 price: "34,80 €" 
             }
         ],
