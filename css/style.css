@@ -76,7 +76,7 @@ body {
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid rgba(255, 190, 11, 0.2);
+    border-bottom: none;
     transition: transform 0.3s ease;
 }
 
@@ -129,15 +129,20 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     background: rgba(26, 26, 46, 0.98);
     backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 190, 11, 0.2);
     border-bottom: 1px solid rgba(255, 190, 11, 0.3);
     transition: top 0.3s ease;
 }
 
 .main-nav.hide-nav + .filters-container {
     top: 0;
+}
+
+.main-nav + .filters-container {
+    margin-top: -1px;
 }
 
 .filters-scroll {
@@ -156,7 +161,7 @@ body {
 }
 
 .filter-btn {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.1);
     color: var(--light);
@@ -167,6 +172,7 @@ body {
     transition: all 0.3s ease;
     white-space: nowrap;
     border: 1px solid rgba(255, 190, 11, 0.3);
+    font-size: 0.9rem;
 }
 
 .filter-btn.active {
@@ -176,7 +182,8 @@ body {
 }
 
 .filter-btn i {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-right: 5px;
 }
 
 /* Hero Section - Modifié pour fond plus clair */
@@ -200,7 +207,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2); /* Overlay plus léger */
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -236,23 +243,24 @@ body {
 /* Simple Navigation */
 .simple-nav {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
     margin-top: 3rem;
-    max-width: 800px;
+    width: 80%;
+    max-width: 400px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .simple-nav-btn {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
     background: rgba(255, 255, 255, 0.1);
     color: var(--light);
     text-decoration: none;
     border-radius: 5px;
     font-weight: 500;
     transition: var(--transition);
-    border: 1px solid rgba(255, 190, 11, 0.3);
+    border: 2px solid var(--gold);
     text-align: center;
     backdrop-filter: blur(5px);
     opacity: 0;
@@ -261,8 +269,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.simple-nav-btn:hover {
+    background: var(--gold);
+    color: var(--dark);
+    transform: translateY(-3px);
 }
 
 /* Animations */
@@ -279,7 +293,7 @@ body {
 
 /* Styles spécifiques pour la page individuel */
 body.page-individuels {
-    padding-top: 120px; /* 60 (nav) + 60 (filtre) */
+    padding-top: 110px;
 }
 
 .main-nav.hide-nav + .filters-container + .individuels-hero {
@@ -288,7 +302,7 @@ body.page-individuels {
 
 /* Emoji dans les filtres */
 .filter-btn .emoji {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-right: 5px;
 }
 
@@ -296,15 +310,6 @@ body.page-individuels {
 @media (max-width: 992px) {
     .title-anim {
         font-size: 3.5rem;
-    }
-    
-    .simple-nav {
-        grid-template-columns: 1fr;
-        width: 80%;
-    }
-    
-    .simple-nav-btn {
-        width: 100%;
     }
 }
 
@@ -322,16 +327,21 @@ body.page-individuels {
     }
     
     body.page-individuels {
-        padding-top: 140px;
+        padding-top: 100px;
     }
     
-    .main-nav.hide-nav + .filters-container + .individuels-hero {
-        padding-top: 80px;
+    .filters-container {
+        padding: 0.5rem 0;
+        top: 50px;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
     }
     
     .simple-nav-btn {
         font-size: 1rem;
-        height: 80px;
     }
 }
 
@@ -349,7 +359,16 @@ body.page-individuels {
     }
     
     body.page-individuels {
-        padding-top: 120px;
+        padding-top: 90px;
+    }
+    
+    .filters-scroll {
+        justify-content: flex-start;
+        padding: 0 1rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 0.8rem;
     }
 }
 
@@ -364,5 +383,9 @@ body.page-individuels {
     
     .nav-link {
         font-size: 0.8rem;
+    }
+    
+    body.page-individuels {
+        padding-top: 85px;
     }
 }
