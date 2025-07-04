@@ -8,12 +8,6 @@
     --transition: all 0.3s ease;
 }
 
-body {
-    background-color: var(--dark);
-    margin: 0;
-    padding: 0;
-}
-
 /* Hero Section */
 .fondue-hero {
     position: relative;
@@ -21,7 +15,6 @@ body {
     min-height: 300px;
     background: url('../images/imagesite/fond-fondues.png') no-repeat center center;
     background-size: cover;
-    background-attachment: local;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,11 +48,10 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    position: relative;
     background-color: rgba(26, 26, 46, 0.95);
-    box-shadow: 0 -20px 30px rgba(0, 0, 0, 0.3);
-    margin-top: -50px;
     border-radius: 10px 10px 0 0;
+    margin-top: -50px;
+    position: relative;
     z-index: 2;
     border: 2px solid var(--gold);
 }
@@ -106,6 +98,7 @@ body {
     font-weight: 500;
     font-size: 1.2rem;
     color: white;
+    text-align: left;
 }
 
 .formule-price {
@@ -113,6 +106,8 @@ body {
     font-weight: 500;
     font-size: 1.5rem;
     color: var(--gold);
+    white-space: nowrap;
+    margin-left: 1rem;
 }
 
 /* Menu Categories */
@@ -136,47 +131,14 @@ body {
     color: var(--gold);
     font-size: 2.2rem;
     margin-bottom: 2rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-/* Dishes Grid */
-.dishes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.dish-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.dish-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.dish-info {
-    padding: 1.2rem;
-}
-
-.dish-name {
-    font-size: 1.1rem;
-    color: var(--light);
-    margin-bottom: 0.5rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 400;
-}
-
-.dish-price {
-    color: var(--gold);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
+.category-title .emoji {
+    font-size: 1.8rem;
 }
 
 /* Table Styles */
@@ -184,9 +146,13 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin: 1rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.fondue-table th, .fondue-table td {
+.fondue-table th, 
+.fondue-table td {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid rgba(255, 190, 11, 0.2);
@@ -196,6 +162,7 @@ body {
     font-family: 'Noto Serif SC', serif;
     color: var(--gold);
     font-size: 1.2rem;
+    background: rgba(255, 190, 11, 0.1);
 }
 
 .fondue-table tr:hover {
@@ -208,12 +175,16 @@ body {
         font-size: 3rem;
     }
     
-    .dishes-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .formule-line {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
     }
     
-    .dish-image {
-        height: 180px;
+    .formule-combo, 
+    .formule-price {
+        text-align: center;
+        width: 100%;
     }
     
     .category-title {
@@ -231,23 +202,17 @@ body {
         font-size: 2.2rem;
     }
     
-    .dishes-grid {
-        grid-template-columns: 1fr;
+    .menu-container {
+        padding: 1.5rem;
     }
     
-    .dish-card {
-        margin-bottom: 1rem;
+    .category-title {
+        font-size: 1.6rem;
     }
     
-    .dish-image {
-        height: 160px;
-    }
-    
-    .formule-combo {
-        font-size: 1rem;
-    }
-    
-    .formule-price {
-        font-size: 1.3rem;
+    .fondue-table th, 
+    .fondue-table td {
+        padding: 0.8rem;
+        font-size: 0.9rem;
     }
 }

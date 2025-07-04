@@ -3,23 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plats Individuels | WOKUP</title>
-    <meta name="description" content="Découvrez nos plats individuels asiatiques - Une sélection de poissons, viandes, volailles et légumes préparés avec authenticité">
+    <title data-translate="Plats principaux">Plats principaux | WOKUP</title>
+    <meta name="description" content="Découvrez nos plats asiatiques principaux">
     
     <!-- Polices -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+SC:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+SC:wght@400;700&display=swap"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Feuilles de style -->
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/individuels.css">
-    
-    <!-- Scripts -->
-    <script src="js/app.js" defer></script>
-    <script src="js/individuels.js" defer></script>
 </head>
 <body>
     <!-- Loader -->
@@ -27,86 +21,110 @@
         <div class="wok-loader"></div>
     </div>
 
-    <!-- Navigation fixe -->
+    <!-- Sélecteur de langue -->
+    <div class="language-switcher">
+        <button class="language-btn active" data-lang="fr">FR</button>
+        <button class="language-btn" data-lang="en">EN</button>
+        <button class="language-btn" data-lang="zh">中文</button>
+    </div>
+
+    <!-- Navigation -->
     <nav class="main-nav">
         <ul>
-            <li><a href="individuels.html" class="nav-link active">Plats Individuels</a></li>
-            <li><a href="fondue.html" class="nav-link">Fondue</a></li>
-            <li><a href="menu-midi.html" class="nav-link">Menu Midi</a></li>
+            <li><a href="individuels.html" class="nav-link active" data-translate="Plats principaux">Plats principaux</a></li>
+            <li><a href="fondue.html" class="nav-link" data-translate="Fondue">Fondue</a></li>
+            <li><a href="menu-midi.html" class="nav-link" data-translate="Menu Midi">Menu Midi</a></li>
         </ul>
     </nav>
 
-    <!-- Filtres améliorés -->
+    <!-- Filtres avec nouveaux icônes -->
     <div class="filters-container">
         <div class="filters-scroll">
-            <button class="filter-btn active" data-category="all">
-                <i class="fas fa-utensils"></i> Tous
-            </button>
-            <button class="filter-btn" data-category="poissons">
-                <i class="fas fa-fish"></i> Poissons
-            </button>
-            <button class="filter-btn" data-category="viandes">
-                <i class="fas fa-drumstick-bite"></i> Viandes
-            </button>
-            <button class="filter-btn" data-category="legumes">
-                <i class="fas fa-leaf"></i> Légumes
-            </button>
-            <button class="filter-btn" data-category="soupes">
-                <i class="fas fa-utensil-spoon"></i> Soupes
-            </button>
-            <button class="filter-btn" data-category="riz">
-                <i class="fas fa-rice"></i> <span class="emoji">🍚</span> Riz
-            </button>
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-category="all">
+                    <span class="filter-text" data-translate="Tous">Tous</span>
+                </button>
+                <button class="filter-tab" data-category="poissons">
+                    <span class="filter-icon"></span>
+                    <span class="filter-text" data-translate="Poissons">Poissons</span>
+                </button>
+                <button class="filter-tab" data-category="viandes">
+                    <span class="filter-icon"></span>
+                    <span class="filter-text" data-translate="Viandes">Viandes</span>
+                </button>
+                <button class="filter-tab" data-category="legumes">
+                    <span class="filter-icon"></span>
+                    <span class="filter-text" data-translate="Légumes">Légumes</span>
+                </button>
+                <button class="filter-tab" data-category="soupes">
+                    <span class="filter-icon"></span>
+                    <span class="filter-text" data-translate="Soupes">Soupes</span>
+                </button>
+                <button class="filter-tab" data-category="riz">
+                    <span class="filter-icon"></span>
+                    <span class="filter-text" data-translate="Riz">Riz</span>
+                </button>
+            </div>
         </div>
     </div>
 
     <!-- Hero Section -->
     <div class="individuels-hero">
         <div class="hero-overlay"></div>
-        <h1>Plats Individuels</h1>
+        <h1 data-translate="Plats principaux">Plats principaux</h1>
     </div>
 
     <!-- Menu -->
     <div class="menu-container">
+        <!-- Section Poissons -->
         <section class="menu-category">
             <h2 class="category-title">
                 <span class="emoji">🐟</span>
-                <span class="text">Poissons & Fruits de Mer</span>
+                <span class="text" data-translate="Poissons & Fruits de Mer">Poissons & Fruits de Mer</span>
             </h2>
             <div class="dishes-grid" id="poissons-grid"></div>
         </section>
 
+        <!-- Section Viandes -->
         <section class="menu-category">
             <h2 class="category-title">
                 <span class="emoji">🍖</span>
-                <span class="text">Viandes & Volaille</span>
+                <span class="text" data-translate="Viandes & Volaille">Viandes & Volaille</span>
             </h2>
             <div class="dishes-grid" id="viandes-grid"></div>
         </section>
 
+        <!-- Section Légumes -->
         <section class="menu-category">
             <h2 class="category-title">
                 <span class="emoji">🥬</span>
-                <span class="text">Légumes & Tofu</span>
+                <span class="text" data-translate="Légumes & Tofu">Légumes & Tofu</span>
             </h2>
             <div class="dishes-grid" id="legumes-grid"></div>
         </section>
 
+        <!-- Section Soupes -->
         <section class="menu-category">
             <h2 class="category-title">
                 <span class="emoji">🍜</span>
-                <span class="text">Soupes & Nouilles</span>
+                <span class="text" data-translate="Soupes & Nouilles">Soupes & Nouilles</span>
             </h2>
             <div class="dishes-grid" id="soupes-grid"></div>
         </section>
 
+        <!-- Section Riz -->
         <section class="menu-category">
             <h2 class="category-title">
                 <span class="emoji">🍚</span>
-                <span class="text">Riz & Raviolis</span>
+                <span class="text" data-translate="Riz & Raviolis">Riz & Raviolis</span>
             </h2>
             <div class="dishes-grid" id="riz-grid"></div>
         </section>
     </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js" defer></script>
+    <script src="js/individuels.js" defer></script>
+    <script src="js/individueltr.js" defer></script>
 </body>
 </html>

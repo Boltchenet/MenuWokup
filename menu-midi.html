@@ -3,71 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Midi | WOKUP</title>
+    <title data-translate="Menu Midi">Menu Midi | WOKUP</title>
+    <meta name="description" content="Découvrez notre menu du midi avec des plats asiatiques authentiques">
+    
+    <!-- Pré-chargement des polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/midicss.css">
-    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-    <script src="js/menu-midi.js" defer></script>
 </head>
 <body>
-    <!-- Navigation fixe -->
+    <!-- Loader -->
+    <div class="loader">
+        <div class="wok-loader"></div>
+    </div>
+
+    <!-- Sélecteur de langue -->
+    <div class="language-switcher">
+        <button class="language-btn active" data-lang="fr">FR</button>
+        <button class="language-btn" data-lang="en">EN</button>
+        <button class="language-btn" data-lang="zh">中文</button>
+    </div>
+
+    <!-- Navigation principale -->
     <nav class="main-nav">
         <ul>
-            <li><a href="individuels.html" class="nav-link">Plats Individuels</a></li>
-            <li><a href="fondue.html" class="nav-link">Fondue</a></li>
-            <li><a href="menu-midi.html" class="nav-link active">Menu Midi</a></li>
+            <li><a href="individuels.html" class="nav-link" data-translate="Plats principaux">Plats principaux</a></li>
+            <li><a href="fondue.html" class="nav-link" data-translate="Fondue">Fondue</a></li>
+            <li><a href="menu-midi.html" class="nav-link active" data-translate="Menu Midi">Menu Midi</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section avec image de fond -->
+    <!-- Hero Section -->
     <div class="menu-midi-hero">
         <div class="hero-overlay"></div>
-        <h1>Menu Midi</h1>
+        <h1 data-translate="Menu Midi">Menu Midi</h1>
     </div>
 
-    <!-- Contenu principal du menu -->
+    <!-- Contenu du menu -->
     <div class="menu-container">
-        <!-- Section Formule Midi -->
         <section class="formule-section">
-            <h2>Formule Midi</h2>
+            <h2 data-translate="Formule Midi">Formule Midi</h2>
             <div class="formule-stacked">
                 <div class="formule-line">
-                    <span class="formule-combo">Entrée + Plat <span class="formule-ou">ou</span> Plat + Dessert</span>
+                    <span class="formule-combo" data-translate="Entrée + Plat ou Plat + Dessert">Entrée + Plat ou Plat + Dessert</span>
                     <span class="formule-price">13,80 €</span>
                 </div>
                 <div class="formule-line highlight">
-                    <span class="formule-combo">Entrée + Plat + Dessert</span>
+                    <span class="formule-combo" data-translate="Entrée + Plat + Dessert">Entrée + Plat + Dessert</span>
                     <span class="formule-price">16,80 €</span>
                 </div>
             </div>
         </section>
 
-        <!-- Section Entrées -->
         <section class="menu-category">
             <h2 class="category-title">
                 <span class="emoji">🥢</span>
-                <span class="text">Entrées</span>
+                <span class="text" data-translate="Entrées">Entrées</span>
             </h2>
             <div class="dishes-grid" id="entrees-grid"></div>
         </section>
 
-        <!-- Section Plats Principaux -->
         <section class="menu-category">
             <h2 class="category-title">
                 <span class="emoji">🍚</span>
-                <span class="text">Plats Principaux</span>
+                <span class="text" data-translate="Plats Principaux">Plats Principaux</span>
             </h2>
             <div class="dishes-grid" id="plats-grid"></div>
         </section>
 
-        <!-- Section Desserts -->
         <section class="menu-category">
             <h2 class="category-title">
                 <span class="emoji">🍡</span>
-                <span class="text">Desserts</span>
+                <span class="text" data-translate="Desserts">Desserts</span>
             </h2>
             <div class="dishes-grid" id="desserts-grid"></div>
         </section>
     </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js" defer></script>
+    <script src="js/menu-midi.js" defer></script>
+    <script src="js/menumiditr.js" defer></script>
 </body>
 </html>
