@@ -1,3 +1,4 @@
+/* Fichier : css/style.css */
 :root {
     --noir: #0a0a0a;
     --blanc: #f9f9f9;
@@ -30,6 +31,7 @@ body {
     background-position: center;
 }
 
+/* Loader */
 .loader {
     position: fixed;
     top: 0;
@@ -72,28 +74,54 @@ body {
     visibility: hidden;
 }
 
-.main-nav {
+/* Nouveau Header avec Menu Hamburger */
+.main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1100;
-    padding: 1rem;
     background: var(--noir);
     border-bottom: 1px solid var(--or);
-    display: flex;
-    justify-content: center;
-    transition: transform 0.3s ease;
 }
 
-.main-nav.hide-nav {
-    transform: translateY(-100%);
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1200;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--or);
+    margin: 6px 0;
+    transition: var(--transition);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    transition: all 0.3s ease;
 }
 
 .main-nav ul {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
@@ -129,6 +157,30 @@ body {
     width: 100%;
 }
 
+.language-switcher {
+    display: flex;
+    gap: 5px;
+    margin-left: 1rem;
+}
+
+.language-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--or);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+.language-btn.active {
+    background: var(--or);
+    color: var(--dark);
+    font-weight: 600;
+}
+
+/* Filtres */
 .filters-container {
     position: fixed;
     top: 60px;
@@ -186,45 +238,72 @@ body {
     color: var(--or);
 }
 
-
-/* Icônes SVG customisées */
+/* Icônes 100% CSS */
 .filter-icon {
     width: 20px;
     height: 20px;
     display: inline-block;
+    position: relative;
     transition: var(--transition);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
-.filter-tab[data-category="all"] .filter-icon {
-    display: none;
-}
-
-/* Poisson (style simplifié) */
+/* Poisson - Triangle */
 .filter-tab[data-category="poissons"] .filter-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M20 8h-2V6h-2V4h-4v2h-2v2H8v2H6v2H4v2H2v2h2v2h2v2h2v2h2v2h4v-2h2v-2h2v-2h2v-2h2v-2h-2v-2h-2z'/%3E%3Ccircle cx='16' cy='11' r='1' fill='%231a1a2e'/%3E%3C/svg%3E");
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: scale(0.8);
 }
 
-/* Viande (steak stylisé) */
+/* Viande - Rectangle avec ligne */
 .filter-tab[data-category="viandes"] .filter-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M12 5l7 14H5l7-14z'/%3E%3Cpath d='M12 9l5 10H7l5-10z' fill='%23c62b2b'/%3E%3C/svg%3E");
+    background: 
+        linear-gradient(var(--gold), var(--gold)),
+        linear-gradient(var(--gold), var(--gold));
+    background-size: 100% 20%, 100% 60%;
+    background-position: center 20%, center 80%;
+    background-repeat: no-repeat;
 }
 
-/* Légumes (brocoli stylisé) */
+/* Légumes - Feuille stylisée */
 .filter-tab[data-category="legumes"] .filter-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233d9970'%3E%3Cpath d='M12 2L4 12h16L12 2z'/%3E%3Cpath d='M8 12l4 10 4-10H8z' fill='%23d4af37'/%3E%3C/svg%3E");
+    background: var(--gold);
+    clip-path: polygon(
+        50% 0%,
+        60% 30%,
+        90% 30%,
+        65% 50%,
+        75% 80%,
+        50% 65%,
+        25% 80%,
+        35% 50%,
+        10% 30%,
+        40% 30%
+    );
+    transform: scale(0.7);
 }
 
-/* Soupe (bol de nouilles) */
+/* Soupes - Bol */
 .filter-tab[data-category="soupes"] .filter-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3Cpath d='M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z' fill='%23e63946'/%3E%3C/svg%3E");
+    border: 2px solid var(--gold);
+    border-top: none;
+    border-radius: 0 0 50% 50%;
+}
+.filter-tab[data-category="soupes"] .filter-icon::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: var(--gold);
 }
 
-/* Riz (grains de riz) */
+/* Riz - Grains */
 .filter-tab[data-category="riz"] .filter-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5z'/%3E%3Cpath d='M2 12l10 5 10-5M2 17l10 5 10-5' fill='none' stroke='%23f8f9fa' stroke-width='2'/%3E%3C/svg%3E");
+    background: 
+        radial-gradient(circle at 30% 40%, var(--gold) 25%, transparent 25%),
+        radial-gradient(circle at 70% 40%, var(--gold) 25%, transparent 25%),
+        radial-gradient(circle at 50% 70%, var(--gold) 25%, transparent 25%);
 }
 
 .filter-tab.active .filter-icon {
@@ -249,6 +328,7 @@ body {
     animation: tabPulse 0.3s ease;
 }
 
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -347,30 +427,78 @@ body {
     font-size: 1.2rem;
 }
 
-.language-switcher {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1200;
-    display: flex;
-    gap: 5px;
-}
-
-.language-btn {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid var(--or);
-    color: white;
-    padding: 0.3rem 0.6rem;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: var(--transition);
-}
-
-.language-btn.active {
-    background: var(--or);
-    color: var(--dark);
-    font-weight: 600;
+/* Styles pour mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--noir);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 70px 20px 20px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    }
+    
+    .main-nav.active {
+        left: 0;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .language-switcher {
+        margin: 2rem 0 0;
+        justify-content: center;
+    }
+    
+    /* Animation du bouton hamburger */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Ajustement du padding pour le contenu */
+    body.page-individuels {
+        padding-top: 140px;
+    }
+    
+    .filters-container {
+        top: 60px;
+    }
+    
+    /* Adaptation des filtres pour mobile */
+    .filter-tabs {
+        justify-content: flex-start;
+        padding-bottom: 5px;
+    }
+    
+    .filter-tab {
+        flex: 0 0 auto;
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .filter-icon {
+        display: none;
+    }
 }
 
 @keyframes fadeInUp {
@@ -384,48 +512,10 @@ body {
     }
 }
 
-body.page-individuels {
-    padding-top: 110px;
-}
-
-.main-nav.hide-nav + .filters-container + .individuels-hero {
-    padding-top: 56px;
-}
-
+/* Responsive Design supplémentaire */
 @media (max-width: 992px) {
     .title-anim {
         font-size: 3.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .title-anim {
-        font-size: 3rem;
-    }
-    
-    .subtitle-anim {
-        font-size: 1rem;
-    }
-    
-    .main-nav ul {
-        gap: 1.5rem;
-    }
-    
-    body.page-individuels {
-        padding-top: 100px;
-    }
-    
-    .filter-tabs {
-        justify-content: flex-start;
-        padding: 0 0.8rem;
-    }
-    
-    .filter-tab {
-        padding: 0.6rem 1rem;
-    }
-    
-    .simple-nav-btn {
-        font-size: 1rem;
     }
 }
 
@@ -434,21 +524,9 @@ body.page-individuels {
         font-size: 2.8rem;
     }
     
-    .main-nav ul {
-        gap: 1rem;
-    }
-    
-    .nav-link {
-        font-size: 0.9rem;
-    }
-    
-    body.page-individuels {
-        padding-top: 90px;
-    }
-    
-    .filter-tab {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.8rem;
+    .simple-nav-btn {
+        font-size: 1rem;
+        padding: 1rem;
     }
 }
 
@@ -457,19 +535,11 @@ body.page-individuels {
         font-size: 2.2rem;
     }
     
-    .main-nav ul {
-        gap: 0.5rem;
+    .main-nav {
+        width: 90%;
     }
     
-    .nav-link {
-        font-size: 0.8rem;
-    }
-    
-    body.page-individuels {
-        padding-top: 85px;
-    }
-    
-    .filter-tabs {
-        padding: 0 0.5rem;
+    .filter-tab {
+        padding: 0.5rem 0.8rem;
     }
 }
