@@ -1,0 +1,137 @@
+/* Fichier : css/fondue.css */
+.fondue-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    background: url('../images/imagesite/fond-fondues.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.fondue-hero h1 {
+    position: relative;
+    z-index: 2;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(26, 26, 46, 0.95);
+    border-radius: 10px 10px 0 0;
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+    border: 2px solid var(--gold);
+}
+
+.formule-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.formule-section h2 {
+    font-family: 'Noto Serif SC', serif;
+    color: var(--red);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.formule-stacked {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category-title .emoji {
+    font-size: 1.8rem;
+}
+
+/* Table Styles */
+.fondue-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.fondue-table th, 
+.fondue-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 190, 11, 0.2);
+}
+
+.fondue-table th {
+    font-family: 'Noto Serif SC', serif;
+    color: var(--gold);
+    font-size: 1.2rem;
+    background: rgba(255, 190, 11, 0.1);
+}
+
+.fondue-table tr:hover {
+    background: rgba(255, 190, 11, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fondue-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .formule-line {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .formule-combo, 
+    .formule-price {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .category-title {
+        font-size: 1.8rem;
+    }
+    
+    .fondue-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .fondue-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .menu-container {
+        padding: 1.5rem;
+    }
+    
+    .category-title {
+        font-size: 1.6rem;
+    }
+    
+    .fondue-table th, 
+    .fondue-table td {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}

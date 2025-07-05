@@ -1,0 +1,97 @@
+/* Fichier : css/midicss.css */
+.menu-midi-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    background: url('../images/imagesite/fond-menu-midi.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: local;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.menu-midi-hero h1 {
+    position: relative;
+    z-index: 2;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    background-color: rgba(26, 26, 46, 0.95);
+    box-shadow: 0 -20px 30px rgba(0, 0, 0, 0.3);
+    margin-top: -50px;
+    border-radius: 10px 10px 0 0;
+    z-index: 2;
+    border: 2px solid var(--gold);
+}
+
+.formule-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.formule-section h2 {
+    font-family: 'Noto Serif SC', serif;
+    color: var(--red);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-midi-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dish-image {
+        height: 180px;
+    }
+    
+    .category-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-midi-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .dish-card {
+        margin-bottom: 1rem;
+    }
+    
+    .dish-image {
+        height: 160px;
+    }
+    
+    .formule-combo {
+        font-size: 1rem;
+    }
+    
+    .formule-price {
+        font-size: 1.3rem;
+    }
+}
