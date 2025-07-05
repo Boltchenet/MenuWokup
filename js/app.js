@@ -1,3 +1,4 @@
+
 // Fichier : js/app.js
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainNav = document.querySelector('.main-nav');
     const loader = document.querySelector('.loader');
     const languageBtns = document.querySelectorAll('.language-btn');
-    const nav = document.querySelector('.main-nav');
+    const nav = document.querySelector('.main-header');
     const filters = document.querySelector('.filters-container');
     let lastScroll = 0;
 
@@ -51,28 +52,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fermer le menu quand on scroll en mobile
+    // Gestion du scroll pour cacher le header et afficher les filtres
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
-        if (window.innerWidth <= 768 && mainNav && mainNav.classList.contains('active')) {
-            menuToggle.classList.remove('active');
-            mainNav.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        if (currentScroll <= 100) {
-            nav?.classList.remove('hide-nav');
-            if (filters) filters.style.top = '60px';
-            return;
-        }
-        
-        if (currentScroll > lastScroll && !nav?.classList.contains('hide-nav')) {
-            nav?.classList.add('hide-nav');
-            if (filters) filters.style.top = '0';
-        } else if (currentScroll < lastScroll && nav?.classList.contains('hide-nav')) {
-            nav?.classList.remove('hide-nav');
-            if (filters) filters.style.top = '60px';
+        if (window.innerWidth <= 768) {
+            // Gestion de l'affichage du header et des filtres
+            if (currentScroll <= 100) {
+                nav?.classList.remove('hide-nav');
+                if (filters) filters.style.top = '60px';
+            } else if (currentScroll > lastScroll && !nav?.classList.contains('hide-nav')) {
+                nav?.classList.add('hide-nav');
+                if (filters) filters.style.top = '0';
+            } else if (currentScroll < lastScroll && nav?.classList.contains('hide-nav')) {
+                nav?.classList.remove('hide-nav');
+                if (filters) filters.style.top = '60px';
+            }
+            
+            // Fermer le menu si ouvert pendant le scroll
+            if (mainNav && mainNav.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         }
         
         lastScroll = currentScroll;

@@ -567,22 +567,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100 + (index * 100));
         });
 
-        // Gestion des filtres
+         // Gestion des filtres
         document.querySelectorAll('.filter-tab').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 const category = btn.dataset.category;
-                if (category === 'all') {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
-                } else {
-                    scrollToCategory(category);
-                }
+                scrollToCategory(category);
             });
         });
+
+        // Activer le premier filtre par défaut
+        document.querySelector('.filter-tab[data-category="poissons"]').classList.add('active');
 
         function scrollToCategory(category) {
             const element = document.getElementById(`${category}-grid`);

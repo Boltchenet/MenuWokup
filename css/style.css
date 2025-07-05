@@ -1,3 +1,4 @@
+
 /* Fichier : css/style.css */
 :root {
     --noir: #0a0a0a;
@@ -89,6 +90,11 @@ body {
     display: flex;
     justify-content: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.main-header.hide-nav {
+    transform: translateY(-100%);
 }
 
 .main-nav {
@@ -178,6 +184,7 @@ body {
     background: var(--dark);
     border-bottom: 1px solid rgba(255, 190, 11, 0.3);
     padding: 0.5rem 0;
+    transition: top 0.3s ease;
 }
 
 .filter-tabs {
@@ -417,8 +424,7 @@ body {
         display: block;
         position: fixed;
         top: 15px;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 20px;
         z-index: 1200;
         background: none;
         border: none;
@@ -449,6 +455,7 @@ body {
         justify-content: flex-start;
         padding: 70px 20px 20px;
         box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+        overflow-y: auto;
     }
     
     .main-nav.active {
@@ -459,11 +466,16 @@ body {
         flex-direction: column;
         width: 100%;
         gap: 1rem;
+        margin-top: 40px;
     }
     
     .language-switcher {
-        margin: 2rem 0 0;
-        justify-content: center;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        left: auto;
+        margin: 0;
+        justify-content: flex-end;
     }
     
     /* Animation du bouton hamburger */
@@ -501,6 +513,11 @@ body {
     }
     
     .filter-icon {
+        display: none;
+    }
+
+    /* Supprimer le filtre "Tous" */
+    .filter-tab[data-category="all"] {
         display: none;
     }
 }
