@@ -51,28 +51,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Gestion de la navigation (scroll)
-    if (nav) {
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll <= 100) {
-                nav.classList.remove('hide-nav');
-                if (filters) filters.style.top = '60px';
-                return;
-            }
-            
-            if (currentScroll > lastScroll && !nav.classList.contains('hide-nav')) {
-                nav.classList.add('hide-nav');
-                if (filters) filters.style.top = '0';
-            } else if (currentScroll < lastScroll && nav.classList.contains('hide-nav')) {
-                nav.classList.remove('hide-nav');
-                if (filters) filters.style.top = '60px';
-            }
-            
-            lastScroll = currentScroll;
-        });
-    }
+    // Fermer le menu quand on scroll en mobile
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (window.innerWidth <= 768 && mainNav && mainNav.classList.contains('active')) {
+            menuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        if (currentScroll <= 100) {
+            nav?.classList.remove('hide-nav');
+            if (filters) filters.style.top = '60px';
+            return;
+        }
+        
+        if (currentScroll > lastScroll && !nav?.classList.contains('hide-nav')) {
+            nav?.classList.add('hide-nav');
+            if (filters) filters.style.top = '0';
+        } else if (currentScroll < lastScroll && nav?.classList.contains('hide-nav')) {
+            nav?.classList.remove('hide-nav');
+            if (filters) filters.style.top = '60px';
+        }
+        
+        lastScroll = currentScroll;
+    });
 
     // Gestion du changement de langue
     if (languageBtns.length > 0) {

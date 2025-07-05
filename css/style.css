@@ -4,7 +4,10 @@
     --blanc: #f9f9f9;
     --rouge: #c62b2b;
     --or: #d4af37;
-    --beige: #e8d8c4;
+    --gold: #ffbe0b;
+    --gold-light: #ffd166;
+    --blue: #3a86ff;
+    --purple: #8338ec;
     --dark: #1a1a2e;
     --light: #f8f9fa;
     --transition: all 0.3s ease;
@@ -38,7 +41,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--noir);
+    background: var(--dark);
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -49,7 +52,7 @@ body {
 .wok-loader {
     width: 60px;
     height: 60px;
-    border: 3px solid var(--or);
+    border: 3px solid var(--gold);
     border-top-color: transparent;
     border-radius: 50%;
     position: relative;
@@ -74,46 +77,29 @@ body {
     visibility: hidden;
 }
 
-/* Nouveau Header avec Menu Hamburger */
+/* Header */
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1100;
-    background: var(--noir);
-    border-bottom: 1px solid var(--or);
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    width: 30px;
-    height: 30px;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1200;
-    cursor: pointer;
-    padding: 0;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: var(--or);
-    margin: 6px 0;
-    transition: var(--transition);
+    background: var(--dark);
+    border-bottom: 1px solid rgba(255, 190, 11, 0.3);
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .main-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
     transition: all 0.3s ease;
+    max-width: 1200px;
+    width: 100%;
+    background: transparent;
 }
 
 .main-nav ul {
@@ -122,12 +108,14 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    flex: 1;
 }
 
 .nav-link {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 400;
-    color: var(--beige);
+    color: var(--light);
     text-decoration: none;
     font-size: 1rem;
     position: relative;
@@ -137,7 +125,7 @@ body {
 }
 
 .nav-link.active {
-    color: var(--or);
+    color: var(--gold);
     font-weight: 500;
 }
 
@@ -148,7 +136,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--or);
+    background: var(--gold);
     transition: var(--transition);
 }
 
@@ -164,9 +152,9 @@ body {
 }
 
 .language-btn {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid var(--or);
-    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--gold);
+    color: var(--light);
     padding: 0.3rem 0.6rem;
     border-radius: 3px;
     cursor: pointer;
@@ -175,7 +163,7 @@ body {
 }
 
 .language-btn.active {
-    background: var(--or);
+    background: var(--gold);
     color: var(--dark);
     font-weight: 600;
 }
@@ -187,8 +175,8 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(10, 10, 10, 0.98);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    background: var(--dark);
+    border-bottom: 1px solid rgba(255, 190, 11, 0.3);
     padding: 0.5rem 0;
 }
 
@@ -211,8 +199,8 @@ body {
     padding: 0.8rem 1.2rem;
     border-radius: 30px;
     background: transparent;
-    color: var(--beige);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--light);
+    border: 1px solid rgba(255, 190, 11, 0.3);
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 400;
     cursor: pointer;
@@ -226,19 +214,19 @@ body {
 }
 
 .filter-tab.active {
-    background: var(--or);
-    color: var(--noir);
+    background: var(--gold);
+    color: var(--dark);
     font-weight: 500;
-    border-color: var(--or);
-    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+    border-color: var(--gold);
+    box-shadow: 0 2px 10px rgba(255, 190, 11, 0.3);
 }
 
 .filter-tab:hover:not(.active) {
-    border-color: var(--or);
-    color: var(--or);
+    border-color: var(--gold);
+    color: var(--gold);
 }
 
-/* Icônes 100% CSS */
+/* Icônes des filtres */
 .filter-icon {
     width: 20px;
     height: 20px;
@@ -247,14 +235,12 @@ body {
     transition: var(--transition);
 }
 
-/* Poisson - Triangle */
 .filter-tab[data-category="poissons"] .filter-icon {
     background: var(--gold);
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: scale(0.8);
 }
 
-/* Viande - Rectangle avec ligne */
 .filter-tab[data-category="viandes"] .filter-icon {
     background: 
         linear-gradient(var(--gold), var(--gold)),
@@ -264,7 +250,6 @@ body {
     background-repeat: no-repeat;
 }
 
-/* Légumes - Feuille stylisée */
 .filter-tab[data-category="legumes"] .filter-icon {
     background: var(--gold);
     clip-path: polygon(
@@ -282,7 +267,6 @@ body {
     transform: scale(0.7);
 }
 
-/* Soupes - Bol */
 .filter-tab[data-category="soupes"] .filter-icon {
     border: 2px solid var(--gold);
     border-top: none;
@@ -298,7 +282,6 @@ body {
     background: var(--gold);
 }
 
-/* Riz - Grains */
 .filter-tab[data-category="riz"] .filter-icon {
     background: 
         radial-gradient(circle at 30% 40%, var(--gold) 25%, transparent 25%),
@@ -311,10 +294,6 @@ body {
 }
 
 .filter-tab:hover .filter-icon {
-    transform: scale(1.1);
-}
-
-.filter-tab.active .filter-icon {
     transform: scale(1.1);
 }
 
@@ -341,6 +320,7 @@ body {
     background-position: center;
     background-blend-mode: darken;
     overflow: hidden;
+    padding-top: 60px;
 }
 
 .hero-overlay {
@@ -363,7 +343,7 @@ body {
 .title-anim {
     font-family: 'Noto Serif SC', serif;
     font-size: 4.5rem;
-    color: var(--or);
+    color: var(--gold);
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     opacity: 0;
@@ -401,7 +381,7 @@ body {
     border-radius: 5px;
     font-weight: 500;
     transition: var(--transition);
-    border: 2px solid var(--or);
+    border: 2px solid var(--gold);
     text-align: center;
     backdrop-filter: blur(5px);
     opacity: 0;
@@ -415,7 +395,7 @@ body {
 }
 
 .simple-nav-btn:hover {
-    background: var(--or);
+    background: var(--gold);
     color: var(--dark);
     transform: translateY(-3px);
 }
@@ -429,8 +409,32 @@ body {
 
 /* Styles pour mobile */
 @media (max-width: 768px) {
+    .main-header {
+        justify-content: flex-start;
+    }
+    
     .menu-toggle {
         display: block;
+        position: fixed;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1200;
+        background: none;
+        border: none;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        padding: 0;
+    }
+    
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--gold);
+        margin: 6px 0;
+        transition: var(--transition);
     }
     
     .main-nav {
@@ -440,7 +444,7 @@ body {
         width: 80%;
         max-width: 300px;
         height: 100vh;
-        background: var(--noir);
+        background: var(--dark);
         flex-direction: column;
         justify-content: flex-start;
         padding: 70px 20px 20px;
