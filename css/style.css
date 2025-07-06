@@ -78,7 +78,7 @@ body {
     visibility: hidden;
 }
 
-/* Header */
+/* Header avec menu hamburger */
 .main-header {
     position: fixed;
     top: 0;
@@ -88,10 +88,12 @@ body {
     background: var(--dark);
     border-bottom: 1px solid rgba(255, 190, 11, 0.3);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
     height: 60px;
+    padding: 0 1rem;
 }
 
 .main-header.hide-nav {
@@ -250,6 +252,14 @@ body {
     padding-top: 60px;
 }
 
+.index-page .main-header {
+    display: none;
+}
+
+.index-page .hero {
+    padding-top: 0;
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -327,78 +337,77 @@ body {
     transform: translateY(-3px);
 }
 
+/* Menu Toggle */
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--light);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    z-index: 1200;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--gold);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
+.menu-text {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
 /* Styles pour mobile */
 @media (max-width: 768px) {
     .main-header {
-        justify-content: center;
-        height: 60px;
-    }
-    
-    .menu-toggle {
-        position: fixed;
-        top: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1200;
-        background: var(--dark);
-        border: 1px solid var(--gold);
-        border-radius: 4px;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-    }
-    
-    .menu-toggle span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: var(--gold);
-        margin: 3px 0;
-        transition: var(--transition);
+        justify-content: space-between;
+        padding: 0 1rem;
     }
     
     .main-nav {
         position: fixed;
         top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        max-width: 300px;
-        height: auto;
-        max-height: 80vh;
+        left: 0;
+        width: 100%;
+        height: 100vh;
         background: var(--dark);
         flex-direction: column;
-        justify-content: flex-start;
-        padding: 70px 20px 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        border-radius: 0 0 10px 10px;
-        overflow-y: auto;
-        border: 1px solid var(--gold);
-        border-top: none;
+        justify-content: center;
+        padding: 2rem;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1100;
     }
     
     .main-nav.active {
-        left: 50%;
+        transform: translateY(0);
     }
     
     .main-nav ul {
         flex-direction: column;
-        width: 100%;
-        gap: 1rem;
-        margin-top: 20px;
+        gap: 2rem;
+        margin-top: 0;
     }
     
     .language-switcher {
         position: absolute;
-        top: 20px;
-        right: 20px;
-        left: auto;
+        top: 1rem;
+        right: 1rem;
         margin: 0;
-        justify-content: flex-end;
     }
     
     /* Animation du bouton hamburger */
@@ -425,8 +434,8 @@ body {
     
     /* Adaptation des filtres pour mobile */
     .filter-tabs {
-        justify-content: center;
-        padding-bottom: 5px;
+        justify-content: flex-start;
+        padding: 0 1rem 5px;
     }
     
     .filter-tab {
@@ -477,10 +486,6 @@ body {
 @media (max-width: 400px) {
     .title-anim {
         font-size: 2.2rem;
-    }
-    
-    .main-nav {
-        width: 95%;
     }
     
     .filter-tab {
