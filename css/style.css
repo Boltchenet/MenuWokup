@@ -177,6 +177,30 @@ body {
     font-weight: 600;
 }
 
+/* Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1200;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--gold);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
 /* Filtres */
 .filters-container {
     position: fixed;
@@ -337,60 +361,26 @@ body {
     transform: translateY(-3px);
 }
 
-/* Menu Toggle */
-.menu-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: var(--light);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 1rem;
-    z-index: 1200;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--gold);
-    margin: 3px 0;
-    transition: var(--transition);
-}
-
-.menu-text {
-    margin-left: 0.5rem;
-    font-size: 1rem;
-}
-
-@media (min-width: 769px) {
-    .menu-toggle {
-        display: none;
-    }
-}
-
 /* Styles pour mobile */
 @media (max-width: 768px) {
-    .main-header {
-        justify-content: space-between;
-        padding: 0 1rem;
+    .menu-toggle {
+        display: flex;
     }
     
     .main-nav {
         position: fixed;
-        top: 0;
+        top: 60px;
         left: 0;
         width: 100%;
-        height: 100vh;
         background: var(--dark);
         flex-direction: column;
-        justify-content: center;
-        padding: 2rem;
+        padding: 1rem;
         transform: translateY(-100%);
         transition: transform 0.3s ease;
         z-index: 1100;
+        border-bottom: 1px solid rgba(255, 190, 11, 0.3);
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
     }
     
     .main-nav.active {
@@ -399,15 +389,19 @@ body {
     
     .main-nav ul {
         flex-direction: column;
-        gap: 2rem;
-        margin-top: 0;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 1rem;
+        display: block;
     }
     
     .language-switcher {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        margin: 0;
+        margin: 1rem 0 0;
+        justify-content: center;
+        width: 100%;
     }
     
     /* Animation du bouton hamburger */
@@ -420,9 +414,9 @@ body {
     }
     
     .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: rotate(-45deg) translate(5px, -5px);
     }
-    
+
     /* Ajustement du padding pour le contenu */
     body.page-individuels {
         padding-top: 140px;
