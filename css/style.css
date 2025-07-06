@@ -1,4 +1,3 @@
-
 /* Fichier : css/style.css */
 :root {
     --noir: #0a0a0a;
@@ -33,6 +32,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    padding-top: 60px;
 }
 
 /* Loader */
@@ -91,6 +91,7 @@ body {
     justify-content: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    height: 60px;
 }
 
 .main-header.hide-nav {
@@ -233,87 +234,6 @@ body {
     color: var(--gold);
 }
 
-/* Icônes des filtres */
-.filter-icon {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    position: relative;
-    transition: var(--transition);
-}
-
-.filter-tab[data-category="poissons"] .filter-icon {
-    background: var(--gold);
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform: scale(0.8);
-}
-
-.filter-tab[data-category="viandes"] .filter-icon {
-    background: 
-        linear-gradient(var(--gold), var(--gold)),
-        linear-gradient(var(--gold), var(--gold));
-    background-size: 100% 20%, 100% 60%;
-    background-position: center 20%, center 80%;
-    background-repeat: no-repeat;
-}
-
-.filter-tab[data-category="legumes"] .filter-icon {
-    background: var(--gold);
-    clip-path: polygon(
-        50% 0%,
-        60% 30%,
-        90% 30%,
-        65% 50%,
-        75% 80%,
-        50% 65%,
-        25% 80%,
-        35% 50%,
-        10% 30%,
-        40% 30%
-    );
-    transform: scale(0.7);
-}
-
-.filter-tab[data-category="soupes"] .filter-icon {
-    border: 2px solid var(--gold);
-    border-top: none;
-    border-radius: 0 0 50% 50%;
-}
-.filter-tab[data-category="soupes"] .filter-icon::before {
-    content: "";
-    position: absolute;
-    top: 30%;
-    left: 20%;
-    right: 20%;
-    height: 2px;
-    background: var(--gold);
-}
-
-.filter-tab[data-category="riz"] .filter-icon {
-    background: 
-        radial-gradient(circle at 30% 40%, var(--gold) 25%, transparent 25%),
-        radial-gradient(circle at 70% 40%, var(--gold) 25%, transparent 25%),
-        radial-gradient(circle at 50% 70%, var(--gold) 25%, transparent 25%);
-}
-
-.filter-tab.active .filter-icon {
-    filter: brightness(0) saturate(100%) invert(9%) sepia(10%) saturate(2838%) hue-rotate(212deg) brightness(93%) contrast(89%);
-}
-
-.filter-tab:hover .filter-icon {
-    transform: scale(1.1);
-}
-
-@keyframes tabPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.filter-tab.active {
-    animation: tabPulse 0.3s ease;
-}
-
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -407,66 +327,69 @@ body {
     transform: translateY(-3px);
 }
 
-.dish-price, .formule-price {
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
-}
-
 /* Styles pour mobile */
 @media (max-width: 768px) {
     .main-header {
-        justify-content: flex-start;
+        justify-content: center;
+        height: 60px;
     }
     
     .menu-toggle {
-        display: block;
         position: fixed;
         top: 15px;
-        left: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1200;
-        background: none;
-        border: none;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
+        background: var(--dark);
+        border: 1px solid var(--gold);
+        border-radius: 4px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         padding: 0;
     }
     
     .menu-toggle span {
         display: block;
-        width: 100%;
+        width: 24px;
         height: 2px;
         background: var(--gold);
-        margin: 6px 0;
+        margin: 3px 0;
         transition: var(--transition);
     }
     
     .main-nav {
         position: fixed;
         top: 0;
-        left: -100%;
-        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
         max-width: 300px;
-        height: 100vh;
+        height: auto;
+        max-height: 80vh;
         background: var(--dark);
         flex-direction: column;
         justify-content: flex-start;
         padding: 70px 20px 20px;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        border-radius: 0 0 10px 10px;
         overflow-y: auto;
+        border: 1px solid var(--gold);
+        border-top: none;
     }
     
     .main-nav.active {
-        left: 0;
+        left: 50%;
     }
     
     .main-nav ul {
         flex-direction: column;
         width: 100%;
         gap: 1rem;
-        margin-top: 40px;
+        margin-top: 20px;
     }
     
     .language-switcher {
@@ -502,7 +425,7 @@ body {
     
     /* Adaptation des filtres pour mobile */
     .filter-tabs {
-        justify-content: flex-start;
+        justify-content: center;
         padding-bottom: 5px;
     }
     
@@ -557,7 +480,7 @@ body {
     }
     
     .main-nav {
-        width: 90%;
+        width: 95%;
     }
     
     .filter-tab {
