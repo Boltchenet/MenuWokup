@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
     
@@ -60,22 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScroll = window.pageYOffset;
         
         if (window.innerWidth <= 768) {
-            if (currentScroll <= 100) {
-                nav?.classList.remove('hide-nav');
-            } else if (currentScroll > lastScroll && !nav?.classList.contains('hide-nav')) {
-                nav?.classList.add('hide-nav');
-            } else if (currentScroll < lastScroll && nav?.classList.contains('hide-nav')) {
-                nav?.classList.remove('hide-nav');
-            }
-
             if (document.body.classList.contains('page-individuels')) {
-                const filters = document.querySelector('.filters-container');
-                if (currentScroll > 100) {
-                    filters.style.position = 'fixed';
-                    filters.style.top = '0';
+                // Comportement spécifique pour la page individuel
+                if (currentScroll <= 100) {
+                    nav?.classList.remove('hide-nav');
+                } else if (currentScroll > lastScroll && !nav?.classList.contains('hide-nav')) {
+                    nav?.classList.add('hide-nav');
+                } else if (currentScroll < lastScroll && nav?.classList.contains('hide-nav')) {
+                    nav?.classList.remove('hide-nav');
+                }
+            } else {
+                // Comportement pour les autres pages
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    nav?.classList.add('hide-nav');
                 } else {
-                    filters.style.position = 'sticky';
-                    filters.style.top = '60px';
+                    nav?.classList.remove('hide-nav');
                 }
             }
         }
