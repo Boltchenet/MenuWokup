@@ -1,8 +1,6 @@
-// Fichier : js/app.js
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
     
-    // Elements DOM
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const loader = document.querySelector('.loader');
@@ -11,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const filters = document.querySelector('.filters-container');
     let lastScroll = 0;
 
-    // Gestion du loader
     const hideLoader = () => {
         if (loader) {
             loader.classList.add('hidden');
@@ -19,28 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Fallback pour masquer le loader après 3s max
     window.addEventListener('load', () => {
         setTimeout(hideLoader, 500);
     });
     setTimeout(hideLoader, 3000);
 
-    // Gestion du menu hamburger
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             menuToggle.classList.toggle('active');
             mainNav.classList.toggle('active');
             
-            // Empêche le défilement lorsque le menu est ouvert
             if (mainNav.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
+                mainNav.scrollTo(0, 0);
             } else {
                 document.body.style.overflow = '';
             }
         });
         
-        // Fermer le menu quand on clique à l'extérieur
         document.addEventListener('click', (e) => {
             if (mainNav.classList.contains('active') && 
                 !mainNav.contains(e.target) && 
@@ -51,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Fermer le menu quand on clique sur un lien
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 if (mainNav.classList.contains('active')) {
@@ -63,12 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Gestion du scroll pour cacher le header
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
         if (window.innerWidth <= 768) {
-            // Gestion de l'affichage du header
             if (currentScroll <= 100) {
                 nav?.classList.remove('hide-nav');
             } else if (currentScroll > lastScroll && !nav?.classList.contains('hide-nav')) {
@@ -81,29 +72,21 @@ document.addEventListener('DOMContentLoaded', () => {
         lastScroll = currentScroll;
     });
 
-    // Gestion du changement de langue
     if (languageBtns.length > 0) {
         languageBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const lang = btn.dataset.lang;
-                // Retirer la classe active de tous les boutons
                 languageBtns.forEach(b => {
                     b.classList.remove('active');
                     b.style.backgroundColor = '';
                 });
-                // Ajouter la classe active seulement au bouton cliqué
                 btn.classList.add('active');
                 btn.style.backgroundColor = 'var(--gold)';
-                
-                // Stocker la préférence de langue
                 localStorage.setItem('preferredLanguage', lang);
-                
-                // Actualiser les traductions
                 updateTranslations(lang);
             });
         });
         
-        // Charger la langue préférée
         const preferredLanguage = localStorage.getItem('preferredLanguage') || 'fr';
         const activeBtn = document.querySelector(`.language-btn[data-lang="${preferredLanguage}"]`);
         if (activeBtn) {
@@ -113,20 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTranslations(preferredLanguage);
     }
 
-    // Fonction pour mettre à jour les traductions
     function updateTranslations(lang) {
         try {
-            // Cette fonction sera complétée par les fichiers de traduction individuels
             console.log(`Language changed to ${lang}`);
-            
-            // Dispatch un événement pour informer les autres scripts
             document.dispatchEvent(new CustomEvent('languageChanged', { detail: lang }));
         } catch (error) {
             console.error('Translation error:', error);
         }
     }
 
-    // Gestion des filtres
     document.querySelectorAll('.filter-tab').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
@@ -144,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fonction pour scroller vers une catégorie
     function scrollToCategory(category) {
         const element = document.getElementById(`${category}-grid`);
         if (element) {
@@ -159,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Animation des éléments au chargement
     setTimeout(() => {
         const animatedElements = document.querySelectorAll('.dish-card, .fondue-table tr, .formule-line');
         animatedElements.forEach((el, index) => {
@@ -175,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300);
 });
 
-// Fonction helper pour les traductions
 function translateElements(lang, translations) {
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
