@@ -35,10 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Empêche le défilement lorsque le menu est ouvert
             if (mainNav.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
-                document.body.style.position = 'fixed';
             } else {
                 document.body.style.overflow = '';
-                document.body.style.position = '';
             }
         });
         
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuToggle.classList.remove('active');
                 mainNav.classList.remove('active');
                 document.body.style.overflow = '';
-                document.body.style.position = '';
             }
         });
         
@@ -61,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     menuToggle.classList.remove('active');
                     mainNav.classList.remove('active');
                     document.body.style.overflow = '';
-                    document.body.style.position = '';
                 }
             });
         });
