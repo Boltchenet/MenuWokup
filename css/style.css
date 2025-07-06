@@ -1,4 +1,3 @@
-/* Fichier : css/style.css */
 :root {
     --noir: #0a0a0a;
     --blanc: #f9f9f9;
@@ -35,7 +34,6 @@ body {
     padding-top: 60px;
 }
 
-/* Loader */
 .loader {
     position: fixed;
     top: 0;
@@ -78,7 +76,6 @@ body {
     visibility: hidden;
 }
 
-/* Header avec menu hamburger */
 .main-header {
     position: fixed;
     top: 0;
@@ -177,7 +174,6 @@ body {
     font-weight: 600;
 }
 
-/* Menu Toggle */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -201,7 +197,6 @@ body {
     transition: var(--transition);
 }
 
-/* Filtres */
 .filters-container {
     position: fixed;
     top: 60px;
@@ -260,7 +255,6 @@ body {
     color: var(--gold);
 }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -361,7 +355,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Styles pour mobile */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
@@ -379,8 +372,13 @@ body {
         transition: transform 0.3s ease;
         z-index: 1100;
         border-bottom: 1px solid rgba(255, 190, 11, 0.3);
-        max-height: calc(100vh - 60px);
+        max-height: 70vh;
         overflow-y: auto;
+    }
+
+    body.page-individuels .main-nav {
+        top: 140px;
+        max-height: calc(100vh - 140px);
     }
     
     .main-nav.active {
@@ -391,6 +389,7 @@ body {
         flex-direction: column;
         gap: 1rem;
         width: 100%;
+        padding-bottom: 20px;
     }
     
     .nav-link {
@@ -404,7 +403,6 @@ body {
         width: 100%;
     }
     
-    /* Animation du bouton hamburger */
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -417,7 +415,6 @@ body {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Ajustement du padding pour le contenu */
     body.page-individuels {
         padding-top: 140px;
     }
@@ -426,7 +423,6 @@ body {
         top: 60px;
     }
     
-    /* Adaptation des filtres pour mobile */
     .filter-tabs {
         justify-content: flex-start;
         padding: 0 1rem 5px;
@@ -442,7 +438,6 @@ body {
         display: none;
     }
 
-    /* Supprimer le filtre "Tous" */
     .filter-tab[data-category="all"] {
         display: none;
     }
@@ -459,7 +454,6 @@ body {
     }
 }
 
-/* Responsive Design supplémentaire */
 @media (max-width: 992px) {
     .title-anim {
         font-size: 3.5rem;
