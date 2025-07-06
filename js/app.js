@@ -27,15 +27,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Gestion du menu hamburger
     if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             menuToggle.classList.toggle('active');
             mainNav.classList.toggle('active');
             
             // Empêche le défilement lorsque le menu est ouvert
             if (mainNav.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
             } else {
                 document.body.style.overflow = '';
+                document.body.style.position = '';
+            }
+        });
+        
+        // Fermer le menu quand on clique à l'extérieur
+        document.addEventListener('click', (e) => {
+            if (mainNav.classList.contains('active') && 
+                !mainNav.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+                document.body.style.position = '';
             }
         });
         
@@ -46,33 +61,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     menuToggle.classList.remove('active');
                     mainNav.classList.remove('active');
                     document.body.style.overflow = '';
+                    document.body.style.position = '';
                 }
             });
         });
     }
 
-    // Gestion du scroll pour cacher le header et afficher les filtres
+    // Gestion du scroll pour cacher le header
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
         if (window.innerWidth <= 768) {
-            // Gestion de l'affichage du header et des filtres
+            // Gestion de l'affichage du header
             if (currentScroll <= 100) {
                 nav?.classList.remove('hide-nav');
-                if (filters) filters.style.top = '60px';
             } else if (currentScroll > lastScroll && !nav?.classList.contains('hide-nav')) {
                 nav?.classList.add('hide-nav');
-                if (filters) filters.style.top = '0';
             } else if (currentScroll < lastScroll && nav?.classList.contains('hide-nav')) {
                 nav?.classList.remove('hide-nav');
-                if (filters) filters.style.top = '60px';
-            }
-            
-            // Fermer le menu si ouvert pendant le scroll
-            if (mainNav && mainNav.classList.contains('active')) {
-                menuToggle.classList.remove('active');
-                mainNav.classList.remove('active');
-                document.body.style.overflow = '';
             }
         }
         
