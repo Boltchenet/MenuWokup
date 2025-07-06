@@ -67,6 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (currentScroll < lastScroll && nav?.classList.contains('hide-nav')) {
                 nav?.classList.remove('hide-nav');
             }
+
+            if (document.body.classList.contains('page-individuels')) {
+                const filters = document.querySelector('.filters-container');
+                if (currentScroll > 100) {
+                    filters.style.position = 'fixed';
+                    filters.style.top = '0';
+                } else {
+                    filters.style.position = 'sticky';
+                    filters.style.top = '60px';
+                }
+            }
         }
         
         lastScroll = currentScroll;
@@ -125,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function scrollToCategory(category) {
         const element = document.getElementById(`${category}-grid`);
         if (element) {
-            const headerOffset = 140;
+            const headerOffset = document.body.classList.contains('page-individuels') ? 140 : 60;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
             
