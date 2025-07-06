@@ -1,4 +1,3 @@
-
 // Fichier : js/app.js
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
@@ -85,8 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
         languageBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const lang = btn.dataset.lang;
-                languageBtns.forEach(b => b.classList.remove('active'));
+                // Retirer la classe active de tous les boutons
+                languageBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.style.backgroundColor = '';
+                });
+                // Ajouter la classe active seulement au bouton cliqué
                 btn.classList.add('active');
+                btn.style.backgroundColor = 'var(--gold)';
                 
                 // Stocker la préférence de langue
                 localStorage.setItem('preferredLanguage', lang);
@@ -98,7 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Charger la langue préférée
         const preferredLanguage = localStorage.getItem('preferredLanguage') || 'fr';
-        document.querySelector(`.language-btn[data-lang="${preferredLanguage}"]`)?.classList.add('active');
+        const activeBtn = document.querySelector(`.language-btn[data-lang="${preferredLanguage}"]`);
+        if (activeBtn) {
+            activeBtn.classList.add('active');
+            activeBtn.style.backgroundColor = 'var(--gold)';
+        }
         updateTranslations(preferredLanguage);
     }
 
