@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { 
                     name: "Travers de porc à la sauce aigre-douce", 
                     price: "13,80 €", 
-                    image: "images/plat/individuel/travers_porc_sauce_aigre_douce.jpg",
+                    image: "images/plat/individuel/travers_porc_sauce_aigre_douce.JPG",
                     translations: {
                         en: "Pork Ribs with Sweet and Sour Sauce",
                         zh: "糖醋排骨"
