@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { 
                     name: "Pieds de cochon braisés", 
                     price: "15,00 €", 
-                    image: "images/plat/individuel/pieds_de_cochon_braises.jpg",
+                    image: "images/plat/individuel/pieds_de_cochon_braises.JPG",
                     translations: {
                         en: "Braised Pork Feets",
                         zh: "红焖猪脚"
