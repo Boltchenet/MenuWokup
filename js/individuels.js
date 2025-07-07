@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { 
                     name: "Poisson bouilli au piment et poivre", 
                     price: "32,00 €", 
-                    image: "images/plat/individuel/poisson_bouilli_au_piment_et_poivre.jpg",
+                    image: "images/plat/individuel/poisson_bouilli_au_piment_et_poivre.JPG",
                     translations: {
                         en: "Boiled Fish with Chili and Pepper",
                         zh: "沸腾鱼"
