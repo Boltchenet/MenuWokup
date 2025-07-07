@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { 
                     name: "Feuilles de tofu au poivre", 
                     price: "12,80 €", 
-                    image: "images/plat/individuel/feuilles_tofu_poivre.jpg",
+                    image: "images/plat/individuel/feuilles_tofu_poivre.JPG",
                     translations: {
                         en: "Tofu Sheets with Pepper",
                         zh: "尖椒干豆腐"
