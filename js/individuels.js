@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { 
                     name: "Soupe aux tomates et aux œufs", 
                     price: "12,00 €", 
-                    image: "images/plat/individuel/soupe_tomates_oeufs.jpg",
+                    image: "images/plat/individuel/soupe_tomates_oeufs.JPG",
                     translations: {
                         en: "Tomato and Egg Soup",
                         zh: "番茄蛋汤"
