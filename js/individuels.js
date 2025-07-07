@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { 
                     name: "Nouilles à l'Agneau", 
                     price: "13,80 €", 
-                    image: "images/plat/individuel/nouilles_agneau.jpg",
+                    image: "images/plat/individuel/nouilles_agneau.JPG",
                     translations: {
                         en: "Noodles with Lamb",
                         zh: "红焖羊肉面"
