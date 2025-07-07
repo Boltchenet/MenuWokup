@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { 
                     name: "Intestins de porc au piment fort", 
                     price: "14,80 €", 
-                    image: "images/plat/individuel/intestins_porc_piment_fort.jpg",
+                    image: "images/plat/individuel/intestins_porc_piment_fort.JPG",
                     translations: {
                         en: "Pork Intestines with Hot Pepper",
                         zh: "尖椒肥肠"
