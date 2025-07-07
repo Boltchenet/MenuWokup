@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { 
                     name: "Soupe de nouilles à la marmite de bœuf", 
                     price: "12,80 €", 
-                    image: "images/plat/individuel/nouilles_marmite_boeuf.jpg",
+                    image: "images/plat/individuel/nouilles_marmite_boeuf.JPG",
                     translations: {
                         en: "Noodle Soup with Sichuan Boiled Beef",
                         zh: "水煮牛肉面"
