@@ -76,6 +76,34 @@ document.addEventListener('DOMContentLoaded', () => {
                         en: "Fried Squid with Pickles",
                         zh: "鱿鱼炒蔬菜"
                     }
+                },
+                // Nouveaux plats poissons
+                { 
+                    name: "Écrevisses épicées au poivre de Sichuan", 
+                    price: "16,80 €", 
+                    image: "images/plat/individuel/ecrevisses-epicees-sichuan.JPG",
+                    translations: {
+                        en: "Spicy and Numbing Crayfish",
+                        zh: "麻辣小龙虾"
+                    }
+                },
+                { 
+                    name: "Crevettes braisées à la sauce soja", 
+                    price: "19,80 €", 
+                    image: "images/plat/individuel/crevettes-braisees-sauce-soja.JPG",
+                    translations: {
+                        en: "Braised Shrimp in Soy Sauce",
+                        zh: "红烧虾"
+                    }
+                },
+                { 
+                    name: "Salade froide de peau de poisson au poivre vert", 
+                    price: "14,80 €", 
+                    image: "images/plat/individuel/salade-peau-de-poisson-poivre-vert.JPG",
+                    translations: {
+                        en: "Cold Fish Skin Salad with Green Sichuan Pepper",
+                        zh: "凉拌藤椒鱼皮"
+                    }
                 }
             ],
             viandes: [
@@ -222,6 +250,43 @@ document.addEventListener('DOMContentLoaded', () => {
                         en: "Salt and Pepper Pork Ribs",
                         zh: "椒盐排骨"
                     }
+                },
+                // Nouveaux plats viandes
+                { 
+                    name: "Bœuf sauté au melon amer", 
+                    price: "16,80 €", 
+                    image: "images/plat/individuel/boeuf-saute-au-melon-amer.JPG",
+                    translations: {
+                        en: "Bitter Melon Stir-Fried with Beef",
+                        zh: "苦瓜炒牛肉"
+                    }
+                },
+                { 
+                    name: "Bœuf au poivre vert de Sichuan", 
+                    price: "16,80 €", 
+                    image: "images/plat/individuel/boeuf-poivre-vert-sichuan.JPG",
+                    translations: {
+                        en: "Beef with Green Sichuan Pepper",
+                        zh: "藤椒牛肉"
+                    }
+                },
+                { 
+                    name: "Émincé de porc sauté aux tiges de laitue", 
+                    price: "16,80 €", 
+                    image: "images/plat/individuel/porc-saute-tiges-de-laitue.JPG",
+                    translations: {
+                        en: "Stir-Fried Lettuce Stems with Sliced Pork",
+                        zh: "莴笋肉片"
+                    }
+                },
+                { 
+                    name: "Abats de poulet au poivre vert de Sichuan", 
+                    price: "16,80 €", 
+                    image: "images/plat/individuel/abats-poulet-poivre-vert-sichuan.JPG",
+                    translations: {
+                        en: "Chicken Offal with Green Sichuan Pepper",
+                        zh: "藤椒鸡杂"
+                    }
                 }
             ],
             legumes: [
@@ -322,6 +387,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     translations: {
                         en: "Sautéed Vegetables",
                         zh: "清炒时蔬"
+                    }
+                },
+                // Nouveaux plats légumes
+                { 
+                    name: "Chou chinois au tofu frit", 
+                    price: "10,80 €", 
+                    image: "images/plat/individuel/chou-chinois-au-tofu-frit.JPG",
+                    translations: {
+                        en: "Napa Cabbage with Fried Tofu",
+                        zh: "白菜油豆腐"
+                    }
+                },
+                { 
+                    name: "Laitue romaine sautée à l'ail", 
+                    price: "16,80 €", 
+                    image: "images/plat/individuel/laitue-romaine-sautee-ail.JPG",
+                    translations: {
+                        en: "Stir-Fried Romaine Lettuce with Garlic",
+                        zh: "蒜蓉油麦菜"
                     }
                 }
             ],
@@ -433,6 +517,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         en: "Soup Rice Noodles",
                         zh: "米粉汤"
                     }
+                },
+                // Nouveau plat soupes
+                { 
+                    name: "Marmite de côtes de porc aux légumes fermentés", 
+                    price: "35,80 €", 
+                    image: "images/plat/individuel/marmite-cotes-de-porc-legumes-fermentes.JPG",
+                    translations: {
+                        en: "Pickled Cabbage and Pork Bone Hotpot",
+                        zh: "酸菜筒骨砂锅"
+                    }
                 }
             ],
             riz: [
@@ -520,6 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         };
 
+        // [Le reste du code original reste exactement le même...]
         // Fonction pour générer les cartes de plats
         const generateDishes = (categoryId, dishes) => {
             const grid = document.getElementById(categoryId);
