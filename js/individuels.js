@@ -542,7 +542,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { 
                     name: "Raviolis (Frit) au Porc et Chou", 
                     price: "12,80 €", 
-                    image: "images/plat/individuel/raviolis_frit_porc_chou.jpg",
+                    image: "images/plat/individuel/raviolis_frit_porc_chou.JPG",
                     translations: {
                         en: "Dumplings (Fried) with Pork and Cabbage",
                         zh: "手工水饺 (15PCS)"
