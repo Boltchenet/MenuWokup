@@ -20,7 +20,7 @@ const individuelTranslations = {
         "Soupes & Nouilles": "Soupes & Nouilles",
         "Riz & Raviolis": "Riz & Raviolis",
 
-        // Plats
+        // Plats existants
         "Bar grillé à la sauce piquante": "Bar grillé à la sauce piquante",
         "Choucroute de poisson": "Choucroute de poisson",
         "Intestins et poisson": "Intestins et poisson",
@@ -76,23 +76,42 @@ const individuelTranslations = {
         "Nouilles de Riz Sautées": "Nouilles de Riz Sautées",
         "Nouilles Sautées": "Nouilles Sautées",
         "Riz Sauté": "Riz Sauté",
-        "Nouilles Pékinnoises": "Nouilles Pékinnoises"
+        "Nouilles Pékinnoises": "Nouilles Pékinnoises",
+
+        // Nouveaux plats
+        "Écrevisses épicées au poivre de Sichuan": "Écrevisses épicées au poivre de Sichuan",
+        "Crevettes braisées à la sauce soja": "Crevettes braisées à la sauce soja",
+        "Salade froide de peau de poisson au poivre vert": "Salade froide de peau de poisson au poivre vert",
+        "Bœuf sauté au melon amer": "Bœuf sauté au melon amer",
+        "Bœuf au poivre vert de Sichuan": "Bœuf au poivre vert de Sichuan",
+        "Émincé de porc sauté aux tiges de laitue": "Émincé de porc sauté aux tiges de laitue",
+        "Abats de poulet au poivre vert de Sichuan": "Abats de poulet au poivre vert de Sichuan",
+        "Chou chinois au tofu frit": "Chou chinois au tofu frit",
+        "Laitue romaine sautée à l'ail": "Laitue romaine sautée à l'ail",
+        "Marmite de côtes de porc aux légumes fermentés": "Marmite de côtes de porc aux légumes fermentés"
     },
     en: {
+        // Navigation
         "Plats principaux": "Main Courses",
         "Fondue": "Fondue",
         "Menu Midi": "Lunch Menu",
+        
+        // Filtres
         "Tous": "All",
         "Poissons": "Fish",
         "Viandes": "Meats",
         "Légumes": "Vegetables",
         "Soupes": "Soups",
         "Riz": "Rice",
+        
+        // Catégories
         "Poissons & Fruits de Mer": "Fish & Seafood",
         "Viandes & Volaille": "Meats & Poultry",
         "Légumes & Tofu": "Vegetables & Tofu",
         "Soupes & Nouilles": "Soups & Noodles",
         "Riz & Raviolis": "Rice & Dumplings",
+
+        // Plats existants
         "Bar grillé à la sauce piquante": "Spicy Grilled Sea Bass",
         "Choucroute de poisson": "Boiled Fish with Pickles",
         "Intestins et poisson": "Intestines and Fish",
@@ -148,23 +167,42 @@ const individuelTranslations = {
         "Nouilles de Riz Sautées": "Fried Rice Noodles (Beef/Chicken/Vegetables/Seafood+2€)",
         "Nouilles Sautées": "Fried Noodles (Beef/Chicken/Seafood+2€)",
         "Riz Sauté": "Fried Rice (Beef/Chicken/Shrimps+2€/Foie Gras+2€)",
-        "Nouilles Pékinnoises": "Noodles with Soybean Paste"
+        "Nouilles Pékinnoises": "Noodles with Soybean Paste",
+
+        // Nouveaux plats
+        "Écrevisses épicées au poivre de Sichuan": "Spicy and Numbing Crayfish",
+        "Crevettes braisées à la sauce soja": "Braised Shrimp in Soy Sauce",
+        "Salade froide de peau de poisson au poivre vert": "Cold Fish Skin Salad with Green Sichuan Pepper",
+        "Bœuf sauté au melon amer": "Bitter Melon Stir-Fried with Beef",
+        "Bœuf au poivre vert de Sichuan": "Beef with Green Sichuan Pepper",
+        "Émincé de porc sauté aux tiges de laitue": "Stir-Fried Lettuce Stems with Sliced Pork",
+        "Abats de poulet au poivre vert de Sichuan": "Chicken Offal with Green Sichuan Pepper",
+        "Chou chinois au tofu frit": "Napa Cabbage with Fried Tofu",
+        "Laitue romaine sautée à l'ail": "Stir-Fried Romaine Lettuce with Garlic",
+        "Marmite de côtes de porc aux légumes fermentés": "Pickled Cabbage and Pork Bone Hotpot"
     },
     zh: {
+        // Navigation
         "Plats principaux": "主菜",
         "Fondue": "火锅",
         "Menu Midi": "午餐菜单",
+        
+        // Filtres
         "Tous": "全部",
         "Poissons": "鱼类",
         "Viandes": "肉类",
         "Légumes": "蔬菜",
         "Soupes": "汤类",
         "Riz": "米饭",
+        
+        // Catégories
         "Poissons & Fruits de Mer": "海鲜类",
         "Viandes & Volaille": "肉类和家禽",
         "Légumes & Tofu": "蔬菜和豆腐",
         "Soupes & Nouilles": "汤和面条",
         "Riz & Raviolis": "米饭和饺子",
+
+        // Plats existants
         "Bar grillé à la sauce piquante": "香辣烤鱼",
         "Choucroute de poisson": "酸菜鱼",
         "Intestins et poisson": "肠肚鱼",
@@ -220,7 +258,19 @@ const individuelTranslations = {
         "Nouilles de Riz Sautées": "炒河粉 (牛肉鸡肉蔬菜海鲜+2€)",
         "Nouilles Sautées": "炒面 (牛肉鸡肉海鲜+2€)",
         "Riz Sauté": "炒饭 (牛肉鸡虾+2€/鹅肝酱+2€)",
-        "Nouilles Pékinnoises": "炸酱面"
+        "Nouilles Pékinnoises": "炸酱面",
+
+        // Nouveaux plats
+        "Écrevisses épicées au poivre de Sichuan": "麻辣小龙虾",
+        "Crevettes braisées à la sauce soja": "红烧虾",
+        "Salade froide de peau de poisson au poivre vert": "凉拌藤椒鱼皮",
+        "Bœuf sauté au melon amer": "苦瓜炒牛肉",
+        "Bœuf au poivre vert de Sichuan": "藤椒牛肉",
+        "Émincé de porc sauté aux tiges de laitue": "莴笋肉片",
+        "Abats de poulet au poivre vert de Sichuan": "藤椒鸡杂",
+        "Chou chinois au tofu frit": "白菜油豆腐",
+        "Laitue romaine sautée à l'ail": "蒜蓉油麦菜",
+        "Marmite de côtes de porc aux légumes fermentés": "酸菜筒骨砂锅"
     }
 };
 
@@ -234,14 +284,24 @@ function updateTranslations(lang) {
             const key = element.getAttribute('data-translate');
             if (translations[key]) {
                 element.textContent = translations[key];
+            } else {
+                console.warn('Missing translation for key:', key);
             }
         });
 
         // Traduire les noms des plats dans les cartes
         document.querySelectorAll('.dish-name').forEach(element => {
-            const originalName = element.getAttribute('data-translate');
+            const originalName = element.getAttribute('data-translate') || element.textContent.trim();
             if (translations[originalName]) {
                 element.textContent = translations[originalName];
+            }
+        });
+
+        // Traduire les textes alternatifs des images
+        document.querySelectorAll('.dish-image').forEach(img => {
+            const originalAlt = img.getAttribute('alt');
+            if (translations[originalAlt]) {
+                img.setAttribute('alt', translations[originalAlt]);
             }
         });
 
@@ -260,9 +320,17 @@ document.addEventListener('DOMContentLoaded', () => {
             languageBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             updateTranslations(lang);
+            
+            // Sauvegarder la préférence de langue
+            localStorage.setItem('preferredLanguage', lang);
         });
     });
     
-    // Initialiser avec le français
-    updateTranslations('fr');
+    // Initialiser avec la langue sauvegardée ou français par défaut
+    const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
+    const activeBtn = document.querySelector(`.language-btn[data-lang="${savedLang}"]`);
+    if (activeBtn) {
+        activeBtn.classList.add('active');
+    }
+    updateTranslations(savedLang);
 });
