@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Zizania avec porc sauté", 
-                    price: "14,80 €", 
+                    price: "16,80 €", 
                     image: "images/plat/individuel/zizania_porc_saute.jpg",
                     translations: {
                         en: "Zizania with Healthy Pork",
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Luffa sauté avec edamames", 
-                    price: "14,80 €", 
+                    price: "16,80 €", 
                     image: "images/plat/individuel/luffa_edamames.jpg",
                     translations: {
                         en: "Luffa with Edamames",
