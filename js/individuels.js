@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             poissons: [
                 { 
                     name: "Bar grillé à la sauce piquante", 
-                    price: "32,00 €", 
+                    price: "32,80 €", 
                     image: "images/plat/individuel/spicy_grilled_sea_bass.jpg",
                     translations: {
                         en: "Spicy Grilled Sea Bass",
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Choucroute de poisson", 
-                    price: "32,00 €", 
+                    price: "32,80 €", 
                     image: "images/plat/individuel/choucroute_de_poisson.jpg",
                     translations: {
                         en: "Boiled Fish with Pickles",
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Intestins et poisson", 
-                    price: "32,00 €", 
+                    price: "32,80 €", 
                     image: "images/plat/individuel/intestins_et_poisson.jpg",
                     translations: {
                         en: "Intestines and Fish",
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Poisson bouilli au piment et poivre", 
-                    price: "32,00 €", 
+                    price: "32,80 €", 
                     image: "images/plat/individuel/poisson_bouilli_au_piment_et_poivre.JPG",
                     translations: {
                         en: "Boiled Fish with Chili and Pepper",
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Crevettes épicées", 
-                    price: "19,00 €", 
+                    price: "19,80 €", 
                     image: "images/plat/individuel/crevettes_epicees.jpg",
                     translations: {
                         en: "Spicy Shrimps",
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Couteaux de mer à l'huile d'oignons verts", 
-                    price: "16,00 €", 
+                    price: "16,80 €", 
                     image: "images/plat/individuel/couteaux_mer_oignons_verts.jpg",
                     translations: {
                         en: "Oil Fried Razor Clam with Green Onions",
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Calamars et crevettes au sel et poivre", 
-                    price: "18,00 €", 
+                    price: "18,80 €", 
                     image: "images/plat/individuel/calamars_crevettes_sel_poivre.jpg",
                     translations: {
                         en: "Squid and Shrimp with Salt and Pepper",
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Calamars sautés avec légumes", 
-                    price: "14,00 €", 
+                    price: "14,80 €", 
                     image: "images/plat/individuel/calamars_sautes_legumes.jpg",
                     translations: {
                         en: "Fried Squid with Pickles",
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             viandes: [
                 { 
                     name: "Porc frit à la sauce aigre-douce", 
-                    price: "15,00 €", 
+                    price: "15,80 €", 
                     image: "images/plat/individuel/fried_pork_sweet_sour_sauce.jpg",
                     translations: {
                         en: "Fried Pork with Sweet and Sour Sauce",
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Marmite de bœuf", 
-                    price: "22,00 €", 
+                    price: "22,80 €", 
                     image: "images/plat/individuel/sichuan_boiled_beef.jpg",
                     translations: {
                         en: "Sichuan Boiled Beef",
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Spécialité de Sichuan (épicé)", 
-                    price: "22,00 €", 
+                    price: "22,80 €", 
                     image: "images/plat/individuel/sichuan_specialty_spicy.jpg",
                     translations: {
                         en: "Sichuan Specialty (Spicy)",
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Pieds de cochon braisés", 
-                    price: "15,00 €", 
+                    price: "15,80 €", 
                     image: "images/plat/individuel/pieds_de_cochon_braises.PNG",
                     translations: {
                         en: "Braised Pork Feets",
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Pot de tendon de bœuf", 
-                    price: "22,00 €", 
+                    price: "22,80 €", 
                     image: "images/plat/individuel/pot_de_tendon_de_boeuf.jpg",
                     translations: {
                         en: "Braised Beef Tendon",
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Pot d'agneau", 
-                    price: "22,00 €", 
+                    price: "22,80 €", 
                     image: "images/plat/individuel/pot_d_agneau.jpg",
                     translations: {
                         en: "Lamb Pot",
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Poulet épicé", 
-                    price: "16,00 €", 
+                    price: "16,80 €", 
                     image: "images/plat/individuel/poulet_epice.jpg",
                     translations: {
                         en: "Spicy Chicken",
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Porc déchiqueté à la sauce d'ail", 
-                    price: "12,00 €", 
+                    price: "12,80 €", 
                     image: "images/plat/individuel/porc_dechiquete_sauce_ail.jpg",
                     translations: {
                         en: "Shredded Pork with Garlic Sauce",
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Chou de Shanghai sauté", 
-                    price: "9,00 €", 
+                    price: "9,80 €", 
                     image: "images/plat/individuel/chou_shanghai_saute.jpg",
                     translations: {
                         en: "Sautéed Shanghai Cabbage",
@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Légumes sautés", 
-                    price: "12,00 €", 
+                    price: "12,80 €", 
                     image: "images/plat/individuel/legumes_sautes.jpg",
                     translations: {
                         en: "Sautéed Vegetables",
