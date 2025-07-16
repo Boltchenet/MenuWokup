@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
             soupes: [
                 { 
                     name: "Mala Tang (Bœuf/Agneau)", 
-                    price: "12,00 €", 
+                    price: "12,80 €", 
                     image: "images/plat/individuel/mala_tang_boeuf_agneau.jpg",
                     translations: {
                         en: "Mala Tang (Beef/Lamb) (Spicy vegetables and meats)",
@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Soupe Pékinoise", 
-                    price: "12,00 €", 
+                    price: "12,80 €", 
                     image: "images/plat/individuel/soupe_pekinoise.jpg",
                     translations: {
                         en: "Hot and Sour Soup",
@@ -430,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Soupe aux tomates et aux œufs", 
-                    price: "12,00 €", 
+                    price: "12,80 €", 
                     image: "images/plat/individuel/soupe_tomates_oeufs.JPG",
                     translations: {
                         en: "Tomato and Egg Soup",
@@ -439,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Soupe aux raviolis de feuilles de tofu au porc", 
-                    price: "14,00 €", 
+                    price: "14,80 €", 
                     image: "images/plat/individuel/soupe_raviolis_tofu_porc.jpg",
                     translations: {
                         en: "Tofu Skin and Pork Dumplings Soup",
