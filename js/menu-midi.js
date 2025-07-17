@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     image: "images/plat/menumidi/perle_de_coco.jpg",
                     translations: {
                         en: "Stuffed sticky rice balls with coconut",
-                        zh: "撒米糕 (2个)"
+                        zh: "糯米糍 (2个)"
                     }
                 },
                 { 
