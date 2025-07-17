@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Fondue JS loaded');
     
     try {
-        // Données COMPLÈTES du menu
+        // Données COMPLÈTES du menu (corrigées selon la version chinoise)
         const menuData = {
             formules: [
                 { 
@@ -24,36 +24,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Tranches d'agneau", price: "5,90 €" },
                 { name: "Bœuf mariné épicé", price: "9,90 €" },
                 { name: "Calamar", price: "9,90 €" },
-                { name: "Champignons tranchés", price: "6,90 €" },
+                { name: "Jambon tranchés", price: "6,90 €" }, // Corrigé
                 { name: "Tripes", price: "6,90 €" },
-                { name: "Sangue en gelée de porc", price: "6,90 €" },
+                { name: "Sang en gelée de porc", price: "6,90 €" }, // Corrigé
                 { name: "Boules de sèche", price: "9,90 €" },
                 { name: "Boules de porc", price: "9,90 €" },
                 { name: "Boulettes de bœuf", price: "9,90 €" },
                 { name: "Assortiment de boules", price: "9,90 €" },
                 { name: "Raviolis feuilles de tofu au porc", price: "9,90 €" },
                 { name: "Filet de morue épicé", price: "9,90 €" },
-                { name: "Crevettes entières", price: "14,90 €" },
-                { name: "Tranches de bar", price: "16,90 €" },
+                { name: "Crevettes", price: "14,90 €" }, // Corrigé
+                { name: "Tranche de bar", price: "16,90 €" }, // Corrigé
                 { name: "Chair de crevette", price: "9,90 €" },
-                { name: "Raviolis œuf au porc", price: "9,90 €" }
+                { name: "Raviolis œufs au porc", price: "9,90 €" } // Corrigé
             ],
             legumes: [
                 { name: "Assortiment de champignons", price: "12,90 €" },
                 { name: "Assortiment de légumes", price: "7,90 €" },
                 { name: "Assortiment de produits à base de soja", price: "12,90 €" },
                 { name: "Algues", price: "4,90 €" },
-                { name: "Colibier à pied velouté", price: "5,90 €" },
+                { name: "Collybie à pied velouté", price: "5,90 €" }, // Corrigé
                 { name: "Champignons shiitake", price: "4,90 €" },
                 { name: "Tranches de pomme de terre", price: "4,90 €" },
                 { name: "Concombres", price: "4,90 €" },
                 { name: "Tofu", price: "4,90 €" },
-                { name: "Rouleau de tofu séché", price: "4,90 €" },
+                { name: "Rouleaux de tofu séché", price: "4,90 €" }, // Corrigé
                 { name: "Feuilles de tofu", price: "4,90 €" },
                 { name: "Vermicelles", price: "4,90 €" },
                 { name: "Chou chinois", price: "4,90 €" },
                 { name: "Pousses de soja", price: "4,90 €" },
-                { name: "Salade", price: "4,90 €" },
+                { name: "Salades", price: "4,90 €" }, // Corrigé
                 { name: "Coriandre", price: "4,90 €" },
                 { name: "Tranches de racine de lotus", price: "4,90 €" },
                 { name: "Champignons noirs", price: "4,90 €" },
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         };
 
-        // Génération des formules (identique à précédemment)
+        // Génération des formules
         const generateFormules = () => {
             const container = document.getElementById('formules-container');
             if (!container) return;
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 formuleLine.innerHTML = `
                     <span class="formule-combo">
-                        ${formule.name}
+                        <span data-translate="${formule.name}">${formule.name}</span>
                         ${formule.description ? `<br><small>${formule.description}</small>` : ''}
                     </span>
                     <span class="formule-price">${formule.price}</span>
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        // Génération des tables (identique à précédemment)
+        // Génération des tables
         const generateTable = (categoryId, items) => {
             const section = document.getElementById(categoryId);
             if (!section) return;
@@ -118,10 +118,37 @@ document.addEventListener('DOMContentLoaded', () => {
             section.appendChild(table);
         };
 
+        // Fonction de traduction
+        const updateTranslations = (lang) => {
+            const translations = fondueTranslations[lang] || fondueTranslations.fr;
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[key]) {
+                    element.textContent = translations[key];
+                }
+            });
+        };
+
+        // Gestion du changement de langue
+        const setupLanguageSwitcher = () => {
+            const languageBtns = document.querySelectorAll('.language-btn');
+            
+            languageBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    languageBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    updateTranslations(lang);
+                });
+            });
+        };
+
         // Initialisation
         generateFormules();
         generateTable('viandes-grid', menuData.viandes);
         generateTable('legumes-grid', menuData.legumes);
+        setupLanguageSwitcher();
+        updateTranslations('fr'); // Défaut: français
 
         // Animation des éléments
         const animateElements = () => {
