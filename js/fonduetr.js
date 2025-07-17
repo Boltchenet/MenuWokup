@@ -152,7 +152,7 @@ const fondueTranslations = {
         "Champignons shiitake": "香菇",
         "Tranches de pomme de terre": "土豆片",
         "Concombres": "黄瓜",
-        "Tofu": "豆腐",
+        "Tofu": "鲜豆腐",
         "Rouleaux de tofu séché": "腐竹",
         "Feuilles de tofu": "厚千张豆腐",
         "Vermicelles": "粉丝",
