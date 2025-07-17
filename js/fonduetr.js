@@ -138,7 +138,7 @@ const fondueTranslations = {
         "Assortiment de boules": "综合丸子拼盘",
         "Raviolis feuilles de tofu au porc": "鲜肉百叶包",
         "Filet de morue épicé": "香辣鳕鱼",
-        "Crevettes entières": "整虾",
+        "Crevettes entières": "新鲜大虾",
         "Tranches de bar": "午餐肉",
         "Chair de crevette": "虾滑",
         "Raviolis œuf au porc": "蛋饺",
