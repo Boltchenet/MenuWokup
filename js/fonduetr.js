@@ -9,8 +9,8 @@ const fondueTranslations = {
         "Prix": "Prix",
         
         // Formules
-        "Formule Bouillon 'Tub Bone Casserole'": "Formule Bouillon 'Tub Bone Casserole'",
-        "Formule Bouillon 'Choucroute de Poisson'": "Formule Bouillon 'Choucroute de Poisson'",
+        "Formule Bouillon 'Tub Bone Casserole'": "Formule Bouillon 'Casserole à os'",
+        "Formule Bouillon 'Choucroute de Poisson'": "Formule Bouillon 'Poisson à la choucroute'",
         
         // Viandes
         "Os": "Os",
@@ -18,37 +18,36 @@ const fondueTranslations = {
         "Tranches d'agneau": "Tranches d'agneau",
         "Bœuf mariné épicé": "Bœuf mariné épicé",
         "Calamar": "Calamar",
-        "Champignons tranchés": "Champignons tranchés",
+        "Jambon tranchés": "Jambon de bœuf en tranches",
         "Tripes": "Tripes",
-        "Sangue en gelée de porc": "Sangue en gelée de porc",
-        "Intestin de sèche": "Intestin de sèche",
-        "Boules de sèche": "Boules de sèche",
+        "Sang en gelée de porc": "Sang de porc",
+        "Boules de sèche": "Boules de seiche",
         "Boules de porc": "Boules de porc",
         "Boulettes de bœuf": "Boulettes de bœuf",
-        "Assortiment de boules": "Assortiment de boules",
-        "Raviolis feuilles de tofu au porc": "Raviolis feuilles de tofu au porc",
+        "Assortiment de boules": "Assortiment de boulettes",
+        "Raviolis feuilles de tofu au porc": "Raviolis en feuille de tofu au porc",
         "Filet de morue épicé": "Filet de morue épicé",
-        "Crevettes entières": "Crevettes entières",
-        "Tranches de bar": "Tranches de bar",
-        "Chair de crevette": "Chair de crevette",
-        "Raviolis œuf au porc": "Raviolis œuf au porc",
+        "Crevettes": "Crevettes",
+        "Tranche de bar": "Tranche de bar",
+        "Chair de crevette": "Pâte de crevette",
+        "Raviolis œufs au porc": "Raviolis aux œufs et porc",
         
         // Légumes
         "Assortiment de champignons": "Assortiment de champignons",
         "Assortiment de légumes": "Assortiment de légumes",
-        "Assortiment de produits à base de soja": "Assortiment de produits à base de soja",
+        "Assortiment de produits à base de soja": "Assortiment de produits au soja",
         "Algues": "Algues",
-        "Colibier à pied velouté": "Colibier à pied velouté",
+        "Collybie à pied velouté": "Collybie à pied velouté",
         "Champignons shiitake": "Champignons shiitake",
         "Tranches de pomme de terre": "Tranches de pomme de terre",
         "Concombres": "Concombres",
         "Tofu": "Tofu",
-        "Rouleau de tofu séché": "Rouleau de tofu séché",
+        "Rouleaux de tofu séché": "Rouleaux de tofu séché",
         "Feuilles de tofu": "Feuilles de tofu",
         "Vermicelles": "Vermicelles",
         "Chou chinois": "Chou chinois",
         "Pousses de soja": "Pousses de soja",
-        "Salade": "Salade",
+        "Salades": "Salades",
         "Coriandre": "Coriandre",
         "Tranches de racine de lotus": "Tranches de racine de lotus",
         "Champignons noirs": "Champignons noirs",
@@ -65,8 +64,8 @@ const fondueTranslations = {
         "Prix": "Price",
         
         // Formules
-        "Formule Bouillon 'Tub Bone Casserole'": "'Tub Bone' Broth Set",
-        "Formule Bouillon 'Choucroute de Poisson'": "'Pickled Fish' Broth Set",
+        "Formule Bouillon 'Tub Bone Casserole'": "'Bone Marrow' Hot Pot Set",
+        "Formule Bouillon 'Choucroute de Poisson'": "'Pickled Fish' Hot Pot Set",
         
         // Viandes
         "Os": "Bones",
@@ -74,36 +73,36 @@ const fondueTranslations = {
         "Tranches d'agneau": "Lamb slices",
         "Bœuf mariné épicé": "Spicy marinated beef",
         "Calamar": "Squid",
-        "Champignons tranchés": "Sliced mushrooms",
-        "Tripes": "Tripe",
-        "Sangue en gelée de porc": "Pork blood curd",
+        "Jambon tranchés": "Beef ham slices",
+        "Tripes": "Beef tripe",
+        "Sang en gelée de porc": "Pork blood",
         "Boules de sèche": "Cuttlefish balls",
-        "Boules de porc": "Pork balls",
-        "Boulettes de bœuf": "Beef balls",
-        "Assortiment de boules": "Assorted balls",
+        "Boules de porc": "Pork meatballs",
+        "Boulettes de bœuf": "Beef meatballs",
+        "Assortiment de boules": "Assorted meatballs",
         "Raviolis feuilles de tofu au porc": "Tofu skin pork dumplings",
         "Filet de morue épicé": "Spicy cod fillet",
-        "Crevettes entières": "Whole shrimps",
-        "Tranches de bar": "Sea bass slices",
+        "Crevettes": "Fresh shrimps",
+        "Tranche de bar": "Sea bass slice",
         "Chair de crevette": "Shrimp paste",
-        "Raviolis œuf au porc": "Egg and pork dumplings",
+        "Raviolis œufs au porc": "Egg pork dumplings",
         
         // Légumes
-        "Assortiment de champignons": "Mushroom assortment",
-        "Assortiment de légumes": "Vegetable assortment",
-        "Assortiment de produits à base de soja": "Soy product assortment",
+        "Assortiment de champignons": "Mushroom platter",
+        "Assortiment de légumes": "Vegetable platter",
+        "Assortiment de produits à base de soja": "Soy products platter",
         "Algues": "Seaweed",
-        "Colibier à pied velouté": "Velvet foot mushrooms",
+        "Collybie à pied velouté": "Enoki mushrooms",
         "Champignons shiitake": "Shiitake mushrooms",
         "Tranches de pomme de terre": "Potato slices",
         "Concombres": "Cucumbers",
         "Tofu": "Tofu",
-        "Rouleau de tofu séché": "Dried tofu roll",
-        "Feuilles de tofu": "Tofu skin",
-        "Vermicelles": "Vermicelli",
+        "Rouleaux de tofu séché": "Dried tofu rolls",
+        "Feuilles de tofu": "Tofu sheets",
+        "Vermicelles": "Vermicelli noodles",
         "Chou chinois": "Chinese cabbage",
         "Pousses de soja": "Bean sprouts",
-        "Salade": "Salad",
+        "Salades": "Lettuce",
         "Coriandre": "Cilantro",
         "Tranches de racine de lotus": "Lotus root slices",
         "Champignons noirs": "Black fungus",
@@ -167,7 +166,7 @@ const fondueTranslations = {
     }
 };
 
-// Fonction de traduction (identique à précédemment)
+// Fonction de traduction
 function updateFondueTranslations(lang) {
     try {
         const translations = fondueTranslations[lang] || fondueTranslations.fr;
@@ -182,7 +181,7 @@ function updateFondueTranslations(lang) {
     }
 }
 
-// Gestion du changement de langue (identique)
+// Gestion du changement de langue
 document.addEventListener('DOMContentLoaded', () => {
     const languageBtns = document.querySelectorAll('.language-btn');
     
@@ -195,5 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    // Défaut: français
     updateFondueTranslations('fr');
 });
