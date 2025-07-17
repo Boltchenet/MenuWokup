@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     image: "images/plat/individuel/intestins_et_poisson.jpg",
                     translations: {
                         en: "Intestines and Fish",
-                        zh: "肠肚鱼"
+                        zh: "肥肠鱼"
                     }
                 },
                 { 
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     image: "images/plat/individuel/calamars_crevettes_sel_poivre.jpg",
                     translations: {
                         en: "Squid and Shrimp with Salt and Pepper",
-                        zh: "椒盐鱿虾"
+                        zh: "椒盐双拼"
                     }
                 },
                 { 
@@ -401,11 +401,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 { 
                     name: "Laitue romaine sautée à l'ail", 
-                    price: "16,80 €", 
+                    price: "14,80 €", 
                     image: "images/plat/individuel/laitue-romaine-sautee-ail.JPG",
                     translations: {
                         en: "Stir-Fried Romaine Lettuce with Garlic",
-                        zh: "蒜蓉油麦菜"
+                        zh: "蒜蓉空心菜"
                     }
                 }
             ],
@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     image: "images/plat/individuel/nouilles_riz_sautees.jpg",
                     translations: {
                         en: "Fried Rice Noodles (Beef/Chicken/Vegetables/Seafood+2€)",
-                        zh: "炒河粉 (牛肉鸡肉蔬菜海鲜+2€)"
+                        zh: "炒河粉（牛肉/鸡肉/蔬菜/海鲜+2€)"
                     }
                 },
                 { 
@@ -590,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     image: "images/plat/individuel/nouilles_sautees.jpg",
                     translations: {
                         en: "Fried Noodles (Beef/Chicken/Seafood+2€)",
-                        zh: "炒面 (牛肉鸡肉海鲜+2€)"
+                        zh: "炒面（牛肉/鸡肉/海鲜+2€)"
                     }
                 },
                 { 
@@ -599,7 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     image: "images/plat/individuel/riz_saute.jpg",
                     translations: {
                         en: "Fried Rice (Beef/Chicken/Shrimps+2€/Foie Gras+2€)",
-                        zh: "炒饭 (牛肉鸡虾+2€/鹅肝酱+2€)"
+                        zh: "炒饭（牛肉/鸡肉/鲜虾+2€/鹅肝酱+2€)"
                     }
                 },
                 { 
