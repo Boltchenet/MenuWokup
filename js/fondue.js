@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Champignons tranchés", price: "6,90 €" },
                 { name: "Tripes", price: "6,90 €" },
                 { name: "Sangue en gelée de porc", price: "6,90 €" },
-                { name: "Intestin de sèche", price: "8,90 €" },
                 { name: "Boules de sèche", price: "9,90 €" },
                 { name: "Boules de porc", price: "9,90 €" },
                 { name: "Boulettes de bœuf", price: "9,90 €" },
