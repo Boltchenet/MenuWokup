@@ -1,0 +1,210 @@
+:root {
+    --gold: #ffbe0b;
+    --gold-light: #ffd166;
+    --dark: #1a1a2e;
+    --light: #f8f9fa;
+    --transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.boissons-hero {
+    position: relative;
+    height: 35vh;
+    min-height: 250px;
+    background: url('../images/imagesite/boissons-bg.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding-top: 110px;
+    margin-bottom: 0;
+}
+
+.boissons-hero h1 {
+    position: relative;
+    z-index: 2;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+}
+
+/* Menu Container */
+.boissons-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    position: relative;
+    background-color: rgba(26, 26, 46, 0.95);
+    z-index: 2;
+}
+
+.boissons-section {
+    margin-bottom: 3rem;
+    position: relative;
+    scroll-margin-top: 180px;
+}
+
+.boissons-section:not(:last-child)::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: rgba(255, 190, 11, 0.3);
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.boissons-title {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Liste des boissons classiques */
+.boissons-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.boisson-item {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 190, 11, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.boisson-item:hover {
+    background: rgba(255, 190, 11, 0.1);
+}
+
+.boisson-name {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.1rem;
+    color: var(--light);
+    flex: 1;
+}
+
+.boisson-price {
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+/* Boissons spéciales */
+.special-boissons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.special-boisson-card {
+    background: rgba(26, 26, 46, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid var(--gold);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.special-boisson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 190, 11, 0.3);
+}
+
+.special-boisson-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(255, 190, 11, 0.3);
+    loading: lazy;
+    aspect-ratio: 4/3;
+}
+
+.special-boisson-info {
+    padding: 1.2rem;
+    background: linear-gradient(to bottom, rgba(26, 26, 46, 0.9), rgba(58, 134, 255, 0.1));
+}
+
+.special-boisson-name {
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+}
+
+.special-boisson-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+}
+
+.special-boisson-price {
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .boissons-hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .boissons-hero {
+        height: 30vh;
+        padding-top: 100px;
+    }
+    
+    .boissons-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .special-boissons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .special-boisson-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .boissons-hero {
+        height: 25vh;
+        min-height: 200px;
+        padding-top: 90px;
+    }
+    
+    .boissons-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .boissons-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .special-boissons-grid {
+        grid-template-columns: 1fr;
+    }
+}
