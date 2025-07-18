@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Jambon tranchés", price: "6,90 €" },
                 { name: "Tripes", price: "6,90 €" },
                 { name: "Sang en gelée de porc", price: "6,90 €" },
-                { name: "Intestins de seiche", price: "6,90 €" },
+                { name: "Intestins de seiche", price: "8,90 €" },
                 { name: "Boules de sèche", price: "9,90 €" },
                 { name: "Boules de porc", price: "9,90 €" },
                 { name: "Boulettes de bœuf", price: "9,90 €" },
