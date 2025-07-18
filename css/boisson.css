@@ -104,53 +104,63 @@
     margin-left: 1rem;
 }
 
-/* Boissons spéciales */
+/* Nouveau style pour les vins */
+.vins-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.vin-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(26, 26, 46, 0.6);
+    border-left: 3px solid var(--gold);
+    transition: var(--transition);
+}
+
+.vin-item:hover {
+    background: rgba(255, 190, 11, 0.1);
+}
+
+.vin-name {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.1rem;
+    color: var(--light);
+    margin-bottom: 0.5rem;
+}
+
+.vin-price {
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* Style simplifié pour les boissons spéciales */
 .special-boissons-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
 }
 
 .special-boisson-card {
-    background: rgba(26, 26, 46, 0.8);
-    border-radius: 8px;
-    overflow: hidden;
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: 5px;
+    padding: 1rem;
+    border-left: 3px solid var(--gold);
     transition: var(--transition);
-    border: 1px solid var(--gold);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .special-boisson-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255, 190, 11, 0.3);
-}
-
-.special-boisson-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    border-bottom: 1px solid rgba(255, 190, 11, 0.3);
-    loading: lazy;
-    aspect-ratio: 4/3;
-}
-
-.special-boisson-info {
-    padding: 1.2rem;
-    background: linear-gradient(to bottom, rgba(26, 26, 46, 0.9), rgba(58, 134, 255, 0.1));
+    background: rgba(255, 190, 11, 0.1);
 }
 
 .special-boisson-name {
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.1rem;
     color: var(--gold-light);
-    margin-bottom: 0.5rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 500;
-}
-
-.special-boisson-desc {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 0.5rem;
 }
 
@@ -158,8 +168,7 @@
     color: var(--gold);
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 1.3rem;
-    margin-top: 0.5rem;
+    font-size: 1.1rem;
 }
 
 /* Responsive Design */
@@ -183,20 +192,15 @@
         font-size: 1.8rem;
     }
     
-    .special-boissons-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    
-    .special-boisson-image {
-        height: 180px;
-    }
-    
-    .boisson-name, .special-boisson-name {
+    .boisson-name,
+    .special-boisson-name,
+    .vin-name {
         font-size: 1rem;
     }
     
-    .boisson-price, .special-boisson-price {
+    .boisson-price,
+    .special-boisson-price,
+    .vin-price {
         font-size: 1.1rem;
     }
 }
@@ -212,11 +216,9 @@
         font-size: 2.2rem;
     }
     
-    .boissons-list {
-        grid-template-columns: 1fr;
-    }
-    
-    .special-boissons-grid {
+    .boissons-list,
+    .special-boissons-grid,
+    .vins-container {
         grid-template-columns: 1fr;
     }
     
@@ -225,11 +227,9 @@
         gap: 0.5rem;
     }
     
-    .boisson-item {
+    .boisson-item,
+    .special-boisson-card,
+    .vin-item {
         padding: 0.8rem;
-    }
-    
-    .special-boisson-info {
-        padding: 1rem;
     }
 }
