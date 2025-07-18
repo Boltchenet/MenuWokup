@@ -73,7 +73,7 @@ const menuMidiTranslations = {
         "Soupe de Wontons (Porc et Crevette)": "馄饨",
         "Raviolis au Porc et Chou (12 pièces)": "手工水饺",
         "Boulette de riz avec sésame (4 pièces)": "糯汤圆 (4个)",
-        "Perle de coco (2 pièces)": "撒米糕 (2个)",
+        "Perle de coco (2 pièces)": "糯米糍 (2个)",
         "Lichi au sirop": "糖水荔枝",
         "Ananas au sirop": "糖水菠萝"
     }
