@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const menuData = {
             poissons: [
                 { 
+                    name: "Marmite de côtes de porc aux légumes fermentés", 
+                    price: "35,80 €", 
+                    image: "images/plat/individuel/marmite-cotes-de-porc-legumes-fermentes.JPG",
+                    translations: {
+                        en: "Pickled Cabbage and Pork Bone Hotpot",
+                        zh: "酸菜筒骨砂锅"
+                    }
+                },
+                { 
                     name: "Bar grillé à la sauce piquante", 
                     price: "32,80 €", 
                     image: "images/plat/individuel/spicy_grilled_sea_bass.jpg",
@@ -407,16 +416,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             ],
             soupes: [
-                // MODIFICATION UNIQUE ICI : Le plat déplacé en premier
-                { 
-                    name: "Marmite de côtes de porc aux légumes fermentés", 
-                    price: "35,80 €", 
-                    image: "images/plat/individuel/marmite-cotes-de-porc-legumes-fermentes.JPG",
-                    translations: {
-                        en: "Pickled Cabbage and Pork Bone Hotpot",
-                        zh: "酸菜筒骨砂锅"
-                    }
-                },
                 { 
                     name: "Mala Tang (Bœuf/Agneau)", 
                     price: "12,80 €", 
@@ -611,7 +610,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         };
 
-        // Fonction pour générer les cartes de plats (inchangée)
+        // Fonction pour générer les cartes de plats
         const generateDishes = (categoryId, dishes) => {
             const grid = document.getElementById(categoryId);
             if (!grid) {
@@ -638,14 +637,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        // Génération des sections (inchangée)
+        // Génération des sections
         generateDishes('poissons-grid', menuData.poissons);
         generateDishes('viandes-grid', menuData.viandes);
         generateDishes('legumes-grid', menuData.legumes);
         generateDishes('soupes-grid', menuData.soupes);
         generateDishes('riz-grid', menuData.riz);
 
-        // Animation des cartes (inchangée)
+        // Animation des cartes
         const dishCards = document.querySelectorAll('.dish-card');
         dishCards.forEach((card, index) => {
             card.style.opacity = '0';
@@ -658,7 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100 + (index * 100));
         });
 
-        // Gestion des filtres (inchangée)
+        // Gestion des filtres
         document.querySelectorAll('.filter-tab').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
@@ -668,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Activer le premier filtre par défaut (inchangé)
+        // Activer le premier filtre par défaut
         document.querySelector('.filter-tab[data-category="poissons"]').classList.add('active');
 
         function scrollToCategory(category) {
