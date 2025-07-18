@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     image: "images/plat/individuel/intestins_et_poisson.jpg",
                     translations: {
                         en: "Intestines and Fish",
-                        zh: "肥肠鱼"
+                        zh: "caca"
                     }
                 },
                 { 
