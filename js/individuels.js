@@ -6,15 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const menuData = {
             poissons: [
                 { 
-                    name: "Marmite de côtes de porc aux légumes fermentés", 
-                    price: "35,80 €", 
-                    image: "images/plat/individuel/marmite-cotes-de-porc-legumes-fermentes.JPG",
-                    translations: {
-                        en: "Pickled Cabbage and Pork Bone Hotpot",
-                        zh: "酸菜筒骨砂锅"
-                    }
-                },
-                { 
                     name: "Bar grillé à la sauce piquante", 
                     price: "32,80 €", 
                     image: "images/plat/individuel/spicy_grilled_sea_bass.jpg",
@@ -115,6 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             ],
             viandes: [
+                { 
+                    name: "Marmite de côtes de porc aux légumes fermentés", 
+                    price: "35,80 €", 
+                    image: "images/plat/individuel/marmite-cotes-de-porc-legumes-fermentes.JPG",
+                    translations: {
+                        en: "Pickled Cabbage and Pork Bone Hotpot",
+                        zh: "酸菜筒骨砂锅"
+                    }
+                },
                 { 
                     name: "Porc frit à la sauce aigre-douce", 
                     price: "15,80 €", 
