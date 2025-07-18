@@ -4,6 +4,7 @@ const individuelTranslations = {
         "Plats principaux": "Plats principaux",
         "Fondue": "Fondue",
         "Menu Midi": "Menu Midi",
+        "Boissons": "Boissons",
         
         // Filtres
         "Tous": "Tous",
@@ -93,6 +94,7 @@ const individuelTranslations = {
         "Plats principaux": "Main Courses",
         "Fondue": "Fondue",
         "Menu Midi": "Lunch Menu",
+        "Boissons": "Drinks",
         
         // Filtres
         "Tous": "All",
@@ -182,6 +184,7 @@ const individuelTranslations = {
         "Plats principaux": "主菜",
         "Fondue": "火锅",
         "Menu Midi": "午餐菜单",
+        "Boissons": "饮料",
         
         // Filtres
         "Tous": "全部",
