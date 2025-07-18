@@ -24,36 +24,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Tranches d'agneau", price: "5,90 €" },
                 { name: "Bœuf mariné épicé", price: "9,90 €" },
                 { name: "Calamar", price: "9,90 €" },
-                { name: "Jambon tranchés", price: "6,90 €" }, // Corrigé
+                { name: "Jambon tranchés", price: "6,90 €" },
                 { name: "Tripes", price: "6,90 €" },
-                { name: "Sang en gelée de porc", price: "6,90 €" }, // Corrigé
+                { name: "Sang en gelée de porc", price: "6,90 €" },
+                { name: "Intestins de seiche", price: "6,90 €" }, // Ajouté
                 { name: "Boules de sèche", price: "9,90 €" },
                 { name: "Boules de porc", price: "9,90 €" },
                 { name: "Boulettes de bœuf", price: "9,90 €" },
                 { name: "Assortiment de boules", price: "9,90 €" },
                 { name: "Raviolis feuilles de tofu au porc", price: "9,90 €" },
                 { name: "Filet de morue épicé", price: "9,90 €" },
-                { name: "Crevettes", price: "14,90 €" }, // Corrigé
-                { name: "Tranche de bar", price: "16,90 €" }, // Corrigé
+                { name: "Crevettes", price: "14,90 €" },
+                { name: "Tranche de bar", price: "16,90 €" },
                 { name: "Chair de crevette", price: "9,90 €" },
-                { name: "Raviolis œufs au porc", price: "9,90 €" } // Corrigé
+                { name: "Raviolis œufs au porc", price: "9,90 €" }
             ],
             legumes: [
                 { name: "Assortiment de champignons", price: "12,90 €" },
                 { name: "Assortiment de légumes", price: "7,90 €" },
                 { name: "Assortiment de produits à base de soja", price: "12,90 €" },
                 { name: "Algues", price: "4,90 €" },
-                { name: "Collybie à pied velouté", price: "5,90 €" }, // Corrigé
+                { name: "Collybie à pied velouté", price: "5,90 €" },
                 { name: "Champignons shiitake", price: "4,90 €" },
                 { name: "Tranches de pomme de terre", price: "4,90 €" },
                 { name: "Concombres", price: "4,90 €" },
                 { name: "Tofu", price: "4,90 €" },
-                { name: "Rouleaux de tofu séché", price: "4,90 €" }, // Corrigé
+                { name: "Rouleaux de tofu séché", price: "4,90 €" },
                 { name: "Feuilles de tofu", price: "4,90 €" },
                 { name: "Vermicelles", price: "4,90 €" },
                 { name: "Chou chinois", price: "4,90 €" },
                 { name: "Pousses de soja", price: "4,90 €" },
-                { name: "Salades", price: "4,90 €" }, // Corrigé
+                { name: "Salades", price: "4,90 €" },
                 { name: "Coriandre", price: "4,90 €" },
                 { name: "Tranches de racine de lotus", price: "4,90 €" },
                 { name: "Champignons noirs", price: "4,90 €" },
