@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Données des boissons
     const boissonsData = {
         classiques: [
             { name: "王老吉 Thé aux herbes chinoises (33cl)", price: "3€" },
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     };
 
-    // Remplir les boissons classiques
     const boissonsList = document.querySelector('.boissons-list');
     boissonsData.classiques.forEach(boisson => {
         const item = document.createElement('div');
@@ -53,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
         boissonsList.appendChild(item);
     });
 
-    // Remplir les boissons spéciales
     const specialGrid = document.querySelector('.special-boissons-grid');
     boissonsData.speciales.forEach(boisson => {
         const card = document.createElement('div');
@@ -69,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         specialGrid.appendChild(card);
     });
 
-    // Remplir les vins
     const vinsList = document.querySelectorAll('.boissons-list')[1];
     boissonsData.vins.forEach(vin => {
         const item = document.createElement('div');
