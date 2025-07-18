@@ -1,6 +1,10 @@
 const menuMidiTranslations = {
     fr: {
+        // Navigation
+        "Plats principaux": "Plats principaux",
+        "Fondue": "Fondue",
         "Menu Midi": "Menu Midi",
+        "Boissons": "Boissons",
         "Formule Midi": "Formule Midi",
         "Entrée + Plat ou Plat + Dessert": "Entrée + Plat ou Plat + Dessert",
         "Entrée + Plat + Dessert": "Entrée + Plat + Dessert",
@@ -26,7 +30,11 @@ const menuMidiTranslations = {
         "Ananas au sirop": "Ananas au sirop"
     },
     en: {
+        // Navigation
+        "Plats principaux": "Main Courses",
+        "Fondue": "Fondue",
         "Menu Midi": "Lunch Menu",
+        "Boissons": "Drinks",
         "Formule Midi": "Lunch Set",
         "Entrée + Plat ou Plat + Dessert": "Starter + Main or Main + Dessert",
         "Entrée + Plat + Dessert": "Starter + Main + Dessert",
@@ -52,7 +60,11 @@ const menuMidiTranslations = {
         "Ananas au sirop": "Pineapple in syrup"
     },
     zh: {
+        // Navigation
+        "Plats principaux": "主菜",
+        "Fondue": "火锅",
         "Menu Midi": "午餐菜单",
+        "Boissons": "饮料",
         "Formule Midi": "午餐套餐",
         "Entrée + Plat ou Plat + Dessert": "前菜+主菜 或 主菜+甜点",
         "Entrée + Plat + Dessert": "前菜+主菜+甜点",
