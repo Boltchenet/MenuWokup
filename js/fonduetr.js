@@ -131,6 +131,7 @@ const fondueTranslations = {
         "Jambon tranchés": "牛餐肉",
         "Tripes": "牛百叶",
         "Sang en gelée de porc": "猪血",
+        "Intestins de seiche": "肥肠",
         "Boules de sèche": "墨鱼丸",
         "Boules de porc": "包心贡丸",
         "Boulettes de bœuf": "牛肉丸",
