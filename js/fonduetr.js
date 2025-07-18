@@ -1,5 +1,10 @@
 const fondueTranslations = {
     fr: {
+        // Navigation
+        "Plats principaux": "Plats principaux",
+        "Fondue": "Fondue",
+        "Menu Midi": "Menu Midi",
+        "Boissons": "Boissons",
         // Menu
         "Fondue Chinoise": "Fondue Chinoise",
         "Formules": "Formules",
@@ -58,6 +63,11 @@ const fondueTranslations = {
         "Wontons": "Wontons"
     },
     en: {
+        // Navigation
+        "Plats principaux": "Main Courses",
+        "Fondue": "Fondue",
+        "Menu Midi": "Lunch Menu",
+        "Boissons": "Drinks",
         // Menu
         "Fondue Chinoise": "Chinese Hot Pot",
         "Formules": "Set Menus",
@@ -116,6 +126,11 @@ const fondueTranslations = {
         "Wontons": "Wontons"
     },
     zh: {
+        // Navigation
+        "Plats principaux": "主菜",
+        "Fondue": "火锅",
+        "Menu Midi": "午餐菜单",
+        "Boissons": "饮料",
         // Menu
         "Fondue Chinoise": "中式火锅",
         "Formules": "套餐",
