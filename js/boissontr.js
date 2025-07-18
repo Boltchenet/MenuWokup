@@ -1,18 +1,13 @@
 const boissonTranslations = {
     fr: {
-        // Navigation
         "Plats principaux": "Plats principaux",
         "Fondue": "Fondue",
         "Menu Midi": "Menu Midi",
         "Boissons": "Boissons",
-        
-        // Titres
         "Boissons & Vins": "Boissons & Vins",
         "Boissons Fraîches": "Boissons Fraîches",
         "Nos Spécialités": "Nos Spécialités",
         "Vins & Bières": "Vins & Bières",
-        
-        // Boissons classiques
         "王老吉 Thé aux herbes chinoises (33cl)": "王老吉 Thé aux herbes chinoises (33cl)",
         "Coca-Cola (33cl)": "Coca-Cola (33cl)",
         "Coca-Cola Zero (33cl)": "Coca-Cola Zero (33cl)",
@@ -27,12 +22,8 @@ const boissonTranslations = {
         "Thé vert": "Thé vert",
         "Café": "Café",
         "Café au lait": "Café au lait",
-        
-        // Boissons spéciales
         "Thé au citron (fait maison)": "Thé au citron (fait maison)",
         "Thé aux prunes aigres": "Thé aux prunes aigres",
-        
-        // Vins
         "Bière Tsingtao (33cl)": "Bière Tsingtao (33cl)",
         "Bière Tsingtao (64cl)": "Bière Tsingtao (64cl)",
         "Vin blanc (Entre-deux-Mers)": "Vin blanc (Entre-deux-Mers)",
@@ -41,26 +32,21 @@ const boissonTranslations = {
         "Vin rouge (Saint-Émilion Grand Cru)": "Vin rouge (Saint-Émilion Grand Cru)"
     },
     en: {
-        // Navigation
         "Plats principaux": "Main Courses",
         "Fondue": "Fondue",
         "Menu Midi": "Lunch Menu",
         "Boissons": "Drinks",
-        
-        // Titres
         "Boissons & Vins": "Drinks & Wines",
         "Boissons Fraîches": "Refreshments",
         "Nos Spécialités": "Our Specialties",
         "Vins & Bières": "Wines & Beers",
-        
-        // Boissons classiques
-        "王老吉 Thé aux herbes chinoises (33cl)": "Wang Lao Ji Chinese Herbal Tea (33cl)",
+        "王老吉 Thé aux herbes chinoises (33cl)": "Wang Lao Ji Herbal Tea (33cl)",
         "Coca-Cola (33cl)": "Coca-Cola (33cl)",
         "Coca-Cola Zero (33cl)": "Coca-Cola Zero (33cl)",
         "Fanta (33cl)": "Fanta (33cl)",
         "7Up (33cl)": "7Up (33cl)",
         "Ice Tea (33cl)": "Ice Tea (33cl)",
-        "Perrier (33cl/1L)": "Perrier Sparkling Water (33cl/1L)",
+        "Perrier (33cl/1L)": "Perrier (33cl/1L)",
         "Eau minérale (50cl/1.5L)": "Mineral Water (50cl/1.5L)",
         "Lait de coco (33cl)": "Coconut Milk (33cl)",
         "Jus de litchi (25cl)": "Lychee Juice (25cl)",
@@ -68,12 +54,8 @@ const boissonTranslations = {
         "Thé vert": "Green Tea",
         "Café": "Coffee",
         "Café au lait": "Coffee with Milk",
-        
-        // Boissons spéciales
         "Thé au citron (fait maison)": "Homemade Lemon Tea",
         "Thé aux prunes aigres": "Sour Plum Tea",
-        
-        // Vins
         "Bière Tsingtao (33cl)": "Tsingtao Beer (33cl)",
         "Bière Tsingtao (64cl)": "Tsingtao Beer (64cl)",
         "Vin blanc (Entre-deux-Mers)": "White Wine (Entre-deux-Mers)",
@@ -82,19 +64,14 @@ const boissonTranslations = {
         "Vin rouge (Saint-Émilion Grand Cru)": "Red Wine (Saint-Émilion Grand Cru)"
     },
     zh: {
-        // Navigation
         "Plats principaux": "主菜",
         "Fondue": "火锅",
         "Menu Midi": "午餐菜单",
         "Boissons": "饮料",
-        
-        // Titres
         "Boissons & Vins": "酒水和饮料",
         "Boissons Fraîches": "饮料",
         "Nos Spécialités": "特色饮品",
         "Vins & Bières": "红酒和啤酒",
-        
-        // Boissons classiques
         "王老吉 Thé aux herbes chinoises (33cl)": "王老吉凉茶 (33cl)",
         "Coca-Cola (33cl)": "可口可乐 (33cl)",
         "Coca-Cola Zero (33cl)": "零度可乐 (33cl)",
@@ -109,12 +86,8 @@ const boissonTranslations = {
         "Thé vert": "绿茶",
         "Café": "咖啡",
         "Café au lait": "牛奶咖啡",
-        
-        // Boissons spéciales
         "Thé au citron (fait maison)": "自制柠檬茶",
         "Thé aux prunes aigres": "酸梅汤",
-        
-        // Vins
         "Bière Tsingtao (33cl)": "青岛啤酒 (33cl)",
         "Bière Tsingtao (64cl)": "青岛啤酒 (64cl)",
         "Vin blanc (Entre-deux-Mers)": "白葡萄酒 (Entre-deux-Mers)",
@@ -124,12 +97,10 @@ const boissonTranslations = {
     }
 };
 
-// Fonction de traduction
 function updateTranslations(lang) {
     try {
         const translations = boissonTranslations[lang] || boissonTranslations.fr;
         
-        // Traduire les éléments de navigation et titres
         document.querySelectorAll('[data-translate]').forEach(element => {
             const key = element.getAttribute('data-translate');
             if (translations[key]) {
@@ -137,7 +108,6 @@ function updateTranslations(lang) {
             }
         });
 
-        // Traduire les noms des boissons
         document.querySelectorAll('.boisson-name, .special-boisson-name').forEach(element => {
             const originalName = element.textContent.trim();
             if (translations[originalName]) {
@@ -150,7 +120,6 @@ function updateTranslations(lang) {
     }
 }
 
-// Gestion du changement de langue
 document.addEventListener('DOMContentLoaded', () => {
     const languageBtns = document.querySelectorAll('.language-btn');
     
@@ -160,13 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
             languageBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             updateTranslations(lang);
-            
-            // Sauvegarder la préférence de langue
             localStorage.setItem('preferredLanguage', lang);
         });
     });
     
-    // Initialiser avec la langue sauvegardée ou français par défaut
     const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
     const activeBtn = document.querySelector(`.language-btn[data-lang="${savedLang}"]`);
     if (activeBtn) {
