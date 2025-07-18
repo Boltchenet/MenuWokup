@@ -4,6 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
         // Données du menu
         const menuData = {
+            // Plat spécial ajouté hors catégories
+            special: [
+                { 
+                    name: "Marmite de côtes de porc aux légumes fermentés", 
+                    price: "35,80 €", 
+                    image: "images/plat/individuel/marmite-cotes-de-porc-legumes-fermentes.JPG",
+                    translations: {
+                        en: "Pickled Cabbage and Pork Bone Hotpot",
+                        zh: "酸菜筒骨砂锅"
+                    }
+                }
+            ],
             poissons: [
                 { 
                     name: "Bar grillé à la sauce piquante", 
@@ -77,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         zh: "鱿鱼炒蔬菜"
                     }
                 },
-                // Nouveaux plats poissons
                 { 
                     name: "Écrevisses épicées au poivre de Sichuan", 
                     price: "16,80 €", 
@@ -251,7 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         zh: "椒盐排骨"
                     }
                 },
-                // Nouveaux plats viandes
                 { 
                     name: "Bœuf sauté au melon amer", 
                     price: "16,80 €", 
@@ -389,7 +399,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         zh: "清炒时蔬"
                     }
                 },
-                // Nouveaux plats légumes
                 { 
                     name: "Chou chinois au tofu frit", 
                     price: "10,80 €", 
@@ -517,16 +526,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         en: "Soup Rice Noodles",
                         zh: "米粉汤"
                     }
-                },
-                // Nouveau plat soupes
-                { 
-                    name: "Marmite de côtes de porc aux légumes fermentés", 
-                    price: "35,80 €", 
-                    image: "images/plat/individuel/marmite-cotes-de-porc-legumes-fermentes.JPG",
-                    translations: {
-                        en: "Pickled Cabbage and Pork Bone Hotpot",
-                        zh: "酸菜筒骨砂锅"
-                    }
                 }
             ],
             riz: [
@@ -614,11 +613,24 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         };
 
-        // [Le reste du code original reste exactement le même...]
-        // Fonction pour générer les cartes de plats
+        // Fonction pour générer les cartes de plats (modifiée pour gérer le plat spécial)
         const generateDishes = (categoryId, dishes) => {
             const grid = document.getElementById(categoryId);
             if (!grid) {
+                // Pour le plat spécial, on crée une nouvelle section si elle n'existe pas
+                if (categoryId === 'special-grid') {
+                    const menuContainer = document.querySelector('.menu-container');
+                    if (!menuContainer) return;
+                    
+                    const specialSection = document.createElement('section');
+                    specialSection.id = 'special';
+                    specialSection.className = 'menu-section';
+                    specialSection.innerHTML = `
+                        <div class="grid" id="special-grid"></div>
+                    `;
+                    menuContainer.prepend(specialSection);
+                    return generateDishes('special-grid', dishes);
+                }
                 console.error(`Element #${categoryId} not found`);
                 return;
             }
@@ -628,7 +640,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dishes.forEach(dish => {
                 const dishCard = document.createElement('div');
                 dishCard.className = 'dish-card';
-                dishCard.dataset.category = dish.category;
+                dishCard.dataset.category = dish.category || 'special';
                 
                 dishCard.innerHTML = `
                     <img src="${dish.image}" alt="${dish.name}" class="dish-image" loading="lazy">
@@ -642,7 +654,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        // Génération des sections
+        // Génération des sections (le plat spécial en premier)
+        generateDishes('special-grid', menuData.special);
         generateDishes('poissons-grid', menuData.poissons);
         generateDishes('viandes-grid', menuData.viandes);
         generateDishes('legumes-grid', menuData.legumes);
@@ -662,7 +675,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100 + (index * 100));
         });
 
-         // Gestion des filtres
+        // Gestion des filtres
         document.querySelectorAll('.filter-tab').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
