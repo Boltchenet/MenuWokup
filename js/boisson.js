@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const boissonsData = {
         classiques: [
-            { name: "王老吉 Thé aux herbes chinoises (33cl)", price: "3€" },
+            { name: "Wang Lao Ji Thé aux herbes chinoises (33cl)", price: "3€" },
             { name: "Coca-Cola (33cl)", price: "3€" },
             { name: "Coca-Cola Zero (33cl)", price: "3€" },
             { name: "Fanta (33cl)", price: "3€" },
@@ -40,17 +40,19 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     };
 
+    // Remplir les boissons classiques
     const boissonsList = document.querySelector('.boissons-list');
     boissonsData.classiques.forEach(boisson => {
         const item = document.createElement('div');
         item.className = 'boisson-item';
         item.innerHTML = `
-            <div class="boisson-name">${boisson.name}</div>
+            <div class="boisson-name" data-translate-id="${boisson.name}">${boisson.name}</div>
             <div class="boisson-price">${boisson.price}</div>
         `;
         boissonsList.appendChild(item);
     });
 
+    // Remplir les boissons spéciales
     const specialGrid = document.querySelector('.special-boissons-grid');
     boissonsData.speciales.forEach(boisson => {
         const card = document.createElement('div');
@@ -58,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.innerHTML = `
             <img src="${boisson.image}" alt="${boisson.name}" class="special-boisson-image" loading="lazy">
             <div class="special-boisson-info">
-                <h3 class="special-boisson-name">${boisson.name}</h3>
+                <h3 class="special-boisson-name" data-translate-id="${boisson.name}">${boisson.name}</h3>
                 <p class="special-boisson-desc">${boisson.desc}</p>
                 <div class="special-boisson-price">${boisson.price}</div>
             </div>
@@ -66,12 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
         specialGrid.appendChild(card);
     });
 
+    // Remplir les vins
     const vinsList = document.querySelectorAll('.boissons-list')[1];
     boissonsData.vins.forEach(vin => {
         const item = document.createElement('div');
         item.className = 'boisson-item';
         item.innerHTML = `
-            <div class="boisson-name">${vin.name}</div>
+            <div class="boisson-name" data-translate-id="${vin.name}">${vin.name}</div>
             <div class="boisson-price">${vin.price}</div>
         `;
         vinsList.appendChild(item);
