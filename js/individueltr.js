@@ -254,7 +254,7 @@ const individuelTranslations = {
         "Soupe de nouilles aux intestins de porc": "肥肠面",
         "Soupe de nouilles à la marmite de bœuf": "水煮牛肉面",
         "Soupe de nouilles à la choucroute et porc haché cru": "酸菜肉糜面",
-        "Nouilles aux tomates et bœuf": "番茄牛肉面",
+        "Nouilles aux tomates et bœuf": "番茄牛腩面",
         "Soupe de nouilles aux pieds de cochon": "猪脚面",
         "Soupe de nouilles à la choucroute de poisson": "酸菜鱼面",
         "Soupe de nouilles aux côtes de porc saumuré": "排骨面",
