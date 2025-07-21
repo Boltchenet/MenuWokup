@@ -10,15 +10,23 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "Perrier (33cl/1L)", price: "3€ (33cl)<br>5€ (1L)" },
             { name: "Eau minérale (50cl/1.5L)", price: "3€ (50cl)<br>5€ (1.5L)" },
             { name: "Lait de coco (33cl)", price: "3€" },
-            { name: "Jus de litchi (25cl)", price: "3€" },
+            { name: "Jus de litchi (33cl)", price: "5€" }, // Modifié de 25cl à 33cl
             { name: "Lait de soja (33cl)", price: "3€" },
             { name: "Thé vert", price: "3€/personne" },
             { name: "Café", price: "2€" },
             { name: "Café au lait", price: "3€" }
         ],
         speciales: [
-            { name: "Thé au citron (fait maison)", price: "4€ (VERRE)<br>8.5€ (CARAFE)" },
-            { name: "Thé aux prunes aigres", price: "4€ (VERRE)<br>8.5€ (CARAFE)" }
+            { 
+                name: "Thé au citron (fait maison)", 
+                price: "5€ (CARAFE)", // Format modifié
+                image: "images/boissons/the-citron.jpg"
+            },
+            { 
+                name: "Thé aux prunes aigres", 
+                price: "5€ (CARAFE)", // Format modifié
+                image: "images/boissons/the-prune.jpg"
+            }
         ],
         vins: [
             { name: "Bière Tsingtao (33cl)", price: "4.9€" },
@@ -30,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     };
 
-    // Boissons classiques
+    // Remplir les boissons classiques
     const boissonsList = document.querySelector('.boissons-list');
     boissonsData.classiques.forEach(boisson => {
         const item = document.createElement('div');
@@ -42,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         boissonsList.appendChild(item);
     });
 
-    // Boissons spéciales
+    // Remplir les boissons spéciales
     const specialGrid = document.querySelector('.special-boissons-grid');
     boissonsData.speciales.forEach(boisson => {
         const card = document.createElement('div');
@@ -54,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         specialGrid.appendChild(card);
     });
 
-    // Vins
+    // Remplir les vins
     const vinsSection = document.querySelectorAll('.boissons-section')[2];
     const oldVinsList = vinsSection.querySelector('.boissons-list');
     if (oldVinsList) oldVinsList.remove();
