@@ -262,7 +262,7 @@ const individuelTranslations = {
         "Riz nature": "白米饭",
         "Raviolis (Frit) au Porc et Chou": "手工水饺 (15PCS)",
         "Soupe de Wontons": "馄饨",
-        "Gâteau de Riz Glutineux Sauté": "炒年糕 (炒年糕（牛肉/鸡肉/蔬菜/海鲜+2€))",
+        "Gâteau de Riz Glutineux Sauté": "炒年糕（牛肉/鸡肉/蔬菜/海鲜+2€)",
         "Nouilles à l'Agneau": "红焖羊肉面",
         "Nouilles de Riz Sautées": "炒河粉（牛肉/鸡肉/蔬菜/海鲜+2€)",
         "Nouilles Sautées": "炒面（牛肉/鸡肉/海鲜+2€)",
