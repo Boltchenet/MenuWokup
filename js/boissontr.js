@@ -22,7 +22,7 @@ const boissonTranslations = {
         "Perrier (33cl/1L)": "Perrier (33cl/1L)",
         "Eau minérale (50cl/1.5L)": "Eau minérale (50cl/1.5L)",
         "Lait de coco (33cl)": "Lait de coco (33cl)",
-        "Jus de litchi (25cl)": "Jus de litchi (25cl)",
+        "Jus de litchi (33cl)": "Jus de litchi (33cl)", // Modifié de 25cl à 33cl
         "Lait de soja (33cl)": "Lait de soja (33cl)",
         "Thé vert": "Thé vert",
         "Café": "Café",
@@ -59,7 +59,7 @@ const boissonTranslations = {
         "Perrier (33cl/1L)": "Perrier Sparkling Water (33cl/1L)",
         "Eau minérale (50cl/1.5L)": "Mineral Water (50cl/1.5L)",
         "Lait de coco (33cl)": "Coconut Milk (33cl)",
-        "Jus de litchi (25cl)": "Lychee Juice (25cl)",
+        "Jus de litchi (33cl)": "Lychee Juice (33cl)", // Modifié de 25cl à 33cl
         "Lait de soja (33cl)": "Soy Milk (33cl)",
         "Thé vert": "Green Tea",
         "Café": "Coffee",
@@ -96,7 +96,7 @@ const boissonTranslations = {
         "Perrier (33cl/1L)": "巴黎水 (33cl/1L)",
         "Eau minérale (50cl/1.5L)": "矿泉水 (50cl/1.5L)",
         "Lait de coco (33cl)": "椰奶 (33cl)",
-        "Jus de litchi (25cl)": "荔枝汁 (25cl)",
+        "Jus de litchi (33cl)": "荔枝汁 (33cl)", // Modifié de 25cl à 33cl
         "Lait de soja (33cl)": "豆奶 (33cl)",
         "Thé vert": "绿茶",
         "Café": "咖啡",
