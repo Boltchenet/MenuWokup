@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "Fanta (33cl)", price: "3€" },
             { name: "7Up (33cl)", price: "3€" },
             { name: "Ice Tea (33cl)", price: "3€" },
-            { name: "Perrier (33cl/1L)", price: "3€/5€" },
-            { name: "Eau minérale (50cl/1.5L)", price: "3€/5€" },
+            { name: "Perrier (33cl/1L)", price: "3€ (33cl)<br>5€ (1L)" },
+            { name: "Eau minérale (50cl/1.5L)", price: "3€ (50cl)<br>5€ (1.5L)" },
             { name: "Lait de coco (33cl)", price: "3€" },
             { name: "Jus de litchi (25cl)", price: "3€" },
             { name: "Lait de soja (33cl)", price: "3€" },
@@ -17,20 +17,20 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "Café au lait", price: "3€" }
         ],
         speciales: [
-            { name: "Thé au citron (fait maison)", price: "5€/carafe" },
-            { name: "Thé aux prunes aigres", price: "5€/carafe" }
+            { name: "Thé au citron (fait maison)", price: "4€ (VERRE)<br>8.5€ (CARAFE)" },
+            { name: "Thé aux prunes aigres", price: "4€ (VERRE)<br>8.5€ (CARAFE)" }
         ],
         vins: [
             { name: "Bière Tsingtao (33cl)", price: "4.9€" },
             { name: "Bière Tsingtao (64cl)", price: "6.9€" },
-            { name: "Vin blanc (Entre-deux-Mers)", price: "4€ (33cl)<br>6.5€ (37.5cl)<br>16€ (75cl)" },
-            { name: "Vin rosé (Plessis du Val)", price: "4€ (33cl)<br>6.5€ (37.5cl)<br>16€ (75cl)" },
-            { name: "Vin rouge (Pied d'Argent Cuvée)", price: "4€ (33cl)<br>6.5€ (37.5cl)<br>16€ (75cl)" },
-            { name: "Vin rouge (Saint-Émilion Grand Cru)", price: "38€ (75cl)" }
+            { name: "Vin blanc (Entre-deux-Mers)", price: "4€ (VERRE)<br>8.5€ (CARAFE)<br>16€ (BOUTEILLE)" },
+            { name: "Vin rosé (Plessis du Val)", price: "4€ (VERRE)<br>8.5€ (CARAFE)<br>16€ (BOUTEILLE)" },
+            { name: "Vin rouge (Pied d'Argent Cuvée)", price: "4€ (VERRE)<br>8.5€ (CARAFE)<br>16€ (BOUTEILLE)" },
+            { name: "Vin rouge (Saint-Émilion Grand Cru)", price: "38€ (BOUTEILLE)" }
         ]
     };
 
-    // Remplir les boissons classiques
+    // Boissons classiques
     const boissonsList = document.querySelector('.boissons-list');
     boissonsData.classiques.forEach(boisson => {
         const item = document.createElement('div');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         boissonsList.appendChild(item);
     });
 
-    // Remplir les boissons spéciales (version simplifiée)
+    // Boissons spéciales
     const specialGrid = document.querySelector('.special-boissons-grid');
     boissonsData.speciales.forEach(boisson => {
         const card = document.createElement('div');
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         specialGrid.appendChild(card);
     });
 
-    // Remplir les vins (nouveau style)
+    // Vins
     const vinsSection = document.querySelectorAll('.boissons-section')[2];
     const oldVinsList = vinsSection.querySelector('.boissons-list');
     if (oldVinsList) oldVinsList.remove();
