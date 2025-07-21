@@ -56,7 +56,7 @@ const boissonTranslations = {
         "Fanta (33cl)": "Fanta (33cl)",
         "7Up (33cl)": "7Up (33cl)",
         "Ice Tea (33cl)": "Ice Tea (33cl)",
-        "Perrier (33cl/1L)": "Perrier (33cl/1L)",
+        "Perrier (33cl/1L)": "Perrier Sparkling Water (33cl/1L)",
         "Eau minérale (50cl/1.5L)": "Mineral Water (50cl/1.5L)",
         "Lait de coco (33cl)": "Coconut Milk (33cl)",
         "Jus de litchi (25cl)": "Lychee Juice (25cl)",
@@ -116,6 +116,10 @@ function updateTranslations(lang) {
     try {
         const translations = boissonTranslations[lang] || boissonTranslations.fr;
         
+        // Traduire le titre de la page
+        document.title = translations["Boissons & Vins"] + " | WOKUP";
+        
+        // Traduire les éléments avec data-translate
         document.querySelectorAll('[data-translate]').forEach(element => {
             const key = element.getAttribute('data-translate');
             if (translations[key]) {
@@ -123,6 +127,7 @@ function updateTranslations(lang) {
             }
         });
 
+        // Traduire les noms des boissons
         document.querySelectorAll('.boisson-name, .special-boisson-name, .vin-name').forEach(element => {
             const originalText = element.textContent.trim();
             const translationKey = Object.keys(boissonTranslations.fr).find(key => 
