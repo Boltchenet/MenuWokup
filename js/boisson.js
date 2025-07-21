@@ -1,168 +1,76 @@
-const boissonTranslations = {
-    fr: {
-        // Navigation
-        "Plats principaux": "Plats principaux",
-        "Fondue": "Fondue",
-        "Menu Midi": "Menu Midi",
-        "Boissons": "Boissons",
-        
-        // Titres
-        "Boissons & Vins": "Boissons & Vins",
-        "Boissons Fraîches": "Boissons Fraîches",
-        "Nos Spécialités": "Nos Spécialités",
-        "Vins & Bières": "Vins & Bières",
-        
-        // Boissons
-        "Wang Lao Ji Thé aux herbes chinoises (33cl)": "Wang Lao Ji Thé aux herbes chinoises (33cl)",
-        "Coca-Cola (33cl)": "Coca-Cola (33cl)",
-        "Coca-Cola Zero (33cl)": "Coca-Cola Zero (33cl)",
-        "Fanta (33cl)": "Fanta (33cl)",
-        "7Up (33cl)": "7Up (33cl)",
-        "Ice Tea (33cl)": "Ice Tea (33cl)",
-        "Perrier (33cl/1L)": "Perrier (33cl/1L)",
-        "Eau minérale (50cl/1.5L)": "Eau minérale (50cl/1.5L)",
-        "Lait de coco (33cl)": "Lait de coco (33cl)",
-        "Jus de litchi (25cl)": "Jus de litchi (25cl)",
-        "Lait de soja (33cl)": "Lait de soja (33cl)",
-        "Thé vert": "Thé vert",
-        "Café": "Café",
-        "Café au lait": "Café au lait",
-        "Thé au citron (fait maison)": "Thé au citron (fait maison)",
-        "Thé aux prunes aigres": "Thé aux prunes aigres",
-        "Bière Tsingtao (33cl)": "Bière Tsingtao (33cl)",
-        "Bière Tsingtao (64cl)": "Bière Tsingtao (64cl)",
-        "Vin blanc (Entre-deux-Mers)": "Vin blanc (Entre-deux-Mers)",
-        "Vin rosé (Plessis du Val)": "Vin rosé (Plessis du Val)",
-        "Vin rouge (Pied d'Argent Cuvée)": "Vin rouge (Pied d'Argent Cuvée)",
-        "Vin rouge (Saint-Émilion Grand Cru)": "Vin rouge (Saint-Émilion Grand Cru)"
-    },
-    en: {
-        // Navigation
-        "Plats principaux": "Main Courses",
-        "Fondue": "Fondue",
-        "Menu Midi": "Lunch Menu",
-        "Boissons": "Drinks",
-        
-        // Titres
-        "Boissons & Vins": "Drinks & Wines",
-        "Boissons Fraîches": "Refreshments",
-        "Nos Spécialités": "Our Specialties",
-        "Vins & Bières": "Wines & Beers",
-        
-        // Boissons
-        "Wang Lao Ji Thé aux herbes chinoises (33cl)": "Wang Lao Ji Herbal Tea (33cl)",
-        "Coca-Cola (33cl)": "Coca-Cola (33cl)",
-        "Coca-Cola Zero (33cl)": "Coca-Cola Zero (33cl)",
-        "Fanta (33cl)": "Fanta (33cl)",
-        "7Up (33cl)": "7Up (33cl)",
-        "Ice Tea (33cl)": "Ice Tea (33cl)",
-        "Perrier (33cl/1L)": "Perrier Sparkling Water (33cl/1L)",
-        "Eau minérale (50cl/1.5L)": "Mineral Water (50cl/1.5L)",
-        "Lait de coco (33cl)": "Coconut Milk (33cl)",
-        "Jus de litchi (25cl)": "Lychee Juice (25cl)",
-        "Lait de soja (33cl)": "Soy Milk (33cl)",
-        "Thé vert": "Green Tea",
-        "Café": "Coffee",
-        "Café au lait": "Coffee with Milk",
-        "Thé au citron (fait maison)": "Homemade Lemon Tea",
-        "Thé aux prunes aigres": "Sour Plum Tea",
-        "Bière Tsingtao (33cl)": "Tsingtao Beer (33cl)",
-        "Bière Tsingtao (64cl)": "Tsingtao Beer (64cl)",
-        "Vin blanc (Entre-deux-Mers)": "White Wine (Entre-deux-Mers)",
-        "Vin rosé (Plessis du Val)": "Rosé Wine (Plessis du Val)",
-        "Vin rouge (Pied d'Argent Cuvée)": "Red Wine (Pied d'Argent Cuvée)",
-        "Vin rouge (Saint-Émilion Grand Cru)": "Red Wine (Saint-Émilion Grand Cru)"
-    },
-    zh: {
-        // Navigation
-        "Plats principaux": "主菜",
-        "Fondue": "火锅",
-        "Menu Midi": "午餐菜单",
-        "Boissons": "饮料",
-        
-        // Titres
-        "Boissons & Vins": "酒水和饮料",
-        "Boissons Fraîches": "饮料",
-        "Nos Spécialités": "特色饮品",
-        "Vins & Bières": "红酒和啤酒",
-        
-        // Boissons
-        "Wang Lao Ji Thé aux herbes chinoises (33cl)": "王老吉凉茶 (33cl)",
-        "Coca-Cola (33cl)": "可口可乐 (33cl)",
-        "Coca-Cola Zero (33cl)": "零度可乐 (33cl)",
-        "Fanta (33cl)": "芬达 (33cl)",
-        "7Up (33cl)": "七喜 (33cl)",
-        "Ice Tea (33cl)": "冰红茶 (33cl)",
-        "Perrier (33cl/1L)": "巴黎水 (33cl/1L)",
-        "Eau minérale (50cl/1.5L)": "矿泉水 (50cl/1.5L)",
-        "Lait de coco (33cl)": "椰奶 (33cl)",
-        "Jus de litchi (25cl)": "荔枝汁 (25cl)",
-        "Lait de soja (33cl)": "豆奶 (33cl)",
-        "Thé vert": "绿茶",
-        "Café": "咖啡",
-        "Café au lait": "牛奶咖啡",
-        "Thé au citron (fait maison)": "自制柠檬茶",
-        "Thé aux prunes aigres": "酸梅汤",
-        "Bière Tsingtao (33cl)": "青岛啤酒 (33cl)",
-        "Bière Tsingtao (64cl)": "青岛啤酒 (64cl)",
-        "Vin blanc (Entre-deux-Mers)": "白葡萄酒 (Entre-deux-Mers)",
-        "Vin rosé (Plessis du Val)": "桃红葡萄酒 (Plessis du Val)",
-        "Vin rouge (Pied d'Argent Cuvée)": "红葡萄酒 (Pied d'Argent Cuvée)",
-        "Vin rouge (Saint-Émilion Grand Cru)": "红葡萄酒 (Saint-Émilion Grand Cru)"
-    }
-};
+document.addEventListener('DOMContentLoaded', function() {
+    const boissonsData = {
+        classiques: [
+            { name: "Wang Lao Ji Thé aux herbes chinoises (33cl)", price: "3€" },
+            { name: "Coca-Cola (33cl)", price: "3€" },
+            { name: "Coca-Cola Zero (33cl)", price: "3€" },
+            { name: "Fanta (33cl)", price: "3€" },
+            { name: "7Up (33cl)", price: "3€" },
+            { name: "Ice Tea (33cl)", price: "3€" },
+            { name: "Perrier (33cl/1L)", price: "3€ (33cl)<br>5€ (1L)" },
+            { name: "Eau minérale (50cl/1.5L)", price: "3€ (50cl)<br>5€ (1.5L)" },
+            { name: "Lait de coco (33cl)", price: "3€" },
+            { name: "Jus de litchi (25cl)", price: "3€" },
+            { name: "Lait de soja (33cl)", price: "3€" },
+            { name: "Thé vert", price: "3€/personne" },
+            { name: "Café", price: "2€" },
+            { name: "Café au lait", price: "3€" }
+        ],
+        speciales: [
+            { name: "Thé au citron (fait maison)", price: "4€ (VERRE)<br>8.5€ (CARAFE)" },
+            { name: "Thé aux prunes aigres", price: "4€ (VERRE)<br>8.5€ (CARAFE)" }
+        ],
+        vins: [
+            { name: "Bière Tsingtao (33cl)", price: "4.9€" },
+            { name: "Bière Tsingtao (64cl)", price: "6.9€" },
+            { name: "Vin blanc (Entre-deux-Mers)", price: "4€ (VERRE)<br>8.5€ (CARAFE)<br>16€ (BOUTEILLE)" },
+            { name: "Vin rosé (Plessis du Val)", price: "4€ (VERRE)<br>8.5€ (CARAFE)<br>16€ (BOUTEILLE)" },
+            { name: "Vin rouge (Pied d'Argent Cuvée)", price: "4€ (VERRE)<br>8.5€ (CARAFE)<br>16€ (BOUTEILLE)" },
+            { name: "Vin rouge (Saint-Émilion Grand Cru)", price: "38€ (BOUTEILLE)" }
+        ]
+    };
 
-function updateTranslations(lang) {
-    try {
-        const translations = boissonTranslations[lang] || boissonTranslations.fr;
-        
-        // Traduire le titre de la page
-        document.title = translations["Boissons & Vins"] + " | WOKUP";
-        
-        // Traduire les éléments avec data-translate
-        document.querySelectorAll('[data-translate]').forEach(element => {
-            const key = element.getAttribute('data-translate');
-            if (translations[key]) {
-                element.textContent = translations[key];
-            }
-        });
+    // Boissons classiques
+    const boissonsList = document.querySelector('.boissons-list');
+    boissonsData.classiques.forEach(boisson => {
+        const item = document.createElement('div');
+        item.className = 'boisson-item';
+        item.innerHTML = `
+            <div class="boisson-name">${boisson.name}</div>
+            <div class="boisson-price">${boisson.price}</div>
+        `;
+        boissonsList.appendChild(item);
+    });
 
-        // Traduire les noms des boissons
-        document.querySelectorAll('.boisson-name, .special-boisson-name, .vin-name').forEach(element => {
-            const originalText = element.textContent.trim();
-            const translationKey = Object.keys(boissonTranslations.fr).find(key => 
-                boissonTranslations.fr[key] === originalText || 
-                boissonTranslations.en[key] === originalText || 
-                boissonTranslations.zh[key] === originalText
-            );
-            
-            if (translationKey && translations[translationKey]) {
-                element.textContent = translations[translationKey];
-            }
-        });
+    // Boissons spéciales
+    const specialGrid = document.querySelector('.special-boissons-grid');
+    boissonsData.speciales.forEach(boisson => {
+        const card = document.createElement('div');
+        card.className = 'special-boisson-card';
+        card.innerHTML = `
+            <div class="special-boisson-name">${boisson.name}</div>
+            <div class="special-boisson-price">${boisson.price}</div>
+        `;
+        specialGrid.appendChild(card);
+    });
 
-    } catch (error) {
-        console.error('Translation error:', error);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const languageBtns = document.querySelectorAll('.language-btn');
+    // Vins
+    const vinsSection = document.querySelectorAll('.boissons-section')[2];
+    const oldVinsList = vinsSection.querySelector('.boissons-list');
+    if (oldVinsList) oldVinsList.remove();
     
-    languageBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang');
-            languageBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            updateTranslations(lang);
-            localStorage.setItem('preferredLanguage', lang);
-        });
+    const vinsContainer = document.createElement('div');
+    vinsContainer.className = 'vins-container';
+    
+    boissonsData.vins.forEach(vin => {
+        const item = document.createElement('div');
+        item.className = 'vin-item';
+        item.innerHTML = `
+            <div class="vin-name">${vin.name}</div>
+            <div class="vin-price">${vin.price}</div>
+        `;
+        vinsContainer.appendChild(item);
     });
     
-    const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
-    const activeBtn = document.querySelector(`.language-btn[data-lang="${savedLang}"]`);
-    if (activeBtn) {
-        activeBtn.classList.add('active');
-    }
-    updateTranslations(savedLang);
+    vinsSection.appendChild(vinsContainer);
 });
