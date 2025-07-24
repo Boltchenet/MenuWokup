@@ -151,7 +151,7 @@ const fondueTranslations = {
         "Tranches d'agneau": "羊肉卷",
         "Bœuf mariné épicé": "麻辣牛肉",
         "Calamar": "鱿鱼卷",
-        "Jambon tranchés": "牛餐肉",
+        "Jambon tranchés": "午餐肉",
         "Tripes": "牛百叶",
         "Sang en gelée de porc": "猪血",
         "Intestins de seiche": "肥肠",
