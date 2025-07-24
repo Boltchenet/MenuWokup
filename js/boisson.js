@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "Perrier (33cl/1L)", price: "3€ (33cl)<br>5€ (1L)" },
             { name: "Eau minérale (50cl/1.5L)", price: "3€ (50cl)<br>5€ (1.5L)" },
             { name: "Lait de coco (33cl)", price: "3€" },
-            { name: "Jus de litchi (33cl)", price: "5€" }, // Modifié de 25cl à 33cl
+            { name: "Jus de litchi (33cl)", price: "3€" }, // Modifié de 25cl à 33cl
             { name: "Lait de soja (33cl)", price: "3€" },
             { name: "Thé vert", price: "3€/personne" },
             { name: "Café", price: "2€" },
